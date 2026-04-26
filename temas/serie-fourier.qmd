@@ -1,0 +1,161 @@
+---
+title: "Serie de Fourier"
+---
+
+## Idea central
+
+La Serie de Fourier permite representar una señal periódica $x(t)$ de período $T_0$ como combinación lineal de exponenciales complejas o, de forma equivalente, de senos y cosenos con frecuencias múltiplos de la frecuencia fundamental.
+
+Si definimos
+
+$$
+u_0=\frac{1}{T_0},
+$$
+
+entonces las frecuencias necesarias para reconstruir la señal serán $k u_0$ con $k\in\mathbb{Z}$. Las frecuencias de este tipo, que corresponden a múltiplos enteros de la frecuencia natural $u_0$, se denominan ***armónicos***. 
+
+::: {.callout-important}
+## Idea clave
+
+La Serie de Fourier es una forma de representar matemáticamente una señal periódica utilizando la exponencial compleja $e^{i2\pi k u_0 t}$ como base del espacio vectorial de funciones complejas.
+:::
+
+## Forma compleja
+
+La representación compleja se escribe como
+
+$$
+x(t)=\sum_{k=-\infty}^{\infty} c_k e^{i2\pi k u_0 t},
+$$
+
+donde los coeficientes complejos son
+
+$$
+c_k=\frac{1}{T_0}\int_{t_0}^{t_0+T_0}x(t)e^{-i2\pi k u_0 t}\,dt.
+$$
+
+Estos coeficientes miden cuánto aporta cada armónico $k u_0$ a la señal original.
+
+## Forma trigonométrica
+
+Una forma equivalente es
+
+$$
+x(t)=\frac{a_0}{2}+\sum_{n=1}^{\infty}\left[a_n\cos(2\pi n u_0 t)+b_n\sin(2\pi n u_0 t)\right].
+$$
+
+Los coeficientes trigonométricos se obtienen integrando sobre cualquier período completo:
+
+$$
+a_0=\frac{2}{T_0}\int_{t_0}^{t_0+T_0}x(t)\,dt,
+$$
+
+$$
+a_n=\frac{2}{T_0}\int_{t_0}^{t_0+T_0}x(t)\cos(2\pi n u_0 t)\,dt,
+\qquad n\geq 1,
+$$
+
+$$
+b_n=\frac{2}{T_0}\int_{t_0}^{t_0+T_0}x(t)\sin(2\pi n u_0 t)\,dt,
+\qquad n\geq 1.
+$$
+
+Aquí:
+
+- $a_0/2$ es el valor medio sobre un período.
+- $a_n$ mide la contribución del coseno del armónico $n$.
+- $b_n$ mide la contribución del seno del armónico $n$.
+- El intervalo de integración puede elegirse como cualquier período completo.
+- Si la señal es par, típicamente desaparecen los términos seno, es decir, $b_n=0$.
+- Si la señal es impar, típicamente desaparecen los términos coseno y el valor medio, de modo que $a_n=0$ y $a_0=0$.
+
+## Interpretación como descomposición en armónicos
+
+Cada término de la serie corresponde a un modo de oscilación compatible con el período $T_0$. El armónico $n=1$ reproduce la frecuencia fundamental; los armónicos $n=2,3,\dots$ agregan detalle fino a la forma de onda.
+
+Para señales suaves, los coeficientes tienden a decrecer rápido. Para señales con discontinuidades, el decrecimiento es más lento y se necesitan más armónicos para aproximar bien los saltos.
+
+## Frecuencia fundamental
+
+La frecuencia fundamental es
+
+$$
+u_0=\frac{1}{T_0}.
+$$
+
+Si se usa frecuencia angular, entonces
+
+$$
+\omega_0=2\pi u_0.
+$$
+
+En este sitio preferimos escribir la serie usando $u_0$, de modo consistente con la convención de Fourier en $u$.
+
+## Condiciones de Dirichlet
+
+Las condiciones de Dirichlet son suficientes para garantizar convergencia puntual de la serie en muchos problemas clásicos:
+
+- $x(t)$ es absolutamente integrable en un período.
+- Tiene un número finito de máximos y mínimos en un período.
+- Tiene un número finito de discontinuidades de salto en un período.
+
+Cuando hay una discontinuidad en $t=t_d$, la serie converge al promedio lateral
+
+$$
+\frac{x(t_d^-)+x(t_d^+)}{2}.
+$$
+
+::: {.callout-note}
+## Interpretación
+
+La convergencia en los puntos de salto no significa que la señal "pierda" el salto. Significa que la suma infinita de funciones continuas aproxima el salto desde ambos lados y toma el valor medio exactamente en el punto discontinuo.
+:::
+
+## Simetrías útiles
+
+Las simetrías reducen el trabajo de cálculo:
+
+- Si $x(t)$ es real, entonces $c_{-k}=\overline{c_k}$.
+- Si $x(t)$ es par, entonces $b_n=0$.
+- Si $x(t)$ es impar, entonces $a_n=0$ y $a_0=0$.
+- Si la señal tiene simetría de media onda, desaparecen ciertos armónicos, con frecuencia los pares.
+
+Reconocer estas estructuras antes de integrar simplifica mucho el cálculo manual.
+
+## Energía, potencia, Bessel y Parseval
+
+Para señales periódicas la energía total suele ser infinita, pero la potencia media sí es finita:
+
+$$
+P=\frac{1}{T_0}\int_{t_0}^{t_0+T_0}|x(t)|^2\,dt.
+$$
+
+La desigualdad de Bessel afirma que, para cualquier suma parcial,
+
+$$
+\sum_{k=-N}^{N}|c_k|^2 \le P.
+$$
+
+Cuando la serie converge en media cuadrática, se obtiene la identidad de Parseval:
+
+$$
+P=\sum_{k=-\infty}^{\infty}|c_k|^2.
+$$
+
+En forma trigonométrica,
+
+$$
+P=\frac{a_0^2}{4}+\frac{1}{2}\sum_{n=1}^{\infty}(a_n^2+b_n^2).
+$$
+
+Estas igualdades conectan el dominio del tiempo con el reparto de potencia entre armónicos.
+
+## Observación práctica
+
+Si una señal tiene esquinas o saltos, la reconstrucción parcial cerca de esas zonas es lenta. Eso no es un error numérico: refleja la estructura espectral real de la señal.
+
+::: {.callout-tip}
+## Explora la reconstrucción
+
+La simulación [Reconstrucción por Serie de Fourier](../simulaciones/serie-fourier.qmd) muestra cómo una onda cuadrada se aproxima sumando armónicos impares y permite observar el fenómeno de Gibbs.
+:::

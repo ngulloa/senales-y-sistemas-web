@@ -1,0 +1,92 @@
+---
+title: "Simulación: senoide"
+page-layout: full
+---
+
+Explora la señal
+
+$$
+x(t)=A\sin\!\bigl(2\pi f (t-t_0)+\phi\bigr)+b
+$$
+
+modificando amplitud, frecuencia, fase, desplazamiento vertical y desplazamiento temporal.
+
+::: {.callout-note}
+## Cómo leer los parámetros
+
+- $A$ cambia la amplitud.
+- $f$ cambia la cantidad de ciclos por unidad de tiempo.
+- $\phi$ desplaza la fase.
+- $b$ agrega un sesgo vertical.
+- $t_0$ mueve la señal horizontalmente.
+:::
+
+::: {#sinusoid-sim .simulation-shell}
+::: {.sim-card .sim-card--controls}
+## Controles
+
+<div class="control-grid">
+<div class="control-field">
+<label for="sinusoid-amplitude">Amplitud <em>A</em></label>
+<div class="control-inline">
+<input id="sinusoid-amplitude" type="range" min="0" max="3" step="0.1" value="1">
+<input id="sinusoid-amplitude-number" type="number" min="0" max="3" step="0.1" value="1">
+</div>
+</div>
+<div class="control-field">
+<label for="sinusoid-frequency">Frecuencia <em>f</em></label>
+<div class="control-inline">
+<input id="sinusoid-frequency" type="range" min="0.25" max="6" step="0.05" value="1">
+<input id="sinusoid-frequency-number" type="number" min="0.25" max="6" step="0.05" value="1">
+</div>
+</div>
+<div class="control-field">
+<label for="sinusoid-phase">Fase <em>&phi;</em> [rad]</label>
+<div class="control-inline">
+<input id="sinusoid-phase" type="range" min="-3.1416" max="3.1416" step="0.05" value="0">
+<input id="sinusoid-phase-number" type="number" min="-3.1416" max="3.1416" step="0.05" value="0">
+</div>
+</div>
+<div class="control-field">
+<label for="sinusoid-bias">Sesgo vertical <em>b</em></label>
+<div class="control-inline">
+<input id="sinusoid-bias" type="range" min="-2" max="2" step="0.1" value="0">
+<input id="sinusoid-bias-number" type="number" min="-2" max="2" step="0.1" value="0">
+</div>
+</div>
+<div class="control-field">
+<label for="sinusoid-shift">Desplazamiento temporal <em>t</em><sub>0</sub></label>
+<div class="control-inline">
+<input id="sinusoid-shift" type="range" min="-1.5" max="1.5" step="0.05" value="0">
+<input id="sinusoid-shift-number" type="number" min="-1.5" max="1.5" step="0.05" value="0">
+</div>
+</div>
+</div>
+:::
+
+::: {.sim-card .sim-card--plot}
+## Gráfico
+
+<div id="sinusoid-plot" class="plot-panel"></div>
+:::
+
+::: {.sim-card .sim-card--diagnostics}
+## Fórmula actual
+
+<div class="formula-panel" id="sinusoid-formula"></div>
+<div class="metric-grid">
+<div class="metric-card">
+<span class="metric-label">Período</span>
+<strong id="sinusoid-period"></strong>
+</div>
+<div class="metric-card">
+<span class="metric-label">Frecuencia angular</span>
+<strong id="sinusoid-omega"></strong>
+</div>
+</div>
+<p class="sim-explainer" id="sinusoid-summary"></p>
+:::
+:::
+
+<script src="https://cdn.plot.ly/plotly-2.32.0.min.js"></script>
+<script type="module" src="../assets/js/simulations/sinusoid-sim.js"></script>

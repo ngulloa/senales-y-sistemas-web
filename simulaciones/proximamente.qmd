@@ -1,0 +1,26 @@
+---
+title: "Simulaciones en desarrollo"
+---
+
+Esta página reúne simulaciones previstas para próximas iteraciones del sitio. Sirve como puente entre los temas teóricos ya publicados y los módulos interactivos que faltan por implementar.
+
+## Transformada de Fourier
+
+Se incorporará una simulación para visualizar magnitud y fase, comparar pares notables y observar el efecto de desplazamientos temporales y modulaciones.
+
+## Relación Serie de Fourier y Transformada de Fourier
+
+Se proyecta una visualización donde el aumento del período haga más densas las líneas espectrales hasta aproximar una envolvente continua.
+
+## Polos y ceros en el plano s
+
+Está planificada una herramienta para ubicar polos, ceros y regiones de convergencia, y relacionarlos con causalidad y estabilidad.
+
+## Sistemas LTI y filtros
+
+Se añadirá una simulación que conecte entrada, respuesta al impulso, salida por convolución y respuesta en frecuencia.
+
+## DFT interactiva
+
+Se planea una página para estudiar bins, resolución, fuga espectral, zero-padding y relación entre duración temporal y densidad frecuencial.
+

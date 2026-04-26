@@ -1,0 +1,91 @@
+---
+title: "Transformada de Fourier"
+---
+
+## Definición
+
+Para una señal $x(t)$, definimos su transformada de Fourier mediante
+
+$$
+X(u)=\int_{-\infty}^{\infty}x(t)e^{-i2\pi ut}\,dt.
+$$
+
+La transformada inversa correspondiente es
+
+$$
+x(t)=\int_{-\infty}^{\infty}X(u)e^{i2\pi ut}\,du.
+$$
+
+Aquí $u$ representa frecuencia en ciclos por unidad de tiempo. Si se desea trabajar con frecuencia angular, entonces $\omega = 2\pi u$.
+
+::: {.callout-important}
+## Convención
+
+Todas las propiedades y tablas de esta página están escritas bajo la convención $e^{-i2\pi ut}$. Si comparas con apuntes que usan $e^{-i\omega t}$, recuerda sustituir $\omega = 2\pi u$.
+:::
+
+## Interpretación espectral
+
+La transformada de Fourier describe cómo se distribuye una señal entre componentes senoidales de distintas frecuencias. La magnitud $|X(u)|$ indica la intensidad relativa de cada banda, mientras que la fase $\arg X(u)$ conserva información temporal y de alineamiento.
+
+Para señales localizadas en el tiempo, el espectro suele ser extendido. Para señales muy oscilatorias o periódicas, el espectro tiende a concentrarse en frecuencias particulares.
+
+## Transformadas notables
+
+Usaremos la función
+
+$$
+\operatorname{sinc}(x)=\frac{\sin(\pi x)}{\pi x}.
+$$
+
+| Señal $x(t)$ | Transformada $X(u)$ | Comentario |
+|---|---|---|
+| $\delta(t)$ | $1$ | Impulso unitario en el tiempo. |
+| $1$ | $\delta(u)$ | Constante temporal, concentración total en frecuencia cero. |
+| $\operatorname{rect}(t/T)$ | $T\,\operatorname{sinc}(Tu)$ | Con $\operatorname{rect}(t/T)=1$ para $|t|<T/2$. |
+| $\operatorname{sinc}(Bt)$ | $\frac{1}{|B|}\operatorname{rect}(u/B)$ | Dualidad clásica entre tiempo y frecuencia. |
+| $e^{-\pi a t^2}$, $a>0$ | $a^{-1/2}e^{-\pi u^2/a}$ | La gaussiana conserva su forma. |
+| $e^{-at}u(t)$, $a>0$ | $\frac{1}{a+i2\pi u}$ | Exponencial lateral causal. |
+| $e^{-a|t|}$, $a>0$ | $\frac{2a}{a^2+(2\pi u)^2}$ | Exponencial doble, real y par. |
+| $\cos(2\pi u_0 t)$ | $\frac{1}{2}\left[\delta(u-u_0)+\delta(u+u_0)\right]$ | Dos líneas espectrales simétricas. |
+| $\sin(2\pi u_0 t)$ | $\frac{1}{2i}\left[\delta(u-u_0)-\delta(u+u_0)\right]$ | Espectro impar en fase. |
+| $\operatorname{sgn}(t)$ | $\operatorname{p.v.}\!\left(\frac{1}{i\pi u}\right)$ | Debe entenderse en sentido distribucional. |
+
+## Delta, escalón y distribuciones
+
+Algunas transformadas no deben interpretarse como funciones ordinarias sino como distribuciones.
+
+- El par $1 \leftrightarrow \delta(u)$ expresa que una componente constante está concentrada en frecuencia cero.
+- El escalón $u(t)$ no es absolutamente integrable, por lo que su transformada se entiende en sentido de distribuciones:
+
+$$
+\mathcal{F}\{u(t)\}
+=
+\operatorname{p.v.}\!\left(\frac{1}{i2\pi u}\right)
++
+\frac{1}{2}\delta(u).
+$$
+
+- Las expresiones con $\delta(u-u_0)$ representan líneas espectrales ideales, no picos "muy angostos".
+- Los pares de seno, coseno, signo y escalón deben leerse también dentro del formalismo distribucional cuando no hay integrabilidad absoluta.
+
+::: {.callout-warning}
+## Error común
+
+No conviene tratar a $\delta$ como una función ordinaria que "vale infinito" en un punto. En análisis de Fourier funciona como distribución: solo adquiere sentido completo dentro de integrales y operaciones lineales.
+:::
+
+## Magnitud y fase
+
+En aplicaciones físicas y de ingeniería suele graficarse:
+
+- $|X(u)|$, para ver qué frecuencias están presentes.
+- $\arg X(u)$, para estudiar retardos, simetrías y reconstrucción temporal.
+
+Dos señales pueden tener magnitud similar y fase muy distinta, produciendo formas temporales radicalmente diferentes.
+
+::: {.callout-tip}
+## Próxima simulación
+
+La página [Simulaciones en desarrollo](../simulaciones/proximamente.qmd#transformada-de-fourier) resume la futura herramienta de magnitud y fase para explorar pares notables y modificaciones espectrales.
+:::

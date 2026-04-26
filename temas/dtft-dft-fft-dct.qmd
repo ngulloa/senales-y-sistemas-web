@@ -1,0 +1,77 @@
+---
+title: "DTFT, DFT, FFT y DCT"
+---
+
+## Señales discretas
+
+Una secuencia $x[n]$ se define sobre índices enteros. Cuando proviene de muestrear una señal continua, la frecuencia natural pasa a medirse en ciclos por muestra.
+
+## DTFT
+
+La transformada de Fourier en tiempo discreto (DTFT) se define por
+
+$$
+X(u)=\sum_{n=-\infty}^{\infty}x[n]e^{-i2\pi un}.
+$$
+
+Aquí $u$ es una frecuencia normalizada y $X(u)$ es periódica de período $1$.
+
+## DFT
+
+Si observamos solo $N$ muestras, la transformada discreta de Fourier es
+
+$$
+X[k]=\sum_{n=0}^{N-1}x[n]e^{-i2\pi kn/N},
+\qquad k=0,1,\dots,N-1.
+$$
+
+La DFT entrega una rejilla finita de muestras espectrales.
+
+## FFT como algoritmo
+
+La FFT no es una transformada distinta, sino una familia de algoritmos rápidos para calcular la DFT reduciendo el costo de $O(N^2)$ a aproximadamente $O(N\log N)$.
+
+## Interpretación de bins
+
+Cada índice $k$ representa un bin frecuencial:
+
+$$
+u_k=\frac{k}{N} \quad \text{ciclos por muestra}.
+$$
+
+Si la secuencia proviene de muestrear a frecuencia $f_s$, entonces
+
+$$
+f_k=\frac{k f_s}{N}.
+$$
+
+## Resolución frecuencial
+
+La separación entre bins es
+
+$$
+\Delta f=\frac{f_s}{N}.
+$$
+
+Por eso aumentar $N$ o la duración de observación mejora resolución frecuencial, aunque no necesariamente mejora la precisión de amplitud si la señal no está alineada con la rejilla.
+
+## DCT
+
+La transformada discreta del coseno (DCT), en particular la DCT-II, es muy útil en compresión porque concentra energía en pocos coeficientes para señales suaves o bloques de imágenes:
+
+$$
+C[k]=\sum_{n=0}^{N-1}x[n]\cos\!\left[\frac{\pi}{N}\left(n+\frac{1}{2}\right)k\right].
+$$
+
+## Ejercicios cortos
+
+1. Calcula la DFT de la secuencia $x[n]=\delta[n]$ para $0\le n \le N-1$. ¿Qué observas?
+2. Considera $x[n]=1$ para $0\le n \le N-1$. ¿En qué bin se concentra la energía?
+3. Muestra que la DTFT de una secuencia finita es una función continua de $u$, aunque la DFT solo entregue un conjunto discreto de muestras.
+
+::: {.callout-tip}
+## Próxima simulación
+
+La página [Simulaciones en desarrollo](../simulaciones/proximamente.qmd#dft-interactiva) resume la futura simulación de DFT para explorar bins, resolución y fugas espectrales.
+:::
+

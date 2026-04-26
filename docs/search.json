@@ -1,0 +1,632 @@
+[
+  {
+    "objectID": "simulaciones/serie-fourier.html",
+    "href": "simulaciones/serie-fourier.html",
+    "title": "Simulación: reconstrucción por Serie de Fourier",
+    "section": "",
+    "text": "Esta simulación usa la aproximación parcial de una onda cuadrada normalizada:\n\\[\nx_N(t)=\\frac{4}{\\pi}\\sum_{m=0}^{N-1}\\frac{1}{2m+1}\\sin\\!\\bigl(2\\pi(2m+1)u_0 t\\bigr),\n\\qquad\nu_0=\\frac{1}{T_0}.\n\\]"
+  },
+  {
+    "objectID": "simulaciones/serie-fourier.html#controles",
+    "href": "simulaciones/serie-fourier.html#controles",
+    "title": "Simulación: reconstrucción por Serie de Fourier",
+    "section": "1 Controles",
+    "text": "1 Controles\n\n\nArmónicos impares\n\n \n\n\n\nPeríodo T0"
+  },
+  {
+    "objectID": "simulaciones/serie-fourier.html#reconstrucción-parcial",
+    "href": "simulaciones/serie-fourier.html#reconstrucción-parcial",
+    "title": "Simulación: reconstrucción por Serie de Fourier",
+    "section": "2 Reconstrucción parcial",
+    "text": "2 Reconstrucción parcial"
+  },
+  {
+    "objectID": "simulaciones/serie-fourier.html#lectura-rápida",
+    "href": "simulaciones/serie-fourier.html#lectura-rápida",
+    "title": "Simulación: reconstrucción por Serie de Fourier",
+    "section": "3 Lectura rápida",
+    "text": "3 Lectura rápida\n\n\n\n\n\nFrecuencia fundamental \n\n\nPeríodo \n\n\nSobrepico de Gibbs"
+  },
+  {
+    "objectID": "simulaciones/proximamente.html",
+    "href": "simulaciones/proximamente.html",
+    "title": "Simulaciones en desarrollo",
+    "section": "",
+    "text": "Esta página reúne simulaciones previstas para próximas iteraciones del sitio. Sirve como puente entre los temas teóricos ya publicados y los módulos interactivos que faltan por implementar."
+  },
+  {
+    "objectID": "simulaciones/proximamente.html#transformada-de-fourier",
+    "href": "simulaciones/proximamente.html#transformada-de-fourier",
+    "title": "Simulaciones en desarrollo",
+    "section": "1 Transformada de Fourier",
+    "text": "1 Transformada de Fourier\nSe incorporará una simulación para visualizar magnitud y fase, comparar pares notables y observar el efecto de desplazamientos temporales y modulaciones."
+  },
+  {
+    "objectID": "simulaciones/proximamente.html#relación-serie-de-fourier-y-transformada-de-fourier",
+    "href": "simulaciones/proximamente.html#relación-serie-de-fourier-y-transformada-de-fourier",
+    "title": "Simulaciones en desarrollo",
+    "section": "2 Relación Serie de Fourier y Transformada de Fourier",
+    "text": "2 Relación Serie de Fourier y Transformada de Fourier\nSe proyecta una visualización donde el aumento del período haga más densas las líneas espectrales hasta aproximar una envolvente continua."
+  },
+  {
+    "objectID": "simulaciones/proximamente.html#polos-y-ceros-en-el-plano-s",
+    "href": "simulaciones/proximamente.html#polos-y-ceros-en-el-plano-s",
+    "title": "Simulaciones en desarrollo",
+    "section": "3 Polos y ceros en el plano s",
+    "text": "3 Polos y ceros en el plano s\nEstá planificada una herramienta para ubicar polos, ceros y regiones de convergencia, y relacionarlos con causalidad y estabilidad."
+  },
+  {
+    "objectID": "simulaciones/proximamente.html#sistemas-lti-y-filtros",
+    "href": "simulaciones/proximamente.html#sistemas-lti-y-filtros",
+    "title": "Simulaciones en desarrollo",
+    "section": "4 Sistemas LTI y filtros",
+    "text": "4 Sistemas LTI y filtros\nSe añadirá una simulación que conecte entrada, respuesta al impulso, salida por convolución y respuesta en frecuencia."
+  },
+  {
+    "objectID": "simulaciones/proximamente.html#dft-interactiva",
+    "href": "simulaciones/proximamente.html#dft-interactiva",
+    "title": "Simulaciones en desarrollo",
+    "section": "5 DFT interactiva",
+    "text": "5 DFT interactiva\nSe planea una página para estudiar bins, resolución, fuga espectral, zero-padding y relación entre duración temporal y densidad frecuencial."
+  },
+  {
+    "objectID": "temas/transformada-fourier.html",
+    "href": "temas/transformada-fourier.html",
+    "title": "Transformada de Fourier",
+    "section": "",
+    "text": "Para una señal \\(x(t)\\), definimos su transformada de Fourier mediante\n\\[\nX(u)=\\int_{-\\infty}^{\\infty}x(t)e^{-i2\\pi ut}\\,dt.\n\\]\nLa transformada inversa correspondiente es\n\\[\nx(t)=\\int_{-\\infty}^{\\infty}X(u)e^{i2\\pi ut}\\,du.\n\\]\nAquí \\(u\\) representa frecuencia en ciclos por unidad de tiempo. Si se desea trabajar con frecuencia angular, entonces \\(\\omega = 2\\pi u\\).\n\n\n\n\n\n\nImportanteConvención\n\n\n\nTodas las propiedades y tablas de esta página están escritas bajo la convención \\(e^{-i2\\pi ut}\\). Si comparas con apuntes que usan \\(e^{-i\\omega t}\\), recuerda sustituir \\(\\omega = 2\\pi u\\)."
+  },
+  {
+    "objectID": "temas/transformada-fourier.html#definición",
+    "href": "temas/transformada-fourier.html#definición",
+    "title": "Transformada de Fourier",
+    "section": "",
+    "text": "Para una señal \\(x(t)\\), definimos su transformada de Fourier mediante\n\\[\nX(u)=\\int_{-\\infty}^{\\infty}x(t)e^{-i2\\pi ut}\\,dt.\n\\]\nLa transformada inversa correspondiente es\n\\[\nx(t)=\\int_{-\\infty}^{\\infty}X(u)e^{i2\\pi ut}\\,du.\n\\]\nAquí \\(u\\) representa frecuencia en ciclos por unidad de tiempo. Si se desea trabajar con frecuencia angular, entonces \\(\\omega = 2\\pi u\\).\n\n\n\n\n\n\nImportanteConvención\n\n\n\nTodas las propiedades y tablas de esta página están escritas bajo la convención \\(e^{-i2\\pi ut}\\). Si comparas con apuntes que usan \\(e^{-i\\omega t}\\), recuerda sustituir \\(\\omega = 2\\pi u\\)."
+  },
+  {
+    "objectID": "temas/transformada-fourier.html#interpretación-espectral",
+    "href": "temas/transformada-fourier.html#interpretación-espectral",
+    "title": "Transformada de Fourier",
+    "section": "2 Interpretación espectral",
+    "text": "2 Interpretación espectral\nLa transformada de Fourier describe cómo se distribuye una señal entre componentes senoidales de distintas frecuencias. La magnitud \\(|X(u)|\\) indica la intensidad relativa de cada banda, mientras que la fase \\(\\arg X(u)\\) conserva información temporal y de alineamiento.\nPara señales localizadas en el tiempo, el espectro suele ser extendido. Para señales muy oscilatorias o periódicas, el espectro tiende a concentrarse en frecuencias particulares."
+  },
+  {
+    "objectID": "temas/transformada-fourier.html#transformadas-notables",
+    "href": "temas/transformada-fourier.html#transformadas-notables",
+    "title": "Transformada de Fourier",
+    "section": "3 Transformadas notables",
+    "text": "3 Transformadas notables\nUsaremos la función\n\\[\n\\operatorname{sinc}(x)=\\frac{\\sin(\\pi x)}{\\pi x}.\n\\]\n\n\n\n\n\n\n\n\nSeñal \\(x(t)\\)\nTransformada \\(X(u)\\)\nComentario\n\n\n\n\n\\(\\delta(t)\\)\n\\(1\\)\nImpulso unitario en el tiempo.\n\n\n\\(1\\)\n\\(\\delta(u)\\)\nConstante temporal, concentración total en frecuencia cero.\n\n\n\\(\\operatorname{rect}(t/T)\\)\n\\(T\\,\\operatorname{sinc}(Tu)\\)\nCon \\(\\operatorname{rect}(t/T)=1\\) para \\(|t|&lt;T/2\\).\n\n\n\\(\\operatorname{sinc}(Bt)\\)\n\\(\\frac{1}{|B|}\\operatorname{rect}(u/B)\\)\nDualidad clásica entre tiempo y frecuencia.\n\n\n\\(e^{-\\pi a t^2}\\), \\(a&gt;0\\)\n\\(a^{-1/2}e^{-\\pi u^2/a}\\)\nLa gaussiana conserva su forma.\n\n\n\\(e^{-at}u(t)\\), \\(a&gt;0\\)\n\\(\\frac{1}{a+i2\\pi u}\\)\nExponencial lateral causal.\n\n\n\\(e^{-a|t|}\\), \\(a&gt;0\\)\n\\(\\frac{2a}{a^2+(2\\pi u)^2}\\)\nExponencial doble, real y par.\n\n\n\\(\\cos(2\\pi u_0 t)\\)\n\\(\\frac{1}{2}\\left[\\delta(u-u_0)+\\delta(u+u_0)\\right]\\)\nDos líneas espectrales simétricas.\n\n\n\\(\\sin(2\\pi u_0 t)\\)\n\\(\\frac{1}{2i}\\left[\\delta(u-u_0)-\\delta(u+u_0)\\right]\\)\nEspectro impar en fase.\n\n\n\\(\\operatorname{sgn}(t)\\)\n\\(\\operatorname{p.v.}\\!\\left(\\frac{1}{i\\pi u}\\right)\\)\nDebe entenderse en sentido distribucional."
+  },
+  {
+    "objectID": "temas/transformada-fourier.html#delta-escalón-y-distribuciones",
+    "href": "temas/transformada-fourier.html#delta-escalón-y-distribuciones",
+    "title": "Transformada de Fourier",
+    "section": "4 Delta, escalón y distribuciones",
+    "text": "4 Delta, escalón y distribuciones\nAlgunas transformadas no deben interpretarse como funciones ordinarias sino como distribuciones.\n\nEl par \\(1 \\leftrightarrow \\delta(u)\\) expresa que una componente constante está concentrada en frecuencia cero.\nEl escalón \\(u(t)\\) no es absolutamente integrable, por lo que su transformada se entiende en sentido de distribuciones:\n\n\\[\n\\mathcal{F}\\{u(t)\\}\n=\n\\operatorname{p.v.}\\!\\left(\\frac{1}{i2\\pi u}\\right)\n+\n\\frac{1}{2}\\delta(u).\n\\]\n\nLas expresiones con \\(\\delta(u-u_0)\\) representan líneas espectrales ideales, no picos “muy angostos”.\nLos pares de seno, coseno, signo y escalón deben leerse también dentro del formalismo distribucional cuando no hay integrabilidad absoluta.\n\n\n\n\n\n\n\nAdvertenciaError común\n\n\n\nNo conviene tratar a \\(\\delta\\) como una función ordinaria que “vale infinito” en un punto. En análisis de Fourier funciona como distribución: solo adquiere sentido completo dentro de integrales y operaciones lineales."
+  },
+  {
+    "objectID": "temas/transformada-fourier.html#magnitud-y-fase",
+    "href": "temas/transformada-fourier.html#magnitud-y-fase",
+    "title": "Transformada de Fourier",
+    "section": "5 Magnitud y fase",
+    "text": "5 Magnitud y fase\nEn aplicaciones físicas y de ingeniería suele graficarse:\n\n\\(|X(u)|\\), para ver qué frecuencias están presentes.\n\\(\\arg X(u)\\), para estudiar retardos, simetrías y reconstrucción temporal.\n\nDos señales pueden tener magnitud similar y fase muy distinta, produciendo formas temporales radicalmente diferentes.\n\n\n\n\n\n\nTipPróxima simulación\n\n\n\nLa página Simulaciones en desarrollo resume la futura herramienta de magnitud y fase para explorar pares notables y modificaciones espectrales."
+  },
+  {
+    "objectID": "temas/serie-fourier.html",
+    "href": "temas/serie-fourier.html",
+    "title": "Serie de Fourier",
+    "section": "",
+    "text": "La Serie de Fourier permite representar una señal periódica \\(x(t)\\) de período \\(T_0\\) como combinación lineal de exponenciales complejas o, de forma equivalente, de senos y cosenos con frecuencias múltiplos de la frecuencia fundamental.\nSi definimos\n\\[\nu_0=\\frac{1}{T_0},\n\\]\nentonces las frecuencias necesarias para reconstruir la señal serán \\(k u_0\\) con \\(k\\in\\mathbb{Z}\\). Las frecuencias de este tipo, que corresponden a múltiplos enteros de la frecuencia natural \\(u_0\\), se denominan armónicos.\n\n\n\n\n\n\nImportanteIdea clave\n\n\n\nLa Serie de Fourier es una forma de representar matemáticamente una señal periódica utilizando la exponencial compleja \\(e^{i2\\pi k u_0 t}\\) como base del espacio vectorial de funciones complejas."
+  },
+  {
+    "objectID": "temas/serie-fourier.html#idea-central",
+    "href": "temas/serie-fourier.html#idea-central",
+    "title": "Serie de Fourier",
+    "section": "",
+    "text": "La Serie de Fourier permite representar una señal periódica \\(x(t)\\) de período \\(T_0\\) como combinación lineal de exponenciales complejas o, de forma equivalente, de senos y cosenos con frecuencias múltiplos de la frecuencia fundamental.\nSi definimos\n\\[\nu_0=\\frac{1}{T_0},\n\\]\nentonces las frecuencias necesarias para reconstruir la señal serán \\(k u_0\\) con \\(k\\in\\mathbb{Z}\\). Las frecuencias de este tipo, que corresponden a múltiplos enteros de la frecuencia natural \\(u_0\\), se denominan armónicos.\n\n\n\n\n\n\nImportanteIdea clave\n\n\n\nLa Serie de Fourier es una forma de representar matemáticamente una señal periódica utilizando la exponencial compleja \\(e^{i2\\pi k u_0 t}\\) como base del espacio vectorial de funciones complejas."
+  },
+  {
+    "objectID": "temas/serie-fourier.html#forma-compleja",
+    "href": "temas/serie-fourier.html#forma-compleja",
+    "title": "Serie de Fourier",
+    "section": "2 Forma compleja",
+    "text": "2 Forma compleja\nLa representación compleja se escribe como\n\\[\nx(t)=\\sum_{k=-\\infty}^{\\infty} c_k e^{i2\\pi k u_0 t},\n\\]\ndonde los coeficientes complejos son\n\\[\nc_k=\\frac{1}{T_0}\\int_{t_0}^{t_0+T_0}x(t)e^{-i2\\pi k u_0 t}\\,dt.\n\\]\nEstos coeficientes miden cuánto aporta cada armónico \\(k u_0\\) a la señal original."
+  },
+  {
+    "objectID": "temas/serie-fourier.html#forma-trigonométrica",
+    "href": "temas/serie-fourier.html#forma-trigonométrica",
+    "title": "Serie de Fourier",
+    "section": "3 Forma trigonométrica",
+    "text": "3 Forma trigonométrica\nUna forma equivalente es\n\\[\nx(t)=\\frac{a_0}{2}+\\sum_{n=1}^{\\infty}\\left[a_n\\cos(2\\pi n u_0 t)+b_n\\sin(2\\pi n u_0 t)\\right].\n\\]\nLos coeficientes trigonométricos se obtienen integrando sobre cualquier período completo:\n\\[\na_0=\\frac{2}{T_0}\\int_{t_0}^{t_0+T_0}x(t)\\,dt,\n\\]\n\\[\na_n=\\frac{2}{T_0}\\int_{t_0}^{t_0+T_0}x(t)\\cos(2\\pi n u_0 t)\\,dt,\n\\qquad n\\geq 1,\n\\]\n\\[\nb_n=\\frac{2}{T_0}\\int_{t_0}^{t_0+T_0}x(t)\\sin(2\\pi n u_0 t)\\,dt,\n\\qquad n\\geq 1.\n\\]\nAquí:\n\n\\(a_0/2\\) es el valor medio sobre un período.\n\\(a_n\\) mide la contribución del coseno del armónico \\(n\\).\n\\(b_n\\) mide la contribución del seno del armónico \\(n\\).\nEl intervalo de integración puede elegirse como cualquier período completo.\nSi la señal es par, típicamente desaparecen los términos seno, es decir, \\(b_n=0\\).\nSi la señal es impar, típicamente desaparecen los términos coseno y el valor medio, de modo que \\(a_n=0\\) y \\(a_0=0\\)."
+  },
+  {
+    "objectID": "temas/serie-fourier.html#interpretación-como-descomposición-en-armónicos",
+    "href": "temas/serie-fourier.html#interpretación-como-descomposición-en-armónicos",
+    "title": "Serie de Fourier",
+    "section": "4 Interpretación como descomposición en armónicos",
+    "text": "4 Interpretación como descomposición en armónicos\nCada término de la serie corresponde a un modo de oscilación compatible con el período \\(T_0\\). El armónico \\(n=1\\) reproduce la frecuencia fundamental; los armónicos \\(n=2,3,\\dots\\) agregan detalle fino a la forma de onda.\nPara señales suaves, los coeficientes tienden a decrecer rápido. Para señales con discontinuidades, el decrecimiento es más lento y se necesitan más armónicos para aproximar bien los saltos."
+  },
+  {
+    "objectID": "temas/serie-fourier.html#frecuencia-fundamental",
+    "href": "temas/serie-fourier.html#frecuencia-fundamental",
+    "title": "Serie de Fourier",
+    "section": "5 Frecuencia fundamental",
+    "text": "5 Frecuencia fundamental\nLa frecuencia fundamental es\n\\[\nu_0=\\frac{1}{T_0}.\n\\]\nSi se usa frecuencia angular, entonces\n\\[\n\\omega_0=2\\pi u_0.\n\\]\nEn este sitio preferimos escribir la serie usando \\(u_0\\), de modo consistente con la convención de Fourier en \\(u\\)."
+  },
+  {
+    "objectID": "temas/serie-fourier.html#condiciones-de-dirichlet",
+    "href": "temas/serie-fourier.html#condiciones-de-dirichlet",
+    "title": "Serie de Fourier",
+    "section": "6 Condiciones de Dirichlet",
+    "text": "6 Condiciones de Dirichlet\nLas condiciones de Dirichlet son suficientes para garantizar convergencia puntual de la serie en muchos problemas clásicos:\n\n\\(x(t)\\) es absolutamente integrable en un período.\nTiene un número finito de máximos y mínimos en un período.\nTiene un número finito de discontinuidades de salto en un período.\n\nCuando hay una discontinuidad en \\(t=t_d\\), la serie converge al promedio lateral\n\\[\n\\frac{x(t_d^-)+x(t_d^+)}{2}.\n\\]\n\n\n\n\n\n\nNotaInterpretación\n\n\n\nLa convergencia en los puntos de salto no significa que la señal “pierda” el salto. Significa que la suma infinita de funciones continuas aproxima el salto desde ambos lados y toma el valor medio exactamente en el punto discontinuo."
+  },
+  {
+    "objectID": "temas/serie-fourier.html#simetrías-útiles",
+    "href": "temas/serie-fourier.html#simetrías-útiles",
+    "title": "Serie de Fourier",
+    "section": "7 Simetrías útiles",
+    "text": "7 Simetrías útiles\nLas simetrías reducen el trabajo de cálculo:\n\nSi \\(x(t)\\) es real, entonces \\(c_{-k}=\\overline{c_k}\\).\nSi \\(x(t)\\) es par, entonces \\(b_n=0\\).\nSi \\(x(t)\\) es impar, entonces \\(a_n=0\\) y \\(a_0=0\\).\nSi la señal tiene simetría de media onda, desaparecen ciertos armónicos, con frecuencia los pares.\n\nReconocer estas estructuras antes de integrar simplifica mucho el cálculo manual."
+  },
+  {
+    "objectID": "temas/serie-fourier.html#energía-potencia-bessel-y-parseval",
+    "href": "temas/serie-fourier.html#energía-potencia-bessel-y-parseval",
+    "title": "Serie de Fourier",
+    "section": "8 Energía, potencia, Bessel y Parseval",
+    "text": "8 Energía, potencia, Bessel y Parseval\nPara señales periódicas la energía total suele ser infinita, pero la potencia media sí es finita:\n\\[\nP=\\frac{1}{T_0}\\int_{t_0}^{t_0+T_0}|x(t)|^2\\,dt.\n\\]\nLa desigualdad de Bessel afirma que, para cualquier suma parcial,\n\\[\n\\sum_{k=-N}^{N}|c_k|^2 \\le P.\n\\]\nCuando la serie converge en media cuadrática, se obtiene la identidad de Parseval:\n\\[\nP=\\sum_{k=-\\infty}^{\\infty}|c_k|^2.\n\\]\nEn forma trigonométrica,\n\\[\nP=\\frac{a_0^2}{4}+\\frac{1}{2}\\sum_{n=1}^{\\infty}(a_n^2+b_n^2).\n\\]\nEstas igualdades conectan el dominio del tiempo con el reparto de potencia entre armónicos."
+  },
+  {
+    "objectID": "temas/serie-fourier.html#observación-práctica",
+    "href": "temas/serie-fourier.html#observación-práctica",
+    "title": "Serie de Fourier",
+    "section": "9 Observación práctica",
+    "text": "9 Observación práctica\nSi una señal tiene esquinas o saltos, la reconstrucción parcial cerca de esas zonas es lenta. Eso no es un error numérico: refleja la estructura espectral real de la señal.\n\n\n\n\n\n\nTipExplora la reconstrucción\n\n\n\nLa simulación Reconstrucción por Serie de Fourier muestra cómo una onda cuadrada se aproxima sumando armónicos impares y permite observar el fenómeno de Gibbs."
+  },
+  {
+    "objectID": "temas/propiedades-fourier.html",
+    "href": "temas/propiedades-fourier.html",
+    "title": "Propiedades de la Transformada de Fourier",
+    "section": "",
+    "text": "Usaremos\n\\[\nX(u)=\\int_{-\\infty}^{\\infty}x(t)e^{-i2\\pi ut}\\,dt.\n\\]\nBajo esta convención, las fórmulas deben escribirse con cuidado en términos de \\(u\\)."
+  },
+  {
+    "objectID": "temas/propiedades-fourier.html#convención-de-trabajo",
+    "href": "temas/propiedades-fourier.html#convención-de-trabajo",
+    "title": "Propiedades de la Transformada de Fourier",
+    "section": "",
+    "text": "Usaremos\n\\[\nX(u)=\\int_{-\\infty}^{\\infty}x(t)e^{-i2\\pi ut}\\,dt.\n\\]\nBajo esta convención, las fórmulas deben escribirse con cuidado en términos de \\(u\\)."
+  },
+  {
+    "objectID": "temas/propiedades-fourier.html#linealidad",
+    "href": "temas/propiedades-fourier.html#linealidad",
+    "title": "Propiedades de la Transformada de Fourier",
+    "section": "2 Linealidad",
+    "text": "2 Linealidad\nSi \\(x_1(t)\\leftrightarrow X_1(u)\\) y \\(x_2(t)\\leftrightarrow X_2(u)\\), entonces\n\\[\na\\,x_1(t)+b\\,x_2(t)\\leftrightarrow a\\,X_1(u)+b\\,X_2(u).\n\\]\nLa linealidad es la base de la superposición en sistemas LTI y del uso de tablas de transformadas."
+  },
+  {
+    "objectID": "temas/propiedades-fourier.html#desplazamiento-temporal",
+    "href": "temas/propiedades-fourier.html#desplazamiento-temporal",
+    "title": "Propiedades de la Transformada de Fourier",
+    "section": "3 Desplazamiento temporal",
+    "text": "3 Desplazamiento temporal\n\\[\nx(t-t_0)\\leftrightarrow e^{-i2\\pi u t_0}X(u).\n\\]\nDesplazar en el tiempo no cambia la magnitud espectral, pero sí introduce una fase lineal."
+  },
+  {
+    "objectID": "temas/propiedades-fourier.html#desplazamiento-en-frecuencia",
+    "href": "temas/propiedades-fourier.html#desplazamiento-en-frecuencia",
+    "title": "Propiedades de la Transformada de Fourier",
+    "section": "4 Desplazamiento en frecuencia",
+    "text": "4 Desplazamiento en frecuencia\n\\[\ne^{i2\\pi u_0 t}x(t)\\leftrightarrow X(u-u_0).\n\\]\nMultiplicar por una exponencial compleja traslada el espectro rígidamente sobre el eje de frecuencias."
+  },
+  {
+    "objectID": "temas/propiedades-fourier.html#derivada-en-tiempo",
+    "href": "temas/propiedades-fourier.html#derivada-en-tiempo",
+    "title": "Propiedades de la Transformada de Fourier",
+    "section": "5 Derivada en tiempo",
+    "text": "5 Derivada en tiempo\nSi \\(x(t)\\) es suficientemente regular,\n\\[\n\\frac{d}{dt}x(t)\\leftrightarrow i2\\pi u\\,X(u).\n\\]\nDerivar en el tiempo enfatiza altas frecuencias porque multiplica por \\(u\\)."
+  },
+  {
+    "objectID": "temas/propiedades-fourier.html#derivada-en-frecuencia",
+    "href": "temas/propiedades-fourier.html#derivada-en-frecuencia",
+    "title": "Propiedades de la Transformada de Fourier",
+    "section": "6 Derivada en frecuencia",
+    "text": "6 Derivada en frecuencia\nDerivando la transformada respecto de \\(u\\),\n\\[\nt\\,x(t)\\leftrightarrow \\frac{i}{2\\pi}\\frac{dX}{du}(u).\n\\]\nMultiplicar por \\(t\\) en el tiempo se traduce en una derivada espectral."
+  },
+  {
+    "objectID": "temas/propiedades-fourier.html#escalamiento-temporal",
+    "href": "temas/propiedades-fourier.html#escalamiento-temporal",
+    "title": "Propiedades de la Transformada de Fourier",
+    "section": "7 Escalamiento temporal",
+    "text": "7 Escalamiento temporal\nPara \\(a\\neq 0\\),\n\\[\nx(at)\\leftrightarrow \\frac{1}{|a|}X\\!\\left(\\frac{u}{a}\\right).\n\\]\nComprimir una señal en el tiempo expande su espectro; dilatarla lo concentra."
+  },
+  {
+    "objectID": "temas/propiedades-fourier.html#dualidad",
+    "href": "temas/propiedades-fourier.html#dualidad",
+    "title": "Propiedades de la Transformada de Fourier",
+    "section": "8 Dualidad",
+    "text": "8 Dualidad\nSi \\(x(t)\\leftrightarrow X(u)\\), entonces\n\\[\nX(t)\\leftrightarrow x(-u).\n\\]\nLa dualidad ayuda a construir nuevas transformadas a partir de pares ya conocidos, pero exige cuidar qué variable está jugando el rol temporal y cuál el frecuencial."
+  },
+  {
+    "objectID": "temas/propiedades-fourier.html#convolución",
+    "href": "temas/propiedades-fourier.html#convolución",
+    "title": "Propiedades de la Transformada de Fourier",
+    "section": "9 Convolución",
+    "text": "9 Convolución\n\\[\n(x*h)(t)\\leftrightarrow X(u)H(u).\n\\]\nEsta propiedad es central en el análisis de sistemas LTI: convolucionar en el tiempo equivale a multiplicar en frecuencia."
+  },
+  {
+    "objectID": "temas/propiedades-fourier.html#producto",
+    "href": "temas/propiedades-fourier.html#producto",
+    "title": "Propiedades de la Transformada de Fourier",
+    "section": "10 Producto",
+    "text": "10 Producto\n\\[\nx(t)h(t)\\leftrightarrow (X*H)(u).\n\\]\nEl producto temporal mezcla contenidos frecuenciales y puede ensanchar el espectro."
+  },
+  {
+    "objectID": "temas/propiedades-fourier.html#deltas-y-distribuciones",
+    "href": "temas/propiedades-fourier.html#deltas-y-distribuciones",
+    "title": "Propiedades de la Transformada de Fourier",
+    "section": "11 Deltas y distribuciones",
+    "text": "11 Deltas y distribuciones\nAl trabajar con impulsos aparecen reglas útiles:\n\\[\n\\delta(t-t_0)\\leftrightarrow e^{-i2\\pi u t_0},\n\\qquad\ne^{i2\\pi u_0 t}\\leftrightarrow \\delta(u-u_0).\n\\]\nEstas relaciones deben entenderse en sentido de distribuciones.\n\n\n\n\n\n\nAdvertenciaError común\n\n\n\nNo mezcles fórmulas en \\(u\\) con fórmulas en \\(\\omega\\) sin convertir factores de \\(2\\pi\\). Ese descuido suele provocar errores de escala, de fase y de ubicación de líneas espectrales."
+  },
+  {
+    "objectID": "temas/laplace.html",
+    "href": "temas/laplace.html",
+    "title": "Transformada de Laplace",
+    "section": "",
+    "text": "La transformada de Laplace amplía la transformada de Fourier introduciendo un factor exponencial real que puede mejorar convergencia y hacer visible la estructura de polos y ceros.\nTrabajaremos con\n\\[\ns=\\sigma+i2\\pi u.\n\\]\nSi el eje \\(\\sigma=0\\) pertenece a la región de convergencia, entonces la transformada de Fourier se recupera al evaluar \\(s=i2\\pi u\\)."
+  },
+  {
+    "objectID": "temas/laplace.html#relación-con-fourier",
+    "href": "temas/laplace.html#relación-con-fourier",
+    "title": "Transformada de Laplace",
+    "section": "",
+    "text": "La transformada de Laplace amplía la transformada de Fourier introduciendo un factor exponencial real que puede mejorar convergencia y hacer visible la estructura de polos y ceros.\nTrabajaremos con\n\\[\ns=\\sigma+i2\\pi u.\n\\]\nSi el eje \\(\\sigma=0\\) pertenece a la región de convergencia, entonces la transformada de Fourier se recupera al evaluar \\(s=i2\\pi u\\)."
+  },
+  {
+    "objectID": "temas/laplace.html#definición-bilateral",
+    "href": "temas/laplace.html#definición-bilateral",
+    "title": "Transformada de Laplace",
+    "section": "2 Definición bilateral",
+    "text": "2 Definición bilateral\nLa transformada bilateral es\n\\[\nX(s)=\\int_{-\\infty}^{\\infty}x(t)e^{-st}\\,dt.\n\\]\nEs útil cuando se desea estudiar señales a dos lados del tiempo o analizar regiones de convergencia sin imponer causalidad desde el inicio."
+  },
+  {
+    "objectID": "temas/laplace.html#definición-unilateral",
+    "href": "temas/laplace.html#definición-unilateral",
+    "title": "Transformada de Laplace",
+    "section": "3 Definición unilateral",
+    "text": "3 Definición unilateral\nLa transformada unilateral es\n\\[\nX^+(s)=\\int_{0^-}^{\\infty}x(t)e^{-st}\\,dt.\n\\]\nEsta forma es especialmente práctica para resolver ecuaciones diferenciales con condiciones iniciales."
+  },
+  {
+    "objectID": "temas/laplace.html#región-de-convergencia",
+    "href": "temas/laplace.html#región-de-convergencia",
+    "title": "Transformada de Laplace",
+    "section": "4 Región de convergencia",
+    "text": "4 Región de convergencia\nLa región de convergencia (ROC) es el conjunto de valores de \\(s\\) para los cuales la integral converge. En muchas señales exponenciales, la ROC es un semiplano o una franja vertical del plano complejo.\nLa ROC no es un detalle secundario: dos señales distintas pueden compartir la misma expresión algebraica \\(X(s)\\) y diferenciarse precisamente por su región de convergencia.\n\n\n\n\n\n\nImportanteIdea clave\n\n\n\nEn Laplace, la expresión analítica y la ROC forman una pareja inseparable. Sin la ROC, la transformada puede quedar ambigua."
+  },
+  {
+    "objectID": "temas/laplace.html#polos-y-ceros",
+    "href": "temas/laplace.html#polos-y-ceros",
+    "title": "Transformada de Laplace",
+    "section": "5 Polos y ceros",
+    "text": "5 Polos y ceros\n\nUn cero es un valor de \\(s\\) donde \\(X(s)=0\\).\nUn polo es un valor de \\(s\\) donde \\(X(s)\\) diverge o se hace no acotada.\n\nEn sistemas racionales, polos y ceros organizan la dinámica: ubicación de resonancias, rapidez de decaimiento y comportamiento transitorio.\nAdemás:\n\nla ROC no contiene polos;\nsi \\(X(s)\\) es racional, los polos delimitan la ROC;\nuna misma expresión como \\(\\frac{1}{s+a}\\) puede corresponder a señales distintas si cambia la ROC."
+  },
+  {
+    "objectID": "temas/laplace.html#función-de-transferencia",
+    "href": "temas/laplace.html#función-de-transferencia",
+    "title": "Transformada de Laplace",
+    "section": "6 Función de transferencia",
+    "text": "6 Función de transferencia\nPara un sistema LTI con condiciones iniciales nulas,\n\\[\nH(s)=\\frac{Y(s)}{X(s)}.\n\\]\nEsta función resume cómo el sistema modifica cada modo exponencial complejo \\(e^{st}\\)."
+  },
+  {
+    "objectID": "temas/laplace.html#aplicación-a-edo-lineales",
+    "href": "temas/laplace.html#aplicación-a-edo-lineales",
+    "title": "Transformada de Laplace",
+    "section": "7 Aplicación a EDO lineales",
+    "text": "7 Aplicación a EDO lineales\nLa transformada unilateral convierte derivadas en expresiones algebraicas. Por ejemplo, si\n\\[\na_2 y''(t)+a_1 y'(t)+a_0 y(t)=x(t),\n\\]\nentonces la ecuación diferencial se transforma en una relación algebraica en \\(s\\), a partir de la cual se despeja \\(Y(s)\\) y luego se aplica transformada inversa."
+  },
+  {
+    "objectID": "temas/laplace.html#causalidad-y-estabilidad-en-términos-de-roc",
+    "href": "temas/laplace.html#causalidad-y-estabilidad-en-términos-de-roc",
+    "title": "Transformada de Laplace",
+    "section": "8 Causalidad y estabilidad en términos de ROC",
+    "text": "8 Causalidad y estabilidad en términos de ROC\nEn sistemas racionales continuos:\n\ncausalidad: la ROC está a la derecha del polo con mayor parte real;\nestabilidad BIBO: la ROC contiene el eje \\(\\sigma=0\\), equivalente a \\(s=i2\\pi u\\);\ncausal y estable a la vez: todos los polos quedan en el semiplano izquierdo \\(\\Re(s)&lt;0\\), de modo que la ROC causal incluye el eje imaginario.\n\nEstas reglas son muy útiles para decidir comportamiento del sistema sin calcular la respuesta temporal completa.\n\n\n\n\n\n\nTipPróxima simulación\n\n\n\nLa página Simulaciones en desarrollo resume la futura visualización del plano \\(s\\) con polos, ceros y región de convergencia."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Inicio",
+    "section": "",
+    "text": "Este sitio reúne apuntes introductorios, recordatorios de fórmulas y simulaciones interactivas para apoyar el estudio de Señales y Sistemas en cursos de matemática aplicada e ingeniería. La idea central es combinar una presentación rigurosa con herramientas ligeras que puedan abrirse en cualquier navegador, sin backend y sin dependencias de escritorio.\n\n\n\n\n\n\nAdvertenciaSitio en construcción\n\n\n\nEl material ya es útil para estudiar conceptos base y experimentar con ejemplos, pero seguirá creciendo con nuevas simulaciones, ejercicios y validación matemática de tablas notables.\n\n\n\n\n\n\n\n\nNotaConvención usada\n\n\n\nEn todo el sitio se usa la transformada de Fourier\n\\[\nX(u)=\\int_{-\\infty}^{\\infty}x(t)e^{-i2\\pi ut}\\,dt\n\\]\ncon frecuencia \\(u\\) medida en ciclos por unidad de tiempo. Si aparece la frecuencia angular, se indicará explícitamente que \\(\\omega = 2\\pi u\\).\n\n\n\n\n\nSeries de Fourier y su interpretación en armónicos.\nTransformada de Fourier de señales continuas bajo la convención \\(e^{-i2\\pi ut}\\).\nRelación entre señales periódicas, espectros discretos y espectros continuos.\nTransformada de Laplace, región de convergencia, polos, ceros y estabilidad.\nPropiedades operacionales de Fourier y fundamentos de sistemas LTI.\nModulación, muestreo, aliasing y primera aproximación a DTFT, DFT, FFT y DCT.\n\n\n\n\n\n\n\nContenidos\n\nContenidos principales\nIngresa por Serie de Fourier y continúa con Fourier, Laplace, LTI, modulación y señales discretas.\n\n\n\nSimulaciones\n\nSimulaciones\nExplora senoides, reconstrucción por Serie de Fourier y aliasing con controles interactivos en navegador.\n\n\nEl sitio está pensado como material gratuito, publicable en GitHub Pages y fácil de extender con nuevas páginas .qmd y módulos JavaScript. Cada simulación busca conectar fórmulas, gráficos e intuición física sin depender de backend."
+  },
+  {
+    "objectID": "index.html#qué-puedes-estudiar-aquí",
+    "href": "index.html#qué-puedes-estudiar-aquí",
+    "title": "Inicio",
+    "section": "",
+    "text": "Series de Fourier y su interpretación en armónicos.\nTransformada de Fourier de señales continuas bajo la convención \\(e^{-i2\\pi ut}\\).\nRelación entre señales periódicas, espectros discretos y espectros continuos.\nTransformada de Laplace, región de convergencia, polos, ceros y estabilidad.\nPropiedades operacionales de Fourier y fundamentos de sistemas LTI.\nModulación, muestreo, aliasing y primera aproximación a DTFT, DFT, FFT y DCT."
+  },
+  {
+    "objectID": "index.html#accesos-rápidos",
+    "href": "index.html#accesos-rápidos",
+    "title": "Inicio",
+    "section": "",
+    "text": "Contenidos\n\nContenidos principales\nIngresa por Serie de Fourier y continúa con Fourier, Laplace, LTI, modulación y señales discretas.\n\n\n\nSimulaciones\n\nSimulaciones\nExplora senoides, reconstrucción por Serie de Fourier y aliasing con controles interactivos en navegador.\n\n\nEl sitio está pensado como material gratuito, publicable en GitHub Pages y fácil de extender con nuevas páginas .qmd y módulos JavaScript. Cada simulación busca conectar fórmulas, gráficos e intuición física sin depender de backend."
+  },
+  {
+    "objectID": "temas/dtft-dft-fft-dct.html",
+    "href": "temas/dtft-dft-fft-dct.html",
+    "title": "DTFT, DFT, FFT y DCT",
+    "section": "",
+    "text": "Una secuencia \\(x[n]\\) se define sobre índices enteros. Cuando proviene de muestrear una señal continua, la frecuencia natural pasa a medirse en ciclos por muestra."
+  },
+  {
+    "objectID": "temas/dtft-dft-fft-dct.html#señales-discretas",
+    "href": "temas/dtft-dft-fft-dct.html#señales-discretas",
+    "title": "DTFT, DFT, FFT y DCT",
+    "section": "",
+    "text": "Una secuencia \\(x[n]\\) se define sobre índices enteros. Cuando proviene de muestrear una señal continua, la frecuencia natural pasa a medirse en ciclos por muestra."
+  },
+  {
+    "objectID": "temas/dtft-dft-fft-dct.html#dtft",
+    "href": "temas/dtft-dft-fft-dct.html#dtft",
+    "title": "DTFT, DFT, FFT y DCT",
+    "section": "2 DTFT",
+    "text": "2 DTFT\nLa transformada de Fourier en tiempo discreto (DTFT) se define por\n\\[\nX(u)=\\sum_{n=-\\infty}^{\\infty}x[n]e^{-i2\\pi un}.\n\\]\nAquí \\(u\\) es una frecuencia normalizada y \\(X(u)\\) es periódica de período \\(1\\)."
+  },
+  {
+    "objectID": "temas/dtft-dft-fft-dct.html#dft",
+    "href": "temas/dtft-dft-fft-dct.html#dft",
+    "title": "DTFT, DFT, FFT y DCT",
+    "section": "3 DFT",
+    "text": "3 DFT\nSi observamos solo \\(N\\) muestras, la transformada discreta de Fourier es\n\\[\nX[k]=\\sum_{n=0}^{N-1}x[n]e^{-i2\\pi kn/N},\n\\qquad k=0,1,\\dots,N-1.\n\\]\nLa DFT entrega una rejilla finita de muestras espectrales."
+  },
+  {
+    "objectID": "temas/dtft-dft-fft-dct.html#fft-como-algoritmo",
+    "href": "temas/dtft-dft-fft-dct.html#fft-como-algoritmo",
+    "title": "DTFT, DFT, FFT y DCT",
+    "section": "4 FFT como algoritmo",
+    "text": "4 FFT como algoritmo\nLa FFT no es una transformada distinta, sino una familia de algoritmos rápidos para calcular la DFT reduciendo el costo de \\(O(N^2)\\) a aproximadamente \\(O(N\\log N)\\)."
+  },
+  {
+    "objectID": "temas/dtft-dft-fft-dct.html#interpretación-de-bins",
+    "href": "temas/dtft-dft-fft-dct.html#interpretación-de-bins",
+    "title": "DTFT, DFT, FFT y DCT",
+    "section": "5 Interpretación de bins",
+    "text": "5 Interpretación de bins\nCada índice \\(k\\) representa un bin frecuencial:\n\\[\nu_k=\\frac{k}{N} \\quad \\text{ciclos por muestra}.\n\\]\nSi la secuencia proviene de muestrear a frecuencia \\(f_s\\), entonces\n\\[\nf_k=\\frac{k f_s}{N}.\n\\]"
+  },
+  {
+    "objectID": "temas/dtft-dft-fft-dct.html#resolución-frecuencial",
+    "href": "temas/dtft-dft-fft-dct.html#resolución-frecuencial",
+    "title": "DTFT, DFT, FFT y DCT",
+    "section": "6 Resolución frecuencial",
+    "text": "6 Resolución frecuencial\nLa separación entre bins es\n\\[\n\\Delta f=\\frac{f_s}{N}.\n\\]\nPor eso aumentar \\(N\\) o la duración de observación mejora resolución frecuencial, aunque no necesariamente mejora la precisión de amplitud si la señal no está alineada con la rejilla."
+  },
+  {
+    "objectID": "temas/dtft-dft-fft-dct.html#dct",
+    "href": "temas/dtft-dft-fft-dct.html#dct",
+    "title": "DTFT, DFT, FFT y DCT",
+    "section": "7 DCT",
+    "text": "7 DCT\nLa transformada discreta del coseno (DCT), en particular la DCT-II, es muy útil en compresión porque concentra energía en pocos coeficientes para señales suaves o bloques de imágenes:\n\\[\nC[k]=\\sum_{n=0}^{N-1}x[n]\\cos\\!\\left[\\frac{\\pi}{N}\\left(n+\\frac{1}{2}\\right)k\\right].\n\\]"
+  },
+  {
+    "objectID": "temas/dtft-dft-fft-dct.html#ejercicios-cortos",
+    "href": "temas/dtft-dft-fft-dct.html#ejercicios-cortos",
+    "title": "DTFT, DFT, FFT y DCT",
+    "section": "8 Ejercicios cortos",
+    "text": "8 Ejercicios cortos\n\nCalcula la DFT de la secuencia \\(x[n]=\\delta[n]\\) para \\(0\\le n \\le N-1\\). ¿Qué observas?\nConsidera \\(x[n]=1\\) para \\(0\\le n \\le N-1\\). ¿En qué bin se concentra la energía?\nMuestra que la DTFT de una secuencia finita es una función continua de \\(u\\), aunque la DFT solo entregue un conjunto discreto de muestras.\n\n\n\n\n\n\n\nTipPróxima simulación\n\n\n\nLa página Simulaciones en desarrollo resume la futura simulación de DFT para explorar bins, resolución y fugas espectrales."
+  },
+  {
+    "objectID": "temas/modulacion-muestreo.html",
+    "href": "temas/modulacion-muestreo.html",
+    "title": "Modulación y muestreo",
+    "section": "",
+    "text": "En modulación de amplitud elemental, una portadora de frecuencia alta transporta una señal de información de frecuencia más baja. Un modelo sencillo es\n\\[\nx_{\\text{AM}}(t)=\\left[1+m\\cos(2\\pi u_m t)\\right]A_c\\cos(2\\pi u_c t),\n\\]\ncon \\(0\\le m \\le 1\\) en el caso sin sobre-modulación.\nEl espectro de la modulante aparece desplazado alrededor de \\(\\pm u_c\\)."
+  },
+  {
+    "objectID": "temas/modulacion-muestreo.html#modulación-am",
+    "href": "temas/modulacion-muestreo.html#modulación-am",
+    "title": "Modulación y muestreo",
+    "section": "",
+    "text": "En modulación de amplitud elemental, una portadora de frecuencia alta transporta una señal de información de frecuencia más baja. Un modelo sencillo es\n\\[\nx_{\\text{AM}}(t)=\\left[1+m\\cos(2\\pi u_m t)\\right]A_c\\cos(2\\pi u_c t),\n\\]\ncon \\(0\\le m \\le 1\\) en el caso sin sobre-modulación.\nEl espectro de la modulante aparece desplazado alrededor de \\(\\pm u_c\\)."
+  },
+  {
+    "objectID": "temas/modulacion-muestreo.html#fm-introductoria",
+    "href": "temas/modulacion-muestreo.html#fm-introductoria",
+    "title": "Modulación y muestreo",
+    "section": "2 FM introductoria",
+    "text": "2 FM introductoria\nEn modulación en frecuencia, la información modifica la fase acumulada o, equivalentemente, la frecuencia instantánea de la portadora. Incluso con señales simples, el espectro ya no se limita a dos bandas laterales: aparecen múltiples componentes."
+  },
+  {
+    "objectID": "temas/modulacion-muestreo.html#desplazamiento-espectral",
+    "href": "temas/modulacion-muestreo.html#desplazamiento-espectral",
+    "title": "Modulación y muestreo",
+    "section": "3 Desplazamiento espectral",
+    "text": "3 Desplazamiento espectral\nLa propiedad\n\\[\ne^{i2\\pi u_0 t}x(t)\\leftrightarrow X(u-u_0)\n\\]\nresume la idea matemática central de la modulación: multiplicar en el tiempo permite trasladar espectros."
+  },
+  {
+    "objectID": "temas/modulacion-muestreo.html#muestreo-ideal",
+    "href": "temas/modulacion-muestreo.html#muestreo-ideal",
+    "title": "Modulación y muestreo",
+    "section": "4 Muestreo ideal",
+    "text": "4 Muestreo ideal\nSi \\(T_s=1/f_s\\) es el período de muestreo, el muestreo ideal puede modelarse como\n\\[\nx_s(t)=x(t)\\sum_{n=-\\infty}^{\\infty}\\delta(t-nT_s).\n\\]\nEn frecuencia esto produce réplicas periódicas:\n\\[\nX_s(u)=f_s\\sum_{k=-\\infty}^{\\infty}X(u-kf_s).\n\\]"
+  },
+  {
+    "objectID": "temas/modulacion-muestreo.html#aliasing",
+    "href": "temas/modulacion-muestreo.html#aliasing",
+    "title": "Modulación y muestreo",
+    "section": "5 Aliasing",
+    "text": "5 Aliasing\nSi las réplicas se solapan, distintas frecuencias continuas generan la misma secuencia muestreada. Ese fenómeno es el aliasing.\nEn términos prácticos, una frecuencia alta puede “disfrazarse” de otra más baja después del muestreo.\nPara una sola senoide, una forma útil de estimar la frecuencia alias es\n\\[\nf_{\\text{alias}}=\\left|f-kf_s\\right|,\n\\]\ndonde \\(k\\in\\mathbb{Z}\\) se escoge de modo que el resultado quede dentro de la banda base observable."
+  },
+  {
+    "objectID": "temas/modulacion-muestreo.html#frecuencia-de-nyquist",
+    "href": "temas/modulacion-muestreo.html#frecuencia-de-nyquist",
+    "title": "Modulación y muestreo",
+    "section": "6 Frecuencia de Nyquist",
+    "text": "6 Frecuencia de Nyquist\nSi la señal es limitada en banda a \\(|u|\\le u_{\\max}\\), el criterio clásico para evitar solapamiento es\n\\[\nf_s \\ge 2u_{\\max}.\n\\]\nEl valor \\(f_s/2\\) se conoce como frecuencia de Nyquist.\n\n\n\n\n\n\nAdvertenciaError común\n\n\n\nCumplir \\(f_s \\ge 2u_{\\max}\\) exige conocer una cota realista de la banda ocupada por la señal. En práctica, siempre se acompaña de filtrado anti-alias antes del muestreo.\n\n\n\n\n\n\n\n\nTipExplora el aliasing\n\n\n\nLa simulación Muestreo y aliasing permite comparar una senoide continua con sus muestras y con la frecuencia alias equivalente cuando no se cumple Nyquist."
+  },
+  {
+    "objectID": "temas/relacion-sf-tf.html",
+    "href": "temas/relacion-sf-tf.html",
+    "title": "Relación entre Serie de Fourier y Transformada de Fourier",
+    "section": "",
+    "text": "La Serie de Fourier describe señales periódicas. La Transformada de Fourier describe señales no periódicas o, más precisamente, señales cuya descripción espectral natural es continua.\nEsta diferencia se refleja en el espectro:\n\nSeñal periódica \\(\\rightarrow\\) espectro discreto.\nSeñal no periódica \\(\\rightarrow\\) espectro continuo."
+  },
+  {
+    "objectID": "temas/relacion-sf-tf.html#señales-periódicas-y-no-periódicas",
+    "href": "temas/relacion-sf-tf.html#señales-periódicas-y-no-periódicas",
+    "title": "Relación entre Serie de Fourier y Transformada de Fourier",
+    "section": "",
+    "text": "La Serie de Fourier describe señales periódicas. La Transformada de Fourier describe señales no periódicas o, más precisamente, señales cuya descripción espectral natural es continua.\nEsta diferencia se refleja en el espectro:\n\nSeñal periódica \\(\\rightarrow\\) espectro discreto.\nSeñal no periódica \\(\\rightarrow\\) espectro continuo."
+  },
+  {
+    "objectID": "temas/relacion-sf-tf.html#espectro-discreto-versus-espectro-continuo",
+    "href": "temas/relacion-sf-tf.html#espectro-discreto-versus-espectro-continuo",
+    "title": "Relación entre Serie de Fourier y Transformada de Fourier",
+    "section": "2 Espectro discreto versus espectro continuo",
+    "text": "2 Espectro discreto versus espectro continuo\nSi \\(x(t)\\) es periódica de período \\(T_0\\), con frecuencia fundamental \\(u_0=1/T_0\\), entonces su representación compleja usa coeficientes \\(c_k\\) y su espectro puede escribirse como\n\\[\nX(u)=\\sum_{k=-\\infty}^{\\infty} c_k\\,\\delta(u-ku_0).\n\\]\nLa frecuencia no aparece como una curva continua, sino como una familia de impulsos en los armónicos. Esta escritura se interpreta en sentido de distribuciones."
+  },
+  {
+    "objectID": "temas/relacion-sf-tf.html#impulsos-en-frecuencia",
+    "href": "temas/relacion-sf-tf.html#impulsos-en-frecuencia",
+    "title": "Relación entre Serie de Fourier y Transformada de Fourier",
+    "section": "3 Impulsos en frecuencia",
+    "text": "3 Impulsos en frecuencia\nCada impulso \\(\\delta(u-ku_0)\\) indica la presencia exacta del armónico \\(ku_0\\). El peso \\(c_k\\) fija magnitud y fase de esa componente.\n\n\n\n\n\n\nNotaInterpretación\n\n\n\nEn una señal periódica, la energía espectral no se “reparte” sobre un intervalo continuo de frecuencias, sino sobre un conjunto discreto de líneas."
+  },
+  {
+    "objectID": "temas/relacion-sf-tf.html#relación-conceptual-entre-coeficientes-de-sf-y-tf",
+    "href": "temas/relacion-sf-tf.html#relación-conceptual-entre-coeficientes-de-sf-y-tf",
+    "title": "Relación entre Serie de Fourier y Transformada de Fourier",
+    "section": "4 Relación conceptual entre coeficientes de SF y TF",
+    "text": "4 Relación conceptual entre coeficientes de SF y TF\nLa relación más útil es pensar una señal no periódica \\(x(t)\\) como límite de señales periódicas obtenidas al repetirla cada \\(T_0\\) unidades. A medida que \\(T_0\\) aumenta:\n\nla frecuencia fundamental \\(u_0=1/T_0\\) disminuye;\nlas líneas espectrales quedan cada vez más juntas;\nlos coeficientes de Serie de Fourier comienzan a comportarse como muestras de una envolvente continua.\n\nEn ese límite, el espectro discreto pasa intuitivamente a la Transformada de Fourier."
+  },
+  {
+    "objectID": "temas/relacion-sf-tf.html#límite-cuando-el-período-crece",
+    "href": "temas/relacion-sf-tf.html#límite-cuando-el-período-crece",
+    "title": "Relación entre Serie de Fourier y Transformada de Fourier",
+    "section": "5 Límite cuando el período crece",
+    "text": "5 Límite cuando el período crece\nSi \\(x_{T_0}(t)\\) es la extensión periódica de una señal originalmente no periódica, entonces el espaciado entre líneas es \\(u_0=1/T_0\\). Cuando \\(T_0\\to\\infty\\), ese espaciado tiende a cero y el conjunto de impulsos se densifica.\nLa idea heurística es:\n\\[\nc_k \\approx \\frac{1}{T_0}X(ku_0),\n\\]\nde modo que\n\\[\n\\sum_k c_k\\,\\delta(u-ku_0)\n\\]\nse aproxima a una descripción continua en frecuencia."
+  },
+  {
+    "objectID": "temas/relacion-sf-tf.html#qué-gana-la-ingeniería-con-esta-relación",
+    "href": "temas/relacion-sf-tf.html#qué-gana-la-ingeniería-con-esta-relación",
+    "title": "Relación entre Serie de Fourier y Transformada de Fourier",
+    "section": "6 Qué gana la ingeniería con esta relación",
+    "text": "6 Qué gana la ingeniería con esta relación\nEsta conexión explica por qué:\n\nuna ventana temporal larga mejora la resolución frecuencial;\nel análisis de señales periódicas sirve como puerta de entrada al análisis de espectros continuos;\nla DFT puede interpretarse como muestreo espectral de una señal observada durante una duración finita.\n\n\n\n\n\n\n\nTipPróxima simulación\n\n\n\nLa página Simulaciones en desarrollo anticipa una futura comparación visual entre líneas espectrales discretas y una envolvente continua cuando el período aumenta."
+  },
+  {
+    "objectID": "temas/sistemas-lti-filtros.html",
+    "href": "temas/sistemas-lti-filtros.html",
+    "title": "Sistemas LTI y filtros",
+    "section": "",
+    "text": "Un sistema lineal e invariante en el tiempo (LTI) queda completamente caracterizado por su respuesta al impulso \\(h(t)\\). Conocer \\(h(t)\\) equivale a conocer cómo el sistema actúa sobre cualquier entrada admisible."
+  },
+  {
+    "objectID": "temas/sistemas-lti-filtros.html#respuesta-al-impulso",
+    "href": "temas/sistemas-lti-filtros.html#respuesta-al-impulso",
+    "title": "Sistemas LTI y filtros",
+    "section": "",
+    "text": "Un sistema lineal e invariante en el tiempo (LTI) queda completamente caracterizado por su respuesta al impulso \\(h(t)\\). Conocer \\(h(t)\\) equivale a conocer cómo el sistema actúa sobre cualquier entrada admisible."
+  },
+  {
+    "objectID": "temas/sistemas-lti-filtros.html#entrada-salida-por-convolución",
+    "href": "temas/sistemas-lti-filtros.html#entrada-salida-por-convolución",
+    "title": "Sistemas LTI y filtros",
+    "section": "2 Entrada-salida por convolución",
+    "text": "2 Entrada-salida por convolución\nSi la entrada es \\(x(t)\\), la salida vale\n\\[\ny(t)=(x*h)(t)=\\int_{-\\infty}^{\\infty}x(\\tau)h(t-\\tau)\\,d\\tau.\n\\]\nLa convolución combina el contenido temporal de la entrada con la memoria del sistema."
+  },
+  {
+    "objectID": "temas/sistemas-lti-filtros.html#función-de-transferencia",
+    "href": "temas/sistemas-lti-filtros.html#función-de-transferencia",
+    "title": "Sistemas LTI y filtros",
+    "section": "3 Función de transferencia",
+    "text": "3 Función de transferencia\nAplicando transformada de Fourier,\n\\[\nY(u)=H(u)X(u),\n\\]\ndonde\n\\[\nH(u)=\\mathcal{F}\\{h(t)\\}\n\\]\nes la función de transferencia en frecuencia."
+  },
+  {
+    "objectID": "temas/sistemas-lti-filtros.html#magnitud-y-fase",
+    "href": "temas/sistemas-lti-filtros.html#magnitud-y-fase",
+    "title": "Sistemas LTI y filtros",
+    "section": "4 Magnitud y fase",
+    "text": "4 Magnitud y fase\n\n\\(|H(u)|\\) indica cuánto amplifica o atenúa cada frecuencia.\n\\(\\arg H(u)\\) indica el cambio de fase introducido por el sistema.\n\nUna fase lineal suele asociarse a retardos temporales aproximadamente uniformes."
+  },
+  {
+    "objectID": "temas/sistemas-lti-filtros.html#causalidad",
+    "href": "temas/sistemas-lti-filtros.html#causalidad",
+    "title": "Sistemas LTI y filtros",
+    "section": "5 Causalidad",
+    "text": "5 Causalidad\nUn sistema causal satisface\n\\[\nh(t)=0 \\quad \\text{para } t&lt;0.\n\\]\nEsto significa que la salida no depende de valores futuros de la entrada."
+  },
+  {
+    "objectID": "temas/sistemas-lti-filtros.html#estabilidad",
+    "href": "temas/sistemas-lti-filtros.html#estabilidad",
+    "title": "Sistemas LTI y filtros",
+    "section": "6 Estabilidad",
+    "text": "6 Estabilidad\nUn criterio clásico de estabilidad BIBO en tiempo continuo es\n\\[\n\\int_{-\\infty}^{\\infty}|h(t)|\\,dt &lt; \\infty.\n\\]\nSi esta integral converge, entradas acotadas producen salidas acotadas."
+  },
+  {
+    "objectID": "temas/sistemas-lti-filtros.html#filtros-básicos",
+    "href": "temas/sistemas-lti-filtros.html#filtros-básicos",
+    "title": "Sistemas LTI y filtros",
+    "section": "7 Filtros básicos",
+    "text": "7 Filtros básicos\n\nPasa bajo: deja pasar bajas frecuencias y atenúa altas.\nPasa alto: atenúa bajas frecuencias y deja pasar altas.\nPasa banda: selecciona una banda intermedia.\nRechaza banda: suprime una banda específica."
+  },
+  {
+    "objectID": "temas/sistemas-lti-filtros.html#lectura-cualitativa",
+    "href": "temas/sistemas-lti-filtros.html#lectura-cualitativa",
+    "title": "Sistemas LTI y filtros",
+    "section": "8 Lectura cualitativa",
+    "text": "8 Lectura cualitativa\nPensar en filtros como operadores espectrales ayuda a conectar intuición física y fórmulas:\n\nuna derivada ideal se comporta como un realce de altas frecuencias;\nuna integración ideal favorece bajas frecuencias;\nun promedio temporal actúa como suavizado y, por tanto, como atenuación espectral.\n\n\n\n\n\n\n\nTipPróxima simulación\n\n\n\nLa página Simulaciones en desarrollo anticipa una simulación donde podrás comparar entrada, respuesta al impulso, salida y respuesta en frecuencia del mismo sistema."
+  },
+  {
+    "objectID": "simulaciones/muestreo-aliasing.html",
+    "href": "simulaciones/muestreo-aliasing.html",
+    "title": "Simulación: muestreo y aliasing",
+    "section": "",
+    "text": "Considera una senoide continua\n\\[\nx(t)=\\sin(2\\pi f t+\\phi)\n\\]\ny una frecuencia de muestreo \\(f_s\\). La simulación compara la señal continua con sus muestras y con una curva alias equivalente cuando la señal ya no es distinguible de otra frecuencia más baja en los instantes de muestreo."
+  },
+  {
+    "objectID": "simulaciones/muestreo-aliasing.html#controles",
+    "href": "simulaciones/muestreo-aliasing.html#controles",
+    "title": "Simulación: muestreo y aliasing",
+    "section": "1 Controles",
+    "text": "1 Controles\n\n\nFrecuencia de la señal f\n\n \n\n\n\nFrecuencia de muestreo fs\n\n \n\n\n\nFase φ [rad]\n\n \n\n\n\nDuración observada"
+  },
+  {
+    "objectID": "simulaciones/muestreo-aliasing.html#señal-continua-muestras-y-alias",
+    "href": "simulaciones/muestreo-aliasing.html#señal-continua-muestras-y-alias",
+    "title": "Simulación: muestreo y aliasing",
+    "section": "2 Señal continua, muestras y alias",
+    "text": "2 Señal continua, muestras y alias"
+  },
+  {
+    "objectID": "simulaciones/muestreo-aliasing.html#diagnóstico",
+    "href": "simulaciones/muestreo-aliasing.html#diagnóstico",
+    "title": "Simulación: muestreo y aliasing",
+    "section": "3 Diagnóstico",
+    "text": "3 Diagnóstico\n\n\n\n\n\nNyquist \n\n\nFrecuencia alias estimada"
+  },
+  {
+    "objectID": "simulaciones/senoide.html",
+    "href": "simulaciones/senoide.html",
+    "title": "Simulación: senoide",
+    "section": "",
+    "text": "Explora la señal\n\\[\nx(t)=A\\sin\\!\\bigl(2\\pi f (t-t_0)+\\phi\\bigr)+b\n\\]\nmodificando amplitud, frecuencia, fase, desplazamiento vertical y desplazamiento temporal."
+  },
+  {
+    "objectID": "simulaciones/senoide.html#controles",
+    "href": "simulaciones/senoide.html#controles",
+    "title": "Simulación: senoide",
+    "section": "1 Controles",
+    "text": "1 Controles\n\n\nAmplitud A\n\n \n\n\n\nFrecuencia f\n\n \n\n\n\nFase φ [rad]\n\n \n\n\n\nSesgo vertical b\n\n \n\n\n\nDesplazamiento temporal t0"
+  },
+  {
+    "objectID": "simulaciones/senoide.html#gráfico",
+    "href": "simulaciones/senoide.html#gráfico",
+    "title": "Simulación: senoide",
+    "section": "2 Gráfico",
+    "text": "2 Gráfico"
+  },
+  {
+    "objectID": "simulaciones/senoide.html#fórmula-actual",
+    "href": "simulaciones/senoide.html#fórmula-actual",
+    "title": "Simulación: senoide",
+    "section": "3 Fórmula actual",
+    "text": "3 Fórmula actual\n\n\n\n\n\nPeríodo \n\n\nFrecuencia angular"
+  }
+]

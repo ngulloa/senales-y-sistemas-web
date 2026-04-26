@@ -1,0 +1,113 @@
+---
+title: "Propiedades de la Transformada de Fourier"
+---
+
+## Convención de trabajo
+
+Usaremos
+
+$$
+X(u)=\int_{-\infty}^{\infty}x(t)e^{-i2\pi ut}\,dt.
+$$
+
+Bajo esta convención, las fórmulas deben escribirse con cuidado en términos de $u$.
+
+## Linealidad
+
+Si $x_1(t)\leftrightarrow X_1(u)$ y $x_2(t)\leftrightarrow X_2(u)$, entonces
+
+$$
+a\,x_1(t)+b\,x_2(t)\leftrightarrow a\,X_1(u)+b\,X_2(u).
+$$
+
+La linealidad es la base de la superposición en sistemas LTI y del uso de tablas de transformadas.
+
+## Desplazamiento temporal
+
+$$
+x(t-t_0)\leftrightarrow e^{-i2\pi u t_0}X(u).
+$$
+
+Desplazar en el tiempo no cambia la magnitud espectral, pero sí introduce una fase lineal.
+
+## Desplazamiento en frecuencia
+
+$$
+e^{i2\pi u_0 t}x(t)\leftrightarrow X(u-u_0).
+$$
+
+Multiplicar por una exponencial compleja traslada el espectro rígidamente sobre el eje de frecuencias.
+
+## Derivada en tiempo
+
+Si $x(t)$ es suficientemente regular,
+
+$$
+\frac{d}{dt}x(t)\leftrightarrow i2\pi u\,X(u).
+$$
+
+Derivar en el tiempo enfatiza altas frecuencias porque multiplica por $u$.
+
+## Derivada en frecuencia
+
+Derivando la transformada respecto de $u$,
+
+$$
+t\,x(t)\leftrightarrow \frac{i}{2\pi}\frac{dX}{du}(u).
+$$
+
+Multiplicar por $t$ en el tiempo se traduce en una derivada espectral.
+
+## Escalamiento temporal
+
+Para $a\neq 0$,
+
+$$
+x(at)\leftrightarrow \frac{1}{|a|}X\!\left(\frac{u}{a}\right).
+$$
+
+Comprimir una señal en el tiempo expande su espectro; dilatarla lo concentra.
+
+## Dualidad
+
+Si $x(t)\leftrightarrow X(u)$, entonces
+
+$$
+X(t)\leftrightarrow x(-u).
+$$
+
+La dualidad ayuda a construir nuevas transformadas a partir de pares ya conocidos, pero exige cuidar qué variable está jugando el rol temporal y cuál el frecuencial.
+
+## Convolución
+
+$$
+(x*h)(t)\leftrightarrow X(u)H(u).
+$$
+
+Esta propiedad es central en el análisis de sistemas LTI: convolucionar en el tiempo equivale a multiplicar en frecuencia.
+
+## Producto
+
+$$
+x(t)h(t)\leftrightarrow (X*H)(u).
+$$
+
+El producto temporal mezcla contenidos frecuenciales y puede ensanchar el espectro.
+
+## Deltas y distribuciones
+
+Al trabajar con impulsos aparecen reglas útiles:
+
+$$
+\delta(t-t_0)\leftrightarrow e^{-i2\pi u t_0},
+\qquad
+e^{i2\pi u_0 t}\leftrightarrow \delta(u-u_0).
+$$
+
+Estas relaciones deben entenderse en sentido de distribuciones.
+
+::: {.callout-warning}
+## Error común
+
+No mezcles fórmulas en $u$ con fórmulas en $\omega$ sin convertir factores de $2\pi$. Ese descuido suele provocar errores de escala, de fase y de ubicación de líneas espectrales.
+:::

@@ -1,0 +1,65 @@
+project:
+  type: website
+  output-dir: docs
+  render:
+    - index.qmd
+    - temas/*.qmd
+    - simulaciones/*.qmd
+  resources:
+    - .nojekyll
+    - assets/
+
+website:
+  title: "Señales y Sistemas"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Inicio
+      - text: Contenidos
+        menu:
+          - href: temas/serie-fourier.qmd
+            text: Serie de Fourier
+          - href: temas/transformada-fourier.qmd
+            text: Transformada de Fourier
+          - href: temas/relacion-sf-tf.qmd
+            text: Relación SF/TF
+          - href: temas/laplace.qmd
+            text: Laplace
+          - href: temas/propiedades-fourier.qmd
+            text: Propiedades de Fourier
+          - href: temas/sistemas-lti-filtros.qmd
+            text: Sistemas LTI y filtros
+          - href: temas/modulacion-muestreo.qmd
+            text: Modulación y muestreo
+          - href: temas/dtft-dft-fft-dct.qmd
+            text: DTFT, DFT, FFT y DCT
+      - text: Simulaciones
+        menu:
+          - href: simulaciones/senoide.qmd
+            text: Senoide
+          - href: simulaciones/serie-fourier.qmd
+            text: Serie de Fourier
+          - href: simulaciones/muestreo-aliasing.qmd
+            text: Muestreo y aliasing
+          - href: simulaciones/proximamente.qmd
+            text: Próximamente
+  search: true
+  page-footer:
+    left: "Sitio educativo gratuito para estudio y experimentación."
+    right: "Quarto + JavaScript + Plotly"
+
+format:
+  html:
+    theme: cosmo
+    html-math-method: mathjax
+    css: assets/css/styles.css
+    toc: true
+    number-sections: true
+    smooth-scroll: true
+    anchor-sections: true
+    code-copy: true
+
+execute:
+  freeze: auto
+
+lang: es

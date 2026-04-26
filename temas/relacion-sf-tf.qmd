@@ -1,0 +1,74 @@
+---
+title: "Relación entre Serie de Fourier y Transformada de Fourier"
+---
+
+## Señales periódicas y no periódicas
+
+La Serie de Fourier describe señales periódicas. La Transformada de Fourier describe señales no periódicas o, más precisamente, señales cuya descripción espectral natural es continua.
+
+Esta diferencia se refleja en el espectro:
+
+- Señal periódica $\rightarrow$ espectro discreto.
+- Señal no periódica $\rightarrow$ espectro continuo.
+
+## Espectro discreto versus espectro continuo
+
+Si $x(t)$ es periódica de período $T_0$, con frecuencia fundamental $u_0=1/T_0$, entonces su representación compleja usa coeficientes $c_k$ y su espectro puede escribirse como
+
+$$
+X(u)=\sum_{k=-\infty}^{\infty} c_k\,\delta(u-ku_0).
+$$
+
+La frecuencia no aparece como una curva continua, sino como una familia de impulsos en los armónicos. Esta escritura se interpreta en sentido de distribuciones.
+
+## Impulsos en frecuencia
+
+Cada impulso $\delta(u-ku_0)$ indica la presencia exacta del armónico $ku_0$. El peso $c_k$ fija magnitud y fase de esa componente.
+
+::: {.callout-note}
+## Interpretación
+
+En una señal periódica, la energía espectral no se "reparte" sobre un intervalo continuo de frecuencias, sino sobre un conjunto discreto de líneas.
+:::
+
+## Relación conceptual entre coeficientes de SF y TF
+
+La relación más útil es pensar una señal no periódica $x(t)$ como límite de señales periódicas obtenidas al repetirla cada $T_0$ unidades. A medida que $T_0$ aumenta:
+
+- la frecuencia fundamental $u_0=1/T_0$ disminuye;
+- las líneas espectrales quedan cada vez más juntas;
+- los coeficientes de Serie de Fourier comienzan a comportarse como muestras de una envolvente continua.
+
+En ese límite, el espectro discreto pasa intuitivamente a la Transformada de Fourier.
+
+## Límite cuando el período crece
+
+Si $x_{T_0}(t)$ es la extensión periódica de una señal originalmente no periódica, entonces el espaciado entre líneas es $u_0=1/T_0$. Cuando $T_0\to\infty$, ese espaciado tiende a cero y el conjunto de impulsos se densifica.
+
+La idea heurística es:
+
+$$
+c_k \approx \frac{1}{T_0}X(ku_0),
+$$
+
+de modo que
+
+$$
+\sum_k c_k\,\delta(u-ku_0)
+$$
+
+se aproxima a una descripción continua en frecuencia.
+
+## Qué gana la ingeniería con esta relación
+
+Esta conexión explica por qué:
+
+- una ventana temporal larga mejora la resolución frecuencial;
+- el análisis de señales periódicas sirve como puerta de entrada al análisis de espectros continuos;
+- la DFT puede interpretarse como muestreo espectral de una señal observada durante una duración finita.
+
+::: {.callout-tip}
+## Próxima simulación
+
+La página [Simulaciones en desarrollo](../simulaciones/proximamente.qmd#relacion-serie-de-fourier-y-transformada-de-fourier) anticipa una futura comparación visual entre líneas espectrales discretas y una envolvente continua cuando el período aumenta.
+:::

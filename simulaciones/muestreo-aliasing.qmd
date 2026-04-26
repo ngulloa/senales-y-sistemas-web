@@ -1,0 +1,82 @@
+---
+title: "Simulación: muestreo y aliasing"
+page-layout: full
+---
+
+Considera una senoide continua
+
+$$
+x(t)=\sin(2\pi f t+\phi)
+$$
+
+y una frecuencia de muestreo $f_s$. La simulación compara la señal continua con sus muestras y con una curva alias equivalente cuando la señal ya no es distinguible de otra frecuencia más baja en los instantes de muestreo.
+
+::: {.callout-warning}
+## Regla de Nyquist
+
+Si la frecuencia máxima presente es $f$, para evitar aliasing idealmente debe cumplirse $f_s \ge 2f$. Cuando esto no ocurre, diferentes señales continuas pueden producir exactamente la misma secuencia de muestras.
+:::
+
+::: {#sampling-sim .simulation-shell}
+::: {.sim-card .sim-card--controls}
+## Controles
+
+<div class="control-grid">
+<div class="control-field">
+<label for="sampling-frequency">Frecuencia de la señal <em>f</em></label>
+<div class="control-inline">
+<input id="sampling-frequency" type="range" min="0.5" max="24" step="0.1" value="7">
+<input id="sampling-frequency-number" type="number" min="0.5" max="24" step="0.1" value="7">
+</div>
+</div>
+<div class="control-field">
+<label for="sampling-rate">Frecuencia de muestreo <em>f</em><sub>s</sub></label>
+<div class="control-inline">
+<input id="sampling-rate" type="range" min="2" max="30" step="0.5" value="12">
+<input id="sampling-rate-number" type="number" min="2" max="30" step="0.5" value="12">
+</div>
+</div>
+<div class="control-field">
+<label for="sampling-phase">Fase <em>&phi;</em> [rad]</label>
+<div class="control-inline">
+<input id="sampling-phase" type="range" min="-3.1416" max="3.1416" step="0.05" value="0">
+<input id="sampling-phase-number" type="number" min="-3.1416" max="3.1416" step="0.05" value="0">
+</div>
+</div>
+<div class="control-field">
+<label for="sampling-duration">Duración observada</label>
+<div class="control-inline">
+<input id="sampling-duration" type="range" min="0.5" max="3" step="0.1" value="1.5">
+<input id="sampling-duration-number" type="number" min="0.5" max="3" step="0.1" value="1.5">
+</div>
+</div>
+</div>
+:::
+
+::: {.sim-card .sim-card--plot}
+## Señal continua, muestras y alias
+
+<div id="sampling-plot" class="plot-panel"></div>
+:::
+
+::: {.sim-card .sim-card--diagnostics}
+## Diagnóstico
+
+<div class="formula-panel" id="sampling-formula"></div>
+<div class="metric-grid">
+<div class="metric-card">
+<span class="metric-label">Nyquist</span>
+<strong id="sampling-nyquist"></strong>
+</div>
+<div class="metric-card">
+<span class="metric-label">Frecuencia alias estimada</span>
+<strong id="sampling-alias"></strong>
+</div>
+</div>
+<div id="sampling-alert" class="status-banner"></div>
+<p class="sim-explainer" id="sampling-summary"></p>
+:::
+:::
+
+<script src="https://cdn.plot.ly/plotly-2.32.0.min.js"></script>
+<script type="module" src="../assets/js/simulations/sampling-aliasing-sim.js"></script>

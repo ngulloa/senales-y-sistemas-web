@@ -1,0 +1,79 @@
+---
+title: "Modulación y muestreo"
+---
+
+## Modulación AM
+
+En modulación de amplitud elemental, una portadora de frecuencia alta transporta una señal de información de frecuencia más baja. Un modelo sencillo es
+
+$$
+x_{\text{AM}}(t)=\left[1+m\cos(2\pi u_m t)\right]A_c\cos(2\pi u_c t),
+$$
+
+con $0\le m \le 1$ en el caso sin sobre-modulación.
+
+El espectro de la modulante aparece desplazado alrededor de $\pm u_c$.
+
+## FM introductoria
+
+En modulación en frecuencia, la información modifica la fase acumulada o, equivalentemente, la frecuencia instantánea de la portadora. Incluso con señales simples, el espectro ya no se limita a dos bandas laterales: aparecen múltiples componentes.
+
+## Desplazamiento espectral
+
+La propiedad
+
+$$
+e^{i2\pi u_0 t}x(t)\leftrightarrow X(u-u_0)
+$$
+
+resume la idea matemática central de la modulación: multiplicar en el tiempo permite trasladar espectros.
+
+## Muestreo ideal
+
+Si $T_s=1/f_s$ es el período de muestreo, el muestreo ideal puede modelarse como
+
+$$
+x_s(t)=x(t)\sum_{n=-\infty}^{\infty}\delta(t-nT_s).
+$$
+
+En frecuencia esto produce réplicas periódicas:
+
+$$
+X_s(u)=f_s\sum_{k=-\infty}^{\infty}X(u-kf_s).
+$$
+
+## Aliasing
+
+Si las réplicas se solapan, distintas frecuencias continuas generan la misma secuencia muestreada. Ese fenómeno es el aliasing.
+
+En términos prácticos, una frecuencia alta puede "disfrazarse" de otra más baja después del muestreo.
+
+Para una sola senoide, una forma útil de estimar la frecuencia alias es
+
+$$
+f_{\text{alias}}=\left|f-kf_s\right|,
+$$
+
+donde $k\in\mathbb{Z}$ se escoge de modo que el resultado quede dentro de la banda base observable.
+
+## Frecuencia de Nyquist
+
+Si la señal es limitada en banda a $|u|\le u_{\max}$, el criterio clásico para evitar solapamiento es
+
+$$
+f_s \ge 2u_{\max}.
+$$
+
+El valor $f_s/2$ se conoce como frecuencia de Nyquist.
+
+::: {.callout-warning}
+## Error común
+
+Cumplir $f_s \ge 2u_{\max}$ exige conocer una cota realista de la banda ocupada por la señal. En práctica, siempre se acompaña de filtrado anti-alias antes del muestreo.
+:::
+
+::: {.callout-tip}
+## Explora el aliasing
+
+La simulación [Muestreo y aliasing](../simulaciones/muestreo-aliasing.qmd) permite comparar una senoide continua con sus muestras y con la frecuencia alias equivalente cuando no se cumple Nyquist.
+:::

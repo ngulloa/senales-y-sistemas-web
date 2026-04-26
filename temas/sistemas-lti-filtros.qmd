@@ -1,0 +1,82 @@
+---
+title: "Sistemas LTI y filtros"
+---
+
+## Respuesta al impulso
+
+Un sistema lineal e invariante en el tiempo (LTI) queda completamente caracterizado por su respuesta al impulso $h(t)$. Conocer $h(t)$ equivale a conocer cómo el sistema actúa sobre cualquier entrada admisible.
+
+## Entrada-salida por convolución
+
+Si la entrada es $x(t)$, la salida vale
+
+$$
+y(t)=(x*h)(t)=\int_{-\infty}^{\infty}x(\tau)h(t-\tau)\,d\tau.
+$$
+
+La convolución combina el contenido temporal de la entrada con la memoria del sistema.
+
+## Función de transferencia
+
+Aplicando transformada de Fourier,
+
+$$
+Y(u)=H(u)X(u),
+$$
+
+donde
+
+$$
+H(u)=\mathcal{F}\{h(t)\}
+$$
+
+es la función de transferencia en frecuencia.
+
+## Magnitud y fase
+
+- $|H(u)|$ indica cuánto amplifica o atenúa cada frecuencia.
+- $\arg H(u)$ indica el cambio de fase introducido por el sistema.
+
+Una fase lineal suele asociarse a retardos temporales aproximadamente uniformes.
+
+## Causalidad
+
+Un sistema causal satisface
+
+$$
+h(t)=0 \quad \text{para } t<0.
+$$
+
+Esto significa que la salida no depende de valores futuros de la entrada.
+
+## Estabilidad
+
+Un criterio clásico de estabilidad BIBO en tiempo continuo es
+
+$$
+\int_{-\infty}^{\infty}|h(t)|\,dt < \infty.
+$$
+
+Si esta integral converge, entradas acotadas producen salidas acotadas.
+
+## Filtros básicos
+
+- Pasa bajo: deja pasar bajas frecuencias y atenúa altas.
+- Pasa alto: atenúa bajas frecuencias y deja pasar altas.
+- Pasa banda: selecciona una banda intermedia.
+- Rechaza banda: suprime una banda específica.
+
+## Lectura cualitativa
+
+Pensar en filtros como operadores espectrales ayuda a conectar intuición física y fórmulas:
+
+- una derivada ideal se comporta como un realce de altas frecuencias;
+- una integración ideal favorece bajas frecuencias;
+- un promedio temporal actúa como suavizado y, por tanto, como atenuación espectral.
+
+::: {.callout-tip}
+## Próxima simulación
+
+La página [Simulaciones en desarrollo](../simulaciones/proximamente.qmd#sistemas-lti-y-filtros) anticipa una simulación donde podrás comparar entrada, respuesta al impulso, salida y respuesta en frecuencia del mismo sistema.
+:::
+

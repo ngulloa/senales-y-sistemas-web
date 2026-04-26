@@ -1,0 +1,96 @@
+---
+title: "Transformada de Laplace"
+---
+
+## Relación con Fourier
+
+La transformada de Laplace amplía la transformada de Fourier introduciendo un factor exponencial real que puede mejorar convergencia y hacer visible la estructura de polos y ceros.
+
+Trabajaremos con
+
+$$
+s=\sigma+i2\pi u.
+$$
+
+Si el eje $\sigma=0$ pertenece a la región de convergencia, entonces la transformada de Fourier se recupera al evaluar $s=i2\pi u$.
+
+## Definición bilateral
+
+La transformada bilateral es
+
+$$
+X(s)=\int_{-\infty}^{\infty}x(t)e^{-st}\,dt.
+$$
+
+Es útil cuando se desea estudiar señales a dos lados del tiempo o analizar regiones de convergencia sin imponer causalidad desde el inicio.
+
+## Definición unilateral
+
+La transformada unilateral es
+
+$$
+X^+(s)=\int_{0^-}^{\infty}x(t)e^{-st}\,dt.
+$$
+
+Esta forma es especialmente práctica para resolver ecuaciones diferenciales con condiciones iniciales.
+
+## Región de convergencia
+
+La región de convergencia (ROC) es el conjunto de valores de $s$ para los cuales la integral converge. En muchas señales exponenciales, la ROC es un semiplano o una franja vertical del plano complejo.
+
+La ROC no es un detalle secundario: dos señales distintas pueden compartir la misma expresión algebraica $X(s)$ y diferenciarse precisamente por su región de convergencia.
+
+::: {.callout-important}
+## Idea clave
+
+En Laplace, la expresión analítica y la ROC forman una pareja inseparable. Sin la ROC, la transformada puede quedar ambigua.
+:::
+
+## Polos y ceros
+
+- Un cero es un valor de $s$ donde $X(s)=0$.
+- Un polo es un valor de $s$ donde $X(s)$ diverge o se hace no acotada.
+
+En sistemas racionales, polos y ceros organizan la dinámica: ubicación de resonancias, rapidez de decaimiento y comportamiento transitorio.
+
+Además:
+
+- la ROC no contiene polos;
+- si $X(s)$ es racional, los polos delimitan la ROC;
+- una misma expresión como $\frac{1}{s+a}$ puede corresponder a señales distintas si cambia la ROC.
+
+## Función de transferencia
+
+Para un sistema LTI con condiciones iniciales nulas,
+
+$$
+H(s)=\frac{Y(s)}{X(s)}.
+$$
+
+Esta función resume cómo el sistema modifica cada modo exponencial complejo $e^{st}$.
+
+## Aplicación a EDO lineales
+
+La transformada unilateral convierte derivadas en expresiones algebraicas. Por ejemplo, si
+
+$$
+a_2 y''(t)+a_1 y'(t)+a_0 y(t)=x(t),
+$$
+
+entonces la ecuación diferencial se transforma en una relación algebraica en $s$, a partir de la cual se despeja $Y(s)$ y luego se aplica transformada inversa.
+
+## Causalidad y estabilidad en términos de ROC
+
+En sistemas racionales continuos:
+
+- causalidad: la ROC está a la derecha del polo con mayor parte real;
+- estabilidad BIBO: la ROC contiene el eje $\sigma=0$, equivalente a $s=i2\pi u$;
+- causal y estable a la vez: todos los polos quedan en el semiplano izquierdo $\Re(s)<0$, de modo que la ROC causal incluye el eje imaginario.
+
+Estas reglas son muy útiles para decidir comportamiento del sistema sin calcular la respuesta temporal completa.
+
+::: {.callout-tip}
+## Próxima simulación
+
+La página [Simulaciones en desarrollo](../simulaciones/proximamente.qmd#polos-y-ceros-en-el-plano-s) resume la futura visualización del plano $s$ con polos, ceros y región de convergencia.
+:::

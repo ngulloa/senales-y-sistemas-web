@@ -1,0 +1,60 @@
+---
+title: "Inicio"
+---
+
+# Señales y Sistemas para estudiar y experimentar
+
+Este sitio reúne apuntes introductorios, recordatorios de fórmulas y simulaciones interactivas para apoyar el estudio de Señales y Sistemas en cursos de matemática aplicada e ingeniería. La idea central es combinar una presentación rigurosa con herramientas ligeras que puedan abrirse en cualquier navegador, sin backend y sin dependencias de escritorio.
+
+::: {.callout-warning}
+## Sitio en construcción
+
+El material ya es útil para estudiar conceptos base y experimentar con ejemplos, pero seguirá creciendo con nuevas simulaciones, ejercicios y validación matemática de tablas notables.
+:::
+
+::: {.callout-note}
+## Convención usada
+
+En todo el sitio se usa la transformada de Fourier
+
+$$
+X(u)=\int_{-\infty}^{\infty}x(t)e^{-i2\pi ut}\,dt
+$$
+
+con frecuencia $u$ medida en ciclos por unidad de tiempo. Si aparece la frecuencia angular, se indicará explícitamente que $\omega = 2\pi u$.
+:::
+
+## Qué puedes estudiar aquí
+
+- Series de Fourier y su interpretación en armónicos.
+- Transformada de Fourier de señales continuas bajo la convención $e^{-i2\pi ut}$.
+- Relación entre señales periódicas, espectros discretos y espectros continuos.
+- Transformada de Laplace, región de convergencia, polos, ceros y estabilidad.
+- Propiedades operacionales de Fourier y fundamentos de sistemas LTI.
+- Modulación, muestreo, aliasing y primera aproximación a DTFT, DFT, FFT y DCT.
+
+## Accesos rápidos
+
+::: {.link-grid}
+::: {.link-card}
+::: {.link-card__eyebrow}
+Contenidos
+:::
+
+**[Contenidos principales](temas/serie-fourier.html)**
+
+Ingresa por Serie de Fourier y continúa con Fourier, Laplace, LTI, modulación y señales discretas.
+:::
+
+::: {.link-card}
+::: {.link-card__eyebrow}
+Simulaciones
+:::
+
+**[Simulaciones](simulaciones/senoide.html)**
+
+Explora senoides, reconstrucción por Serie de Fourier y aliasing con controles interactivos en navegador.
+:::
+:::
+
+El sitio está pensado como material gratuito, publicable en GitHub Pages y fácil de extender con nuevas páginas `.qmd` y módulos JavaScript. Cada simulación busca conectar fórmulas, gráficos e intuición física sin depender de backend.
