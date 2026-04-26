@@ -74,21 +74,21 @@
     "href": "temas/transformada-fourier.html",
     "title": "Transformada de Fourier",
     "section": "",
-    "text": "Para una señal \\(x(t)\\), definimos su transformada de Fourier mediante\n\\[\nX(u)=\\int_{-\\infty}^{\\infty}x(t)e^{-i2\\pi ut}\\,dt.\n\\]\nLa transformada inversa correspondiente es\n\\[\nx(t)=\\int_{-\\infty}^{\\infty}X(u)e^{i2\\pi ut}\\,du.\n\\]\nAquí \\(u\\) representa frecuencia en ciclos por unidad de tiempo. Si se desea trabajar con frecuencia angular, entonces \\(\\omega = 2\\pi u\\).\n\n\n\n\n\n\nImportanteConvención\n\n\n\nTodas las propiedades y tablas de esta página están escritas bajo la convención \\(e^{-i2\\pi ut}\\). Si comparas con apuntes que usan \\(e^{-i\\omega t}\\), recuerda sustituir \\(\\omega = 2\\pi u\\)."
+    "text": "Para una señal \\(x(t)\\), se define su transformada de Fourier como\n\\[\nX(u)=\\int_{-\\infty}^{\\infty}x(t)e^{-i2\\pi ut}\\,dt.\n\\]\nLa transformada inversa correspondiente es\n\\[\nx(t)=\\int_{-\\infty}^{\\infty}X(u)e^{i2\\pi ut}\\,du.\n\\]\nAquí \\(u\\) representa frecuencia en ciclos por unidad de tiempo. Si se desea trabajar con frecuencia angular, entonces \\(\\omega = 2\\pi u\\).\n\n\n\n\n\n\nNotaConvención\n\n\n\nTodas las propiedades y tablas de esta página están escritas bajo la convención \\(e^{-i2\\pi ut}\\). Si comparas con apuntes que usan \\(e^{-i\\omega t}\\), recuerda sustituir \\(\\omega = 2\\pi u\\)."
   },
   {
     "objectID": "temas/transformada-fourier.html#definición",
     "href": "temas/transformada-fourier.html#definición",
     "title": "Transformada de Fourier",
     "section": "",
-    "text": "Para una señal \\(x(t)\\), definimos su transformada de Fourier mediante\n\\[\nX(u)=\\int_{-\\infty}^{\\infty}x(t)e^{-i2\\pi ut}\\,dt.\n\\]\nLa transformada inversa correspondiente es\n\\[\nx(t)=\\int_{-\\infty}^{\\infty}X(u)e^{i2\\pi ut}\\,du.\n\\]\nAquí \\(u\\) representa frecuencia en ciclos por unidad de tiempo. Si se desea trabajar con frecuencia angular, entonces \\(\\omega = 2\\pi u\\).\n\n\n\n\n\n\nImportanteConvención\n\n\n\nTodas las propiedades y tablas de esta página están escritas bajo la convención \\(e^{-i2\\pi ut}\\). Si comparas con apuntes que usan \\(e^{-i\\omega t}\\), recuerda sustituir \\(\\omega = 2\\pi u\\)."
+    "text": "Para una señal \\(x(t)\\), se define su transformada de Fourier como\n\\[\nX(u)=\\int_{-\\infty}^{\\infty}x(t)e^{-i2\\pi ut}\\,dt.\n\\]\nLa transformada inversa correspondiente es\n\\[\nx(t)=\\int_{-\\infty}^{\\infty}X(u)e^{i2\\pi ut}\\,du.\n\\]\nAquí \\(u\\) representa frecuencia en ciclos por unidad de tiempo. Si se desea trabajar con frecuencia angular, entonces \\(\\omega = 2\\pi u\\).\n\n\n\n\n\n\nNotaConvención\n\n\n\nTodas las propiedades y tablas de esta página están escritas bajo la convención \\(e^{-i2\\pi ut}\\). Si comparas con apuntes que usan \\(e^{-i\\omega t}\\), recuerda sustituir \\(\\omega = 2\\pi u\\)."
   },
   {
     "objectID": "temas/transformada-fourier.html#interpretación-espectral",
     "href": "temas/transformada-fourier.html#interpretación-espectral",
     "title": "Transformada de Fourier",
     "section": "2 Interpretación espectral",
-    "text": "2 Interpretación espectral\nLa transformada de Fourier describe cómo se distribuye una señal entre componentes senoidales de distintas frecuencias. La magnitud \\(|X(u)|\\) indica la intensidad relativa de cada banda, mientras que la fase \\(\\arg X(u)\\) conserva información temporal y de alineamiento.\nPara señales localizadas en el tiempo, el espectro suele ser extendido. Para señales muy oscilatorias o periódicas, el espectro tiende a concentrarse en frecuencias particulares."
+    "text": "2 Interpretación espectral\nLa transformada de Fourier describe cómo se distribuye una señal entre componentes senoidales de distintas frecuencias. La magnitud \\(|X(u)|\\) indica la intensidad relativa de cada banda, mientras que la fase \\(\\arg X(u)\\) conserva información temporal y de alineamiento.\nPara señales localizadas en el tiempo, el espectro suele ser extendido. Para señales muy oscilatorias o periódicas, el espectro tiende a concentrarse en frecuencias particulares.\nCuando aparecen distribuciones, la visualización separa la parte regular de los términos impulsivos para no presentar como función ordinaria algo que solo adquiere sentido completo dentro de integrales u operadores lineales.\n\nExplorador tiempo-frecuencia\n\n\nSelecciona una señal típica y observa su representación en el dominio del tiempo y en el dominio de la frecuencia. La vista espectral puede mostrarse como magnitud, fase o ambas; cuando hay deltas o derivadas de deltas, la interfaz lo indica explícitamente.\n\n\n\n\nControles\n\n\n\nSeñal típica  Delta de Dirac Constante uno Escalón Rampa causal Signo Triángulo \n\n\nVista espectral  Magnitud y fase Solo magnitud Solo fase \n\n\n\n\n\n\n\n\n\n\n\n\nDominio del tiempo\n\n\n\n\n\n\n\nDominio de la frecuencia"
   },
   {
     "objectID": "temas/transformada-fourier.html#transformadas-notables",
@@ -109,21 +109,21 @@
     "href": "temas/transformada-fourier.html#magnitud-y-fase",
     "title": "Transformada de Fourier",
     "section": "5 Magnitud y fase",
-    "text": "5 Magnitud y fase\nEn aplicaciones físicas y de ingeniería suele graficarse:\n\n\\(|X(u)|\\), para ver qué frecuencias están presentes.\n\\(\\arg X(u)\\), para estudiar retardos, simetrías y reconstrucción temporal.\n\nDos señales pueden tener magnitud similar y fase muy distinta, produciendo formas temporales radicalmente diferentes.\n\n\n\n\n\n\nTipPróxima simulación\n\n\n\nLa página Simulaciones en desarrollo resume la futura herramienta de magnitud y fase para explorar pares notables y modificaciones espectrales."
+    "text": "5 Magnitud y fase\nEn aplicaciones físicas y de ingeniería suele graficarse:\n\n\\(|X(u)|\\), para ver qué frecuencias están presentes.\n\\(\\arg X(u)\\), para estudiar retardos, simetrías y reconstrucción temporal.\n\nDos señales pueden tener magnitud similar y fase muy distinta, produciendo formas temporales radicalmente diferentes.\n\nEjemplos gráficos\n\n\nLos siguientes ejemplos muestran dos situaciones típicas: un espectro real y par con fase nula, y el efecto de un retardo temporal que conserva la magnitud pero agrega una fase lineal en \\(u\\).\n\n\n\n\nEjemplo 1: triángulo y fase nula\n\n\nPara una señal triangular par, la magnitud puede verse como una envolvente no negativa tipo \\(\\operatorname{sinc}^2\\), y la fase es nula allí donde la magnitud es positiva.\n\n\n\n\n\n\n\nEjemplo 2: retardo temporal\n\n\nSi la señal se desplaza en el tiempo, la magnitud permanece igual y la fase adquiere una dependencia lineal de la forma \\(-2\\pi u t_0\\)."
   },
   {
     "objectID": "temas/serie-fourier.html",
     "href": "temas/serie-fourier.html",
     "title": "Serie de Fourier",
     "section": "",
-    "text": "La Serie de Fourier permite representar una señal periódica \\(x(t)\\) de período \\(T_0\\) como combinación lineal de exponenciales complejas o, de forma equivalente, de senos y cosenos con frecuencias múltiplos de la frecuencia fundamental.\nSi definimos\n\\[\nu_0=\\frac{1}{T_0},\n\\]\nentonces las frecuencias necesarias para reconstruir la señal serán \\(k u_0\\) con \\(k\\in\\mathbb{Z}\\). Las frecuencias de este tipo, que corresponden a múltiplos enteros de la frecuencia natural \\(u_0\\), se denominan armónicos.\n\n\n\n\n\n\nImportanteIdea clave\n\n\n\nLa Serie de Fourier es una forma de representar matemáticamente una señal periódica utilizando la exponencial compleja \\(e^{i2\\pi k u_0 t}\\) como base del espacio vectorial de funciones complejas."
+    "text": "La Serie de Fourier permite representar una señal periódica \\(x(t)\\) de período \\(T_0\\) como combinación lineal de exponenciales complejas o, de forma equivalente, de senos y cosenos con frecuencias múltiplos de la frecuencia fundamental.\nSi definimos\n\\[\nu_0=\\frac{1}{T_0},\n\\]\nentonces las frecuencias necesarias para reconstruir la señal serán \\(k u_0\\) con \\(k\\in\\mathbb{Z}\\). Las frecuencias de este tipo, que corresponden a múltiplos enteros de la frecuencia natural \\(u_0\\), se denominan armónicos.\n\n\n\n\n\n\nTipIdea clave\n\n\n\nLa Serie de Fourier es una forma de representar matemáticamente una señal periódica utilizando la exponencial compleja \\(e^{i2\\pi k u_0 t}\\) como base del espacio vectorial de funciones complejas."
   },
   {
     "objectID": "temas/serie-fourier.html#idea-central",
     "href": "temas/serie-fourier.html#idea-central",
     "title": "Serie de Fourier",
     "section": "",
-    "text": "La Serie de Fourier permite representar una señal periódica \\(x(t)\\) de período \\(T_0\\) como combinación lineal de exponenciales complejas o, de forma equivalente, de senos y cosenos con frecuencias múltiplos de la frecuencia fundamental.\nSi definimos\n\\[\nu_0=\\frac{1}{T_0},\n\\]\nentonces las frecuencias necesarias para reconstruir la señal serán \\(k u_0\\) con \\(k\\in\\mathbb{Z}\\). Las frecuencias de este tipo, que corresponden a múltiplos enteros de la frecuencia natural \\(u_0\\), se denominan armónicos.\n\n\n\n\n\n\nImportanteIdea clave\n\n\n\nLa Serie de Fourier es una forma de representar matemáticamente una señal periódica utilizando la exponencial compleja \\(e^{i2\\pi k u_0 t}\\) como base del espacio vectorial de funciones complejas."
+    "text": "La Serie de Fourier permite representar una señal periódica \\(x(t)\\) de período \\(T_0\\) como combinación lineal de exponenciales complejas o, de forma equivalente, de senos y cosenos con frecuencias múltiplos de la frecuencia fundamental.\nSi definimos\n\\[\nu_0=\\frac{1}{T_0},\n\\]\nentonces las frecuencias necesarias para reconstruir la señal serán \\(k u_0\\) con \\(k\\in\\mathbb{Z}\\). Las frecuencias de este tipo, que corresponden a múltiplos enteros de la frecuencia natural \\(u_0\\), se denominan armónicos.\n\n\n\n\n\n\nTipIdea clave\n\n\n\nLa Serie de Fourier es una forma de representar matemáticamente una señal periódica utilizando la exponencial compleja \\(e^{i2\\pi k u_0 t}\\) como base del espacio vectorial de funciones complejas."
   },
   {
     "objectID": "temas/serie-fourier.html#forma-compleja",
@@ -291,7 +291,7 @@
     "href": "temas/laplace.html#región-de-convergencia",
     "title": "Transformada de Laplace",
     "section": "4 Región de convergencia",
-    "text": "4 Región de convergencia\nLa región de convergencia (ROC) es el conjunto de valores de \\(s\\) para los cuales la integral converge. En muchas señales exponenciales, la ROC es un semiplano o una franja vertical del plano complejo.\nLa ROC no es un detalle secundario: dos señales distintas pueden compartir la misma expresión algebraica \\(X(s)\\) y diferenciarse precisamente por su región de convergencia.\n\n\n\n\n\n\nImportanteIdea clave\n\n\n\nEn Laplace, la expresión analítica y la ROC forman una pareja inseparable. Sin la ROC, la transformada puede quedar ambigua."
+    "text": "4 Región de convergencia\nLa región de convergencia (ROC) es el conjunto de valores de \\(s\\) para los cuales la integral converge. En muchas señales exponenciales, la ROC es un semiplano o una franja vertical del plano complejo.\nLa ROC no es un detalle secundario: dos señales distintas pueden compartir la misma expresión algebraica \\(X(s)\\) y diferenciarse precisamente por su región de convergencia.\n\n\n\n\n\n\nTipIdea clave\n\n\n\nEn Laplace, la expresión analítica y la ROC forman una pareja inseparable. Sin la ROC, la transformada puede quedar ambigua."
   },
   {
     "objectID": "temas/laplace.html#polos-y-ceros",

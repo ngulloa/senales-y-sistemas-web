@@ -20,7 +20,7 @@ html {
   --color-border: #d8e2dc;
   --color-grid: #d8e2dc;
   --color-shadow: rgba(24, 46, 58, 0.12);
-  --color-note-bg: #e3f0f4;
+  --color-note-bg: #eaf4fb;
   --color-note-border: #1d6f8f;
   --color-tip-bg: #e6f4ef;
   --color-tip-border: #2a9d8f;
@@ -188,11 +188,6 @@ a:focus {
   border-color: var(--color-important-border);
 }
 
-.callout.callout-idea-verde {
-  background-color: var(--color-accent-soft);
-  border-color: var(--color-accent);
-}
-
 .callout.callout-note .callout-header,
 .callout.callout-tip .callout-header {
   color: var(--color-primary-strong);
@@ -201,11 +196,6 @@ a:focus {
 
 .callout.callout-important .callout-header {
   color: #8a4b00;
-  font-weight: 800;
-}
-
-.callout.callout-idea-verde .callout-header {
-  color: var(--color-primary);
   font-weight: 800;
 }
 
@@ -295,6 +285,12 @@ tbody tr:nth-child(even) {
   gap: 1.2rem;
   margin-top: 1.6rem;
   align-items: start;
+}
+
+.dual-plot-grid {
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .sim-grid {
@@ -532,6 +528,10 @@ input[type="range"]::-moz-range-thumb {
   min-height: 380px;
 }
 
+.plot-panel--example {
+  min-height: 360px;
+}
+
 .mjx-container {
   overflow-x: auto;
   overflow-y: hidden;
@@ -582,6 +582,10 @@ sub {
 }
 
 @media (max-width: 900px) {
+  .dual-plot-grid {
+    grid-template-columns: 1fr;
+  }
+
   .control-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -592,6 +596,10 @@ sub {
 
   .plot-panel--embedded {
     min-height: 340px;
+  }
+
+  .plot-panel--example {
+    min-height: 320px;
   }
 
   .metric-grid {
@@ -624,6 +632,10 @@ sub {
 
   .plot-panel--embedded {
     min-height: 280px;
+  }
+
+  .plot-panel--example {
+    min-height: 260px;
   }
 
   .navbar-brand {

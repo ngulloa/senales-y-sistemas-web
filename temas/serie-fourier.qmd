@@ -14,7 +14,7 @@ $$
 
 entonces las frecuencias necesarias para reconstruir la señal serán $k u_0$ con $k\in\mathbb{Z}$. Las frecuencias de este tipo, que corresponden a múltiplos enteros de la frecuencia natural $u_0$, se denominan ***armónicos***. 
 
-::: {.callout-important .callout-idea-verde}
+::: {.callout-tip}
 ## Idea clave
 
 La Serie de Fourier es una forma de representar matemáticamente una señal periódica utilizando la exponencial compleja $e^{i2\pi k u_0 t}$ como base del espacio vectorial de funciones complejas.

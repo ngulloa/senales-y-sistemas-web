@@ -40,7 +40,7 @@ La región de convergencia (ROC) es el conjunto de valores de $s$ para los cuale
 
 La ROC no es un detalle secundario: dos señales distintas pueden compartir la misma expresión algebraica $X(s)$ y diferenciarse precisamente por su región de convergencia.
 
-::: {.callout-important}
+::: {.callout-tip}
 ## Idea clave
 
 En Laplace, la expresión analítica y la ROC forman una pareja inseparable. Sin la ROC, la transformada puede quedar ambigua.

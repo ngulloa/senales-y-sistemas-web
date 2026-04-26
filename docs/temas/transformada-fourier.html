@@ -236,7 +236,7 @@ window.Quarto = {
 
 <section id="definición" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="definición"><span class="header-section-number">1</span> Definición</h2>
-<p>Para una señal <span class="math inline">\(x(t)\)</span>, definimos su transformada de Fourier mediante</p>
+<p>Para una señal <span class="math inline">\(x(t)\)</span>, se define su transformada de Fourier como</p>
 <p><span class="math display">\[
 X(u)=\int_{-\infty}^{\infty}x(t)e^{-i2\pi ut}\,dt.
 \]</span></p>
@@ -245,13 +245,13 @@ X(u)=\int_{-\infty}^{\infty}x(t)e^{-i2\pi ut}\,dt.
 x(t)=\int_{-\infty}^{\infty}X(u)e^{i2\pi ut}\,du.
 \]</span></p>
 <p>Aquí <span class="math inline">\(u\)</span> representa frecuencia en ciclos por unidad de tiempo. Si se desea trabajar con frecuencia angular, entonces <span class="math inline">\(\omega = 2\pi u\)</span>.</p>
-<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Importante</span>Convención
+<span class="screen-reader-only">Nota</span>Convención
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -263,6 +263,52 @@ x(t)=\int_{-\infty}^{\infty}X(u)e^{i2\pi ut}\,du.
 <h2 data-number="2" class="anchored" data-anchor-id="interpretación-espectral"><span class="header-section-number">2</span> Interpretación espectral</h2>
 <p>La transformada de Fourier describe cómo se distribuye una señal entre componentes senoidales de distintas frecuencias. La magnitud <span class="math inline">\(|X(u)|\)</span> indica la intensidad relativa de cada banda, mientras que la fase <span class="math inline">\(\arg X(u)\)</span> conserva información temporal y de alineamiento.</p>
 <p>Para señales localizadas en el tiempo, el espectro suele ser extendido. Para señales muy oscilatorias o periódicas, el espectro tiende a concentrarse en frecuencias particulares.</p>
+<p>Cuando aparecen distribuciones, la visualización separa la parte regular de los términos impulsivos para no presentar como función ordinaria algo que solo adquiere sentido completo dentro de integrales u operadores lineales.</p>
+<p class="sim-section-title">
+Explorador tiempo-frecuencia
+</p>
+<p class="sim-section-lead">
+Selecciona una señal típica y observa su representación en el dominio del tiempo y en el dominio de la frecuencia. La vista espectral puede mostrarse como magnitud, fase o ambas; cuando hay deltas o derivadas de deltas, la interfaz lo indica explícitamente.
+</p>
+<div id="tf-explorer" class="simulation-shell simulation-shell--embedded">
+<div class="sim-card sim-card--controls">
+<p class="sim-card-title">
+Controles
+</p>
+<div class="control-grid">
+<div class="control-field">
+<p><label for="tf-explorer-signal">Señal típica</label> <select id="tf-explorer-signal"> <option value="delta">Delta de Dirac</option> <option value="one">Constante uno</option> <option value="step">Escalón</option> <option value="ramp">Rampa causal</option> <option value="sign">Signo</option> <option value="triangle">Triángulo</option> </select></p>
+</div>
+<div class="control-field">
+<p><label for="tf-explorer-view">Vista espectral</label> <select id="tf-explorer-view"> <option value="both">Magnitud y fase</option> <option value="magnitude">Solo magnitud</option> <option value="phase">Solo fase</option> </select></p>
+</div>
+</div>
+<div id="tf-explorer-formula" class="formula-panel">
+
+</div>
+<div id="tf-explorer-note" class="status-banner">
+
+</div>
+</div>
+<div class="dual-plot-grid">
+<div class="sim-card sim-card--plot">
+<p class="sim-card-title">
+Dominio del tiempo
+</p>
+<div id="tf-time-plot" class="plot-panel plot-panel--embedded">
+
+</div>
+</div>
+<div class="sim-card sim-card--plot">
+<p class="sim-card-title">
+Dominio de la frecuencia
+</p>
+<div id="tf-spectrum-plot" class="plot-panel plot-panel--embedded">
+
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="transformadas-notables" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="transformadas-notables"><span class="header-section-number">3</span> Transformadas notables</h2>
@@ -377,19 +423,38 @@ x(t)=\int_{-\infty}^{\infty}X(u)e^{i2\pi ut}\,du.
 <li><span class="math inline">\(\arg X(u)\)</span>, para estudiar retardos, simetrías y reconstrucción temporal.</li>
 </ul>
 <p>Dos señales pueden tener magnitud similar y fase muy distinta, produciendo formas temporales radicalmente diferentes.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<p class="sim-section-title">
+Ejemplos gráficos
+</p>
+<p class="sim-section-lead">
+Los siguientes ejemplos muestran dos situaciones típicas: un espectro real y par con fase nula, y el efecto de un retardo temporal que conserva la magnitud pero agrega una fase lineal en <span class="math inline">\(u\)</span>.
+</p>
+<div class="dual-plot-grid">
+<div class="sim-card">
+<p class="sim-card-title">
+Ejemplo 1: triángulo y fase nula
+</p>
+<p class="sim-explainer">
+Para una señal triangular par, la magnitud puede verse como una envolvente no negativa tipo <span class="math inline">\(\operatorname{sinc}^2\)</span>, y la fase es nula allí donde la magnitud es positiva.
+</p>
+<div id="tf-example-even-plot" class="plot-panel plot-panel--example">
+
 </div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Próxima simulación
+</div>
+<div class="sim-card">
+<p class="sim-card-title">
+Ejemplo 2: retardo temporal
+</p>
+<p class="sim-explainer">
+Si la señal se desplaza en el tiempo, la magnitud permanece igual y la fase adquiere una dependencia lineal de la forma <span class="math inline">\(-2\pi u t_0\)</span>.
+</p>
+<div id="tf-example-delay-plot" class="plot-panel plot-panel--example">
+
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<p>La página <a href="../simulaciones/proximamente.html#transformada-de-fourier">Simulaciones en desarrollo</a> resume la futura herramienta de magnitud y fase para explorar pares notables y modificaciones espectrales.</p>
 </div>
-</div>
+<script src="https://cdn.plot.ly/plotly-2.32.0.min.js"></script>
+<script type="module" src="../assets/js/simulations/fourier-transform-explorer.js"></script>
 
 
 </section>
