@@ -116,7 +116,7 @@
     "href": "temas/serie-fourier.html",
     "title": "Serie de Fourier",
     "section": "",
-    "text": "La Serie de Fourier permite representar una señal periódica \\(x(t)\\) de período \\(T_0\\) como combinación lineal de exponenciales complejas o, de forma equivalente, de senos y cosenos con frecuencias múltiplos de la frecuencia fundamental.\nSi definimos\n\\[\nu_0=\\frac{1}{T_0},\n\\]\nentonces las frecuencias necesarias para reconstruir la señal serán \\(k u_0\\) con \\(k\\in\\mathbb{Z}\\). Las frecuencias de este tipo, que corresponden a múltiplos enteros de la frecuencia natural \\(u_0\\), se denominan armónicos.\n\n\n\n\n\n\nImportanteIdea clave\n\n\n\nLa Serie de Fourier es una forma de representar matemáticamente una señal periódica utilizando la exponencial compleja \\(e^{i2\\pi k u_0 t}\\) como base del espacio vectorial de funciones complejas.\nAl aumentar \\(N\\) se agregan más armónicos y la señal reconstruida se acerca mejor a la ideal. Las ondas con saltos o esquinas necesitan más componentes espectrales que las formas suaves para lograr una aproximación comparable. En la triangular mostrada aquí se usa una convención par, de media cero, con máximo en \\(t=0\\). Cerca de discontinuidades puede aparecer una sobreoscilación del tipo Gibbs, incluso cuando la forma global ya está muy bien capturada; si quieres explorar esta idea con más detalle para una onda cuadrada, puedes abrir la simulación Reconstrucción por Serie de Fourier."
+    "text": "La Serie de Fourier permite representar una señal periódica \\(x(t)\\) de período \\(T_0\\) como combinación lineal de exponenciales complejas o, de forma equivalente, de senos y cosenos con frecuencias múltiplos de la frecuencia fundamental.\nSi definimos\n\\[\nu_0=\\frac{1}{T_0},\n\\]\nentonces las frecuencias necesarias para reconstruir la señal serán \\(k u_0\\) con \\(k\\in\\mathbb{Z}\\). Las frecuencias de este tipo, que corresponden a múltiplos enteros de la frecuencia natural \\(u_0\\), se denominan armónicos.\n\n\n\n\n\n\nImportanteIdea clave\n\n\n\nLa Serie de Fourier es una forma de representar matemáticamente una señal periódica utilizando la exponencial compleja \\(e^{i2\\pi k u_0 t}\\) como base del espacio vectorial de funciones complejas."
   },
   {
     "objectID": "temas/serie-fourier.html#idea-central",
@@ -144,56 +144,35 @@
     "href": "temas/serie-fourier.html#interpretación-espectral",
     "title": "Serie de Fourier",
     "section": "4 Interpretación Espectral",
-    "text": "4 Interpretación Espectral\nLa Serie de Fourier también puede leerse en el dominio de la frecuencia: una señal periódica no genera un espectro continuo, sino un conjunto discreto de componentes espectrales ubicadas en \\(u=ku_0\\), con \\(k\\in\\mathbb{Z}\\). Cada coeficiente \\(c_k\\), o de forma equivalente cada par \\((a_n,b_n)\\), indica cuánto pesa una línea espectral y cómo contribuye a la reconstrucción temporal.\nCuando truncamos la serie y conservamos solo una cantidad finita de términos, estamos reteniendo un número finito de líneas del espectro. Los armónicos bajos capturan la estructura gruesa de la señal; los armónicos altos agregan bordes, esquinas y cambios rápidos."
-  },
-  {
-    "objectID": "temas/serie-fourier.html#explorador-espectral",
-    "href": "temas/serie-fourier.html#explorador-espectral",
-    "title": "Serie de Fourier",
-    "section": "5 Explorador espectral",
-    "text": "5 Explorador espectral\n\n\nSeñal periódica  Cuadrada impar Diente de sierra impar Triangular par \n\n\nCantidad de términos N\n\n\n\n0"
-  },
-  {
-    "objectID": "temas/serie-fourier.html#señal-ideal-y-suma-parcial",
-    "href": "temas/serie-fourier.html#señal-ideal-y-suma-parcial",
-    "title": "Serie de Fourier",
-    "section": "6 Señal ideal y suma parcial",
-    "text": "6 Señal ideal y suma parcial"
-  },
-  {
-    "objectID": "temas/serie-fourier.html#lectura-rápida",
-    "href": "temas/serie-fourier.html#lectura-rápida",
-    "title": "Serie de Fourier",
-    "section": "7 Lectura rápida",
-    "text": "7 Lectura rápida\n\n\n\n\n\nArmónicos retenidos \n\n\nValor medio \n\n\nPeríodo usado"
+    "text": "4 Interpretación Espectral\nLa Serie de Fourier de una función puede entenderse en el dominio de la frecuencia. Las señales periódicas, en particular, tienen un conjunto discreto de frecuencias. Cada coeficiente \\(c_k\\), o de forma equivalente cada par \\((a_n,b_n)\\), indica cuánto pesa una frecuencia en particular en la construcción temporal de la señal. La representación gráfica de las frecuencias de la Serie de Fourier de alguna función se denomina espectro.\nCuando se trunca la serie y se conserva solo una cantidad finita de términos, se retiene un número finito de líneas del espectro. Los armónicos bajos capturan la estructura gruesa de la señal; los armónicos altos agregan bordes, esquinas y cambios rápidos.\n\nReconstrucción de señal\n\n\nEn la visualización se muestra el resultado de la suma de los primeros N términos de la Serie de Fourier para algunas señales típicas. Al aumentar N, la aproximación incorpora más armónicos; en señales con saltos o esquinas la convergencia exige más términos y puede aparecer sobreoscilación del tipo Gibbs.\n\n\n\n\nExplorador espectral\n\n\n\nSeñal periódica  Cuadrada impar Diente de sierra impar Triangular par \n\n\nCantidad de términos N\n\n\n\n0\n\n\n\n\n\nSerie parcial actual"
   },
   {
     "objectID": "temas/serie-fourier.html#frecuencia-fundamental",
     "href": "temas/serie-fourier.html#frecuencia-fundamental",
     "title": "Serie de Fourier",
-    "section": "8 Frecuencia fundamental",
-    "text": "8 Frecuencia fundamental\nLa frecuencia fundamental es\n\\[\nu_0=\\frac{1}{T_0}.\n\\]\nSi se usa frecuencia angular, entonces\n\\[\n\\omega_0=2\\pi u_0.\n\\]"
+    "section": "5 Frecuencia fundamental",
+    "text": "5 Frecuencia fundamental\nLa frecuencia fundamental es\n\\[\nu_0=\\frac{1}{T_0}.\n\\]\nSi se usa frecuencia angular, entonces\n\\[\n\\omega_0=2\\pi u_0.\n\\]"
   },
   {
     "objectID": "temas/serie-fourier.html#condiciones-de-dirichlet",
     "href": "temas/serie-fourier.html#condiciones-de-dirichlet",
     "title": "Serie de Fourier",
-    "section": "9 Condiciones de Dirichlet",
-    "text": "9 Condiciones de Dirichlet\nLas condiciones de Dirichlet son suficientes para garantizar convergencia puntual de la serie en muchos problemas clásicos:\n\n\\(x(t)\\) es absolutamente integrable en un período.\nTiene un número finito de máximos y mínimos en un período.\nTiene un número finito de discontinuidades de salto en un período.\n\nCuando hay una discontinuidad en \\(t=t_d\\), la serie converge al promedio lateral\n\\[\n\\frac{x(t_d^-)+x(t_d^+)}{2}.\n\\]\n\n\n\n\n\n\nNotaInterpretación\n\n\n\nLa convergencia en los puntos de salto no significa que la señal “pierda” el salto. Significa que la suma infinita de funciones continuas aproxima el salto desde ambos lados y toma el valor medio exactamente en el punto discontinuo."
+    "section": "6 Condiciones de Dirichlet",
+    "text": "6 Condiciones de Dirichlet\nLas condiciones de Dirichlet son suficientes para garantizar convergencia puntual de la serie en muchos problemas clásicos:\n\n\\(x(t)\\) es absolutamente integrable en un período.\nTiene un número finito de máximos y mínimos en un período.\nTiene un número finito de discontinuidades de salto en un período.\n\nCuando hay una discontinuidad en \\(t=t_d\\), la serie converge al promedio lateral\n\\[\n\\frac{x(t_d^-)+x(t_d^+)}{2}.\n\\]\n\n\n\n\n\n\nNotaInterpretación\n\n\n\nLa convergencia en los puntos de salto no significa que la señal “pierda” el salto. Significa que la suma infinita de funciones continuas aproxima el salto desde ambos lados y toma el valor medio exactamente en el punto discontinuo."
   },
   {
     "objectID": "temas/serie-fourier.html#simetrías-útiles",
     "href": "temas/serie-fourier.html#simetrías-útiles",
     "title": "Serie de Fourier",
-    "section": "10 Simetrías útiles",
-    "text": "10 Simetrías útiles\nLas simetrías reducen el trabajo de cálculo:\n\nSi \\(x(t)\\) es real, entonces \\(c_{-k}=\\overline{c_k}\\).\nSi \\(x(t)\\) es par, entonces \\(b_n=0\\).\nSi \\(x(t)\\) es impar, entonces \\(a_n=0\\) y \\(a_0=0\\).\nSi la señal tiene simetría de media onda, desaparecen ciertos armónicos, con frecuencia los pares.\n\nReconocer estas estructuras antes de integrar simplifica mucho el cálculo manual."
+    "section": "7 Simetrías útiles",
+    "text": "7 Simetrías útiles\nLas simetrías reducen el trabajo de cálculo:\n\nSi \\(x(t)\\) es real, entonces \\(c_{-k}=\\overline{c_k}\\).\nSi \\(x(t)\\) es par, entonces \\(b_n=0\\).\nSi \\(x(t)\\) es impar, entonces \\(a_n=0\\) y \\(a_0=0\\).\nSi la señal tiene simetría de media onda, desaparecen ciertos armónicos, con frecuencia los pares.\n\nReconocer estas estructuras antes de integrar simplifica mucho el cálculo manual."
   },
   {
     "objectID": "temas/serie-fourier.html#energía-potencia-bessel-y-parseval",
     "href": "temas/serie-fourier.html#energía-potencia-bessel-y-parseval",
     "title": "Serie de Fourier",
-    "section": "11 Energía, potencia, Bessel y Parseval",
-    "text": "11 Energía, potencia, Bessel y Parseval\nEn Señales y Sistemas, la energía puede entenderse como una medida matemática basada en la norma cuadrática de la señal. Resume la magnitud global acumulada de \\(x(t)\\) y sirve para cuantificar su tamaño total en un intervalo, sin necesidad de interpretarla siempre en un sentido físico.\nSobre un período completo definimos la energía acumulada como\n\\[\nE_{T_0}=\\int_{t_0}^{t_0+T_0}|x(t)|^2\\,dt.\n\\]\nPara señales periódicas resulta más natural trabajar con la potencia promedio asociada a esa energía por período:\n\\[\nP=\\frac{1}{T_0}\\int_{t_0}^{t_0+T_0}|x(t)|^2\\,dt.\n\\]\nLa desigualdad de Bessel afirma que, para cualquier suma parcial,\n\\[\n\\sum_{k=-N}^{N}|c_k|^2 \\le P.\n\\]\nCuando la serie converge en media cuadrática, se obtiene la identidad de Parseval:\n\\[\nP=\\sum_{k=-\\infty}^{\\infty}|c_k|^2.\n\\]\nEn forma trigonométrica,\n\\[\nP=\\frac{a_0^2}{4}+\\frac{1}{2}\\sum_{n=1}^{\\infty}(a_n^2+b_n^2).\n\\]\nEstas igualdades conectan el dominio del tiempo con el reparto de potencia entre armónicos."
+    "section": "8 Energía, potencia, Bessel y Parseval",
+    "text": "8 Energía, potencia, Bessel y Parseval\nEn Señales y Sistemas, la energía puede entenderse como una medida matemática basada en la norma cuadrática de la señal. Resume la magnitud global acumulada de \\(x(t)\\) y sirve para cuantificar su tamaño total en un intervalo, sin necesidad de interpretarla siempre en un sentido físico.\nSobre un período completo definimos la energía acumulada como\n\\[\nE_{T_0}=\\int_{t_0}^{t_0+T_0}|x(t)|^2\\,dt.\n\\]\nPara señales periódicas resulta más natural trabajar con la potencia promedio asociada a esa energía por período:\n\\[\nP=\\frac{1}{T_0}\\int_{t_0}^{t_0+T_0}|x(t)|^2\\,dt.\n\\]\nLa desigualdad de Bessel afirma que, para cualquier suma parcial,\n\\[\n\\sum_{k=-N}^{N}|c_k|^2 \\le P.\n\\]\nCuando la serie converge en media cuadrática, se obtiene la identidad de Parseval:\n\\[\nP=\\sum_{k=-\\infty}^{\\infty}|c_k|^2.\n\\]\nEn forma trigonométrica,\n\\[\nP=\\frac{a_0^2}{4}+\\frac{1}{2}\\sum_{n=1}^{\\infty}(a_n^2+b_n^2).\n\\]\nEstas igualdades conectan el dominio del tiempo con el reparto de potencia entre armónicos."
   },
   {
     "objectID": "temas/propiedades-fourier.html",

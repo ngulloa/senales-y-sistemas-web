@@ -14,7 +14,7 @@ $$
 
 entonces las frecuencias necesarias para reconstruir la señal serán $k u_0$ con $k\in\mathbb{Z}$. Las frecuencias de este tipo, que corresponden a múltiplos enteros de la frecuencia natural $u_0$, se denominan ***armónicos***. 
 
-::: {.callout-important}
+::: {.callout-important .callout-idea-verde}
 ## Idea clave
 
 La Serie de Fourier es una forma de representar matemáticamente una señal periódica utilizando la exponencial compleja $e^{i2\pi k u_0 t}$ como base del espacio vectorial de funciones complejas.
@@ -71,13 +71,16 @@ Aquí:
 
 ## Interpretación Espectral
 
-La Serie de Fourier también puede leerse en el dominio de la frecuencia: una señal periódica no genera un espectro continuo, sino un conjunto discreto de componentes espectrales ubicadas en $u=ku_0$, con $k\in\mathbb{Z}$. Cada coeficiente $c_k$, o de forma equivalente cada par $(a_n,b_n)$, indica cuánto pesa una línea espectral y cómo contribuye a la reconstrucción temporal.
+La Serie de Fourier de una función puede entenderse en el dominio de la frecuencia. Las señales periódicas, en particular, tienen un conjunto discreto de frecuencias. Cada coeficiente $c_k$, o de forma equivalente cada par $(a_n,b_n)$, indica cuánto pesa una frecuencia en particular en la construcción temporal de la señal. La representación gráfica de las frecuencias de la Serie de Fourier de alguna función se denomina espectro.
 
-Cuando truncamos la serie y conservamos solo una cantidad finita de términos, estamos reteniendo un número finito de líneas del espectro. Los armónicos bajos capturan la estructura gruesa de la señal; los armónicos altos agregan bordes, esquinas y cambios rápidos.
+Cuando se trunca la serie y se conserva solo una cantidad finita de términos, se retiene un número finito de líneas del espectro. Los armónicos bajos capturan la estructura gruesa de la señal; los armónicos altos agregan bordes, esquinas y cambios rápidos.
+
+<p class="sim-section-title">Reconstrucción de señal</p>
+<p class="sim-section-lead">En la visualización se muestra el resultado de la suma de los primeros <em>N</em> términos de la Serie de Fourier para algunas señales típicas. Al aumentar <em>N</em>, la aproximación incorpora más armónicos; en señales con saltos o esquinas la convergencia exige más términos y puede aparecer sobreoscilación del tipo Gibbs.</p>
 
 ::: {#fourier-spectrum-widget .simulation-shell .simulation-shell--embedded}
 ::: {.sim-card .sim-card--controls}
-## Explorador espectral
+<p class="sim-card-title">Explorador espectral</p>
 
 <div class="control-grid">
 <div class="control-field">
@@ -96,37 +99,15 @@ Cuando truncamos la serie y conservamos solo una cantidad finita de términos, e
 </div>
 </div>
 </div>
+
+<p class="sim-card-kicker">Serie parcial actual</p>
+<div class="formula-panel" id="fs-spectrum-formula"></div>
 :::
 
 ::: {.sim-card .sim-card--plot}
-## Señal ideal y suma parcial
-
 <div id="fs-spectrum-plot" class="plot-panel plot-panel--embedded"></div>
 :::
-
-::: {.sim-card .sim-card--diagnostics}
-## Lectura rápida
-
-<div class="formula-panel" id="fs-spectrum-formula"></div>
-<div class="metric-grid">
-<div class="metric-card">
-<span class="metric-label">Armónicos retenidos</span>
-<strong id="fs-spectrum-harmonics"></strong>
-</div>
-<div class="metric-card">
-<span class="metric-label">Valor medio</span>
-<strong id="fs-spectrum-mean"></strong>
-</div>
-<div class="metric-card">
-<span class="metric-label">Período usado</span>
-<strong id="fs-spectrum-period"></strong>
-</div>
-</div>
-<p class="sim-explainer" id="fs-spectrum-summary"></p>
 :::
-:::
-
-Al aumentar $N$ se agregan más armónicos y la señal reconstruida se acerca mejor a la ideal. Las ondas con saltos o esquinas necesitan más componentes espectrales que las formas suaves para lograr una aproximación comparable. En la triangular mostrada aquí se usa una convención par, de media cero, con máximo en $t=0$. Cerca de discontinuidades puede aparecer una sobreoscilación del tipo Gibbs, incluso cuando la forma global ya está muy bien capturada; si quieres explorar esta idea con más detalle para una onda cuadrada, puedes abrir la simulación [Reconstrucción por Serie de Fourier](../simulaciones/serie-fourier.qmd).
 
 ## Frecuencia fundamental
 

@@ -2,7 +2,7 @@
 title: "Inicio"
 ---
 
-# Señales y Sistemas para estudiar y experimentar
+# Señales y Sistemas
 
 Este sitio reúne apuntes introductorios, recordatorios de fórmulas y simulaciones interactivas para apoyar el estudio de Señales y Sistemas en cursos de matemática aplicada e ingeniería. La idea central es combinar una presentación rigurosa con herramientas ligeras que puedan abrirse en cualquier navegador, sin backend y sin dependencias de escritorio.
 

@@ -188,6 +188,11 @@ a:focus {
   border-color: var(--color-important-border);
 }
 
+.callout.callout-idea-verde {
+  background-color: var(--color-accent-soft);
+  border-color: var(--color-accent);
+}
+
 .callout.callout-note .callout-header,
 .callout.callout-tip .callout-header {
   color: var(--color-primary-strong);
@@ -196,6 +201,11 @@ a:focus {
 
 .callout.callout-important .callout-header {
   color: #8a4b00;
+  font-weight: 800;
+}
+
+.callout.callout-idea-verde .callout-header {
+  color: var(--color-primary);
   font-weight: 800;
 }
 
@@ -313,6 +323,35 @@ tbody tr:nth-child(even) {
   padding-bottom: 0;
   border-bottom: none;
   font-size: 1.15rem;
+}
+
+.sim-card-title,
+.sim-section-title {
+  margin: 0 0 1rem;
+  color: var(--color-primary-strong);
+  font-family: "Segoe UI Variable Display", "Trebuchet MS", sans-serif;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.sim-section-title {
+  margin-top: 1.5rem;
+  margin-bottom: 0.55rem;
+  font-size: 1.2rem;
+}
+
+.sim-section-lead {
+  margin-bottom: 1rem;
+  color: var(--color-muted);
+}
+
+.sim-card-kicker {
+  margin: 1rem 0 0.55rem;
+  color: var(--color-primary);
+  font-family: "Segoe UI Variable Display", "Trebuchet MS", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
 }
 
 .control-grid {
