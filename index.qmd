@@ -51,9 +51,9 @@ Ingresa por Serie de Fourier y continúa con Fourier, Laplace, LTI, modulación 
 Simulaciones
 :::
 
-**[Simulaciones](simulaciones/senoide.html)**
+**[Simulaciones](simulaciones/sinusoide.html)**
 
-Explora senoides, reconstrucción por Serie de Fourier y aliasing con controles interactivos en navegador.
+Explora sinusoides, reconstrucción por Serie de Fourier y aliasing con controles interactivos en navegador.
 :::
 :::
 

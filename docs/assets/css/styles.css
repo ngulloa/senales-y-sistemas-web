@@ -345,12 +345,28 @@ tbody tr:nth-child(even) {
   gap: 0.7rem;
 }
 
+.control-readout {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.6rem;
+  padding: 0.45rem 0.7rem;
+  border: 1px solid rgba(13, 95, 123, 0.16);
+  border-radius: 0.78rem;
+  background-color: var(--color-surface-soft);
+  color: var(--color-primary-strong);
+  font-family: "Segoe UI Variable Display", "Trebuchet MS", sans-serif;
+  font-weight: 800;
+}
+
 input[type="number"],
+select,
 input[type="range"] {
   font-family: "Segoe UI Variable Display", "Trebuchet MS", sans-serif;
 }
 
-input[type="number"] {
+input[type="number"],
+select {
   width: 100%;
   padding: 0.48rem 0.68rem;
   color: var(--color-ink);
@@ -361,6 +377,12 @@ input[type="number"] {
 }
 
 input[type="number"]:focus {
+  outline: none;
+  border-color: var(--color-secondary);
+  box-shadow: 0 0 0 3px rgba(29, 111, 143, 0.14);
+}
+
+select:focus {
   outline: none;
   border-color: var(--color-secondary);
   box-shadow: 0 0 0 3px rgba(29, 111, 143, 0.14);
@@ -467,6 +489,10 @@ input[type="range"]::-moz-range-thumb {
   width: 100%;
 }
 
+.plot-panel--embedded {
+  min-height: 380px;
+}
+
 .mjx-container {
   overflow-x: auto;
   overflow-y: hidden;
@@ -525,6 +551,10 @@ sub {
     min-height: 390px;
   }
 
+  .plot-panel--embedded {
+    min-height: 340px;
+  }
+
   .metric-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -551,6 +581,10 @@ sub {
 
   .plot-panel {
     min-height: 320px;
+  }
+
+  .plot-panel--embedded {
+    min-height: 280px;
   }
 
   .navbar-brand {

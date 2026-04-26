@@ -48,7 +48,7 @@ Si las réplicas se solapan, distintas frecuencias continuas generan la misma se
 
 En términos prácticos, una frecuencia alta puede "disfrazarse" de otra más baja después del muestreo.
 
-Para una sola senoide, una forma útil de estimar la frecuencia alias es
+Para una sola sinusoide, una forma útil de estimar la frecuencia alias es
 
 $$
 f_{\text{alias}}=\left|f-kf_s\right|,
@@ -75,5 +75,5 @@ Cumplir $f_s \ge 2u_{\max}$ exige conocer una cota realista de la banda ocupada 
 ::: {.callout-tip}
 ## Explora el aliasing
 
-La simulación [Muestreo y aliasing](../simulaciones/muestreo-aliasing.qmd) permite comparar una senoide continua con sus muestras y con la frecuencia alias equivalente cuando no se cumple Nyquist.
+La simulación [Muestreo y aliasing](../simulaciones/muestreo-aliasing.qmd) permite comparar una sinusoide continua con sus muestras y con la frecuencia alias equivalente cuando no se cumple Nyquist.
 :::

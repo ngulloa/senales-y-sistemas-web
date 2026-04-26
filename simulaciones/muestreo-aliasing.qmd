@@ -3,7 +3,7 @@ title: "Simulación: muestreo y aliasing"
 page-layout: full
 ---
 
-Considera una senoide continua
+Considera una sinusoide continua
 
 $$
 x(t)=\sin(2\pi f t+\phi)

@@ -51,13 +51,13 @@ a_0=\frac{2}{T_0}\int_{t_0}^{t_0+T_0}x(t)\,dt,
 $$
 
 $$
-a_n=\frac{2}{T_0}\int_{t_0}^{t_0+T_0}x(t)\cos(2\pi n u_0 t)\,dt,
-\qquad n\geq 1,
+a_n=\frac{2}{T_0}\int_{t_0}^{t_0+T_0}
+x(t)\cos(2\pi n u_0t)\,dt,\qquad n\geq 1,
 $$
 
 $$
-b_n=\frac{2}{T_0}\int_{t_0}^{t_0+T_0}x(t)\sin(2\pi n u_0 t)\,dt,
-\qquad n\geq 1.
+b_n=\frac{2}{T_0}\int_{t_0}^{t_0+T_0}
+x(t)\sin(2\pi n u_0t)\,dt,\qquad n\geq 1.
 $$
 
 Aquí:
@@ -69,11 +69,64 @@ Aquí:
 - Si la señal es par, típicamente desaparecen los términos seno, es decir, $b_n=0$.
 - Si la señal es impar, típicamente desaparecen los términos coseno y el valor medio, de modo que $a_n=0$ y $a_0=0$.
 
-## Interpretación como descomposición en armónicos
+## Interpretación Espectral
 
-Cada término de la serie corresponde a un modo de oscilación compatible con el período $T_0$. El armónico $n=1$ reproduce la frecuencia fundamental; los armónicos $n=2,3,\dots$ agregan detalle fino a la forma de onda.
+La Serie de Fourier también puede leerse en el dominio de la frecuencia: una señal periódica no genera un espectro continuo, sino un conjunto discreto de componentes espectrales ubicadas en $u=ku_0$, con $k\in\mathbb{Z}$. Cada coeficiente $c_k$, o de forma equivalente cada par $(a_n,b_n)$, indica cuánto pesa una línea espectral y cómo contribuye a la reconstrucción temporal.
 
-Para señales suaves, los coeficientes tienden a decrecer rápido. Para señales con discontinuidades, el decrecimiento es más lento y se necesitan más armónicos para aproximar bien los saltos.
+Cuando truncamos la serie y conservamos solo una cantidad finita de términos, estamos reteniendo un número finito de líneas del espectro. Los armónicos bajos capturan la estructura gruesa de la señal; los armónicos altos agregan bordes, esquinas y cambios rápidos.
+
+::: {#fourier-spectrum-widget .simulation-shell .simulation-shell--embedded}
+::: {.sim-card .sim-card--controls}
+## Explorador espectral
+
+<div class="control-grid">
+<div class="control-field">
+<label for="fs-spectrum-waveform">Señal periódica</label>
+<select id="fs-spectrum-waveform">
+  <option value="square">Cuadrada impar</option>
+  <option value="sawtooth">Diente de sierra impar</option>
+  <option value="triangle">Triangular par</option>
+</select>
+</div>
+<div class="control-field">
+<label for="fs-spectrum-order">Cantidad de términos <em>N</em></label>
+<div class="control-inline">
+<input id="fs-spectrum-order" type="range" min="0" max="20" step="1" value="0">
+<output id="fs-spectrum-order-value" class="control-readout">0</output>
+</div>
+</div>
+</div>
+:::
+
+::: {.sim-card .sim-card--plot}
+## Señal ideal y suma parcial
+
+<div id="fs-spectrum-plot" class="plot-panel plot-panel--embedded"></div>
+:::
+
+::: {.sim-card .sim-card--diagnostics}
+## Lectura rápida
+
+<div class="formula-panel" id="fs-spectrum-formula"></div>
+<div class="metric-grid">
+<div class="metric-card">
+<span class="metric-label">Armónicos retenidos</span>
+<strong id="fs-spectrum-harmonics"></strong>
+</div>
+<div class="metric-card">
+<span class="metric-label">Valor medio</span>
+<strong id="fs-spectrum-mean"></strong>
+</div>
+<div class="metric-card">
+<span class="metric-label">Período usado</span>
+<strong id="fs-spectrum-period"></strong>
+</div>
+</div>
+<p class="sim-explainer" id="fs-spectrum-summary"></p>
+:::
+:::
+
+Al aumentar $N$ se agregan más armónicos y la señal reconstruida se acerca mejor a la ideal. Las ondas con saltos o esquinas necesitan más componentes espectrales que las formas suaves para lograr una aproximación comparable. En la triangular mostrada aquí se usa una convención par, de media cero, con máximo en $t=0$. Cerca de discontinuidades puede aparecer una sobreoscilación del tipo Gibbs, incluso cuando la forma global ya está muy bien capturada; si quieres explorar esta idea con más detalle para una onda cuadrada, puedes abrir la simulación [Reconstrucción por Serie de Fourier](../simulaciones/serie-fourier.qmd).
 
 ## Frecuencia fundamental
 
@@ -88,8 +141,6 @@ Si se usa frecuencia angular, entonces
 $$
 \omega_0=2\pi u_0.
 $$
-
-En este sitio preferimos escribir la serie usando $u_0$, de modo consistente con la convención de Fourier en $u$.
 
 ## Condiciones de Dirichlet
 
@@ -124,7 +175,15 @@ Reconocer estas estructuras antes de integrar simplifica mucho el cálculo manua
 
 ## Energía, potencia, Bessel y Parseval
 
-Para señales periódicas la energía total suele ser infinita, pero la potencia media sí es finita:
+En Señales y Sistemas, la energía puede entenderse como una medida matemática basada en la norma cuadrática de la señal. Resume la magnitud global acumulada de $x(t)$ y sirve para cuantificar su tamaño total en un intervalo, sin necesidad de interpretarla siempre en un sentido físico.
+
+Sobre un período completo definimos la energía acumulada como
+
+$$
+E_{T_0}=\int_{t_0}^{t_0+T_0}|x(t)|^2\,dt.
+$$
+
+Para señales periódicas resulta más natural trabajar con la potencia promedio asociada a esa energía por período:
 
 $$
 P=\frac{1}{T_0}\int_{t_0}^{t_0+T_0}|x(t)|^2\,dt.
@@ -150,12 +209,5 @@ $$
 
 Estas igualdades conectan el dominio del tiempo con el reparto de potencia entre armónicos.
 
-## Observación práctica
-
-Si una señal tiene esquinas o saltos, la reconstrucción parcial cerca de esas zonas es lenta. Eso no es un error numérico: refleja la estructura espectral real de la señal.
-
-::: {.callout-tip}
-## Explora la reconstrucción
-
-La simulación [Reconstrucción por Serie de Fourier](../simulaciones/serie-fourier.qmd) muestra cómo una onda cuadrada se aproxima sumando armónicos impares y permite observar el fenómeno de Gibbs.
-:::
+<script src="https://cdn.plot.ly/plotly-2.32.0.min.js"></script>
+<script type="module" src="../assets/js/simulations/fourier-spectrum-widget.js"></script>

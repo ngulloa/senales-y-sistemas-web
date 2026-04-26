@@ -58,7 +58,7 @@ function updateSimulation(elements) {
     });
   } else {
     setStatusBanner(elements.alert, {
-      text: `Hay aliasing: la secuencia muestreada es indistinguible de una senoide con frecuencia ${formatNumber(alias, 3)} ciclos/u.t. y frecuencia firmada ${formatNumber(signedAlias, 3)}.`,
+      text: `Hay aliasing: la secuencia muestreada es indistinguible de una sinusoide con frecuencia ${formatNumber(alias, 3)} ciclos/u.t. y frecuencia firmada ${formatNumber(signedAlias, 3)}.`,
       tone: "warning",
     });
   }

@@ -63,7 +63,7 @@ El archivo `docs/.nojekyll` se incluye para evitar conflictos con el procesamien
 │   ├── modulacion-muestreo.qmd
 │   └── dtft-dft-fft-dct.qmd
 ├── simulaciones/
-│   ├── senoide.qmd
+│   ├── sinusoide.qmd
 │   ├── serie-fourier.qmd
 │   ├── muestreo-aliasing.qmd
 │   └── proximamente.qmd
@@ -114,7 +114,6 @@ con frecuencia \(u\) en ciclos por unidad de tiempo. Si se introduce frecuencia 
 - Sitio estático compatible con GitHub Pages.
 - Navegación superior, búsqueda, tabla de contenidos y numeración de secciones vía Quarto.
 - Tres simulaciones iniciales en navegador:
-  - senoide ajustable;
+  - sinusoide ajustable;
   - reconstrucción por Serie de Fourier;
   - muestreo y aliasing.
-

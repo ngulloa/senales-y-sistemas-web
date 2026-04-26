@@ -171,8 +171,8 @@ window.Quarto = {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-simulaciones">    
         <li>
-    <a class="dropdown-item" href="../simulaciones/senoide.html">
- <span class="dropdown-text">Senoide</span></a>
+    <a class="dropdown-item" href="../simulaciones/sinusoide.html">
+ <span class="dropdown-text">Sinusoide</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../simulaciones/serie-fourier.html">
@@ -207,12 +207,11 @@ window.Quarto = {
   <li><a href="#idea-central" id="toc-idea-central" class="nav-link active" data-scroll-target="#idea-central"><span class="header-section-number">1</span> Idea central</a></li>
   <li><a href="#forma-compleja" id="toc-forma-compleja" class="nav-link" data-scroll-target="#forma-compleja"><span class="header-section-number">2</span> Forma compleja</a></li>
   <li><a href="#forma-trigonométrica" id="toc-forma-trigonométrica" class="nav-link" data-scroll-target="#forma-trigonométrica"><span class="header-section-number">3</span> Forma trigonométrica</a></li>
-  <li><a href="#interpretación-como-descomposición-en-armónicos" id="toc-interpretación-como-descomposición-en-armónicos" class="nav-link" data-scroll-target="#interpretación-como-descomposición-en-armónicos"><span class="header-section-number">4</span> Interpretación como descomposición en armónicos</a></li>
-  <li><a href="#frecuencia-fundamental" id="toc-frecuencia-fundamental" class="nav-link" data-scroll-target="#frecuencia-fundamental"><span class="header-section-number">5</span> Frecuencia fundamental</a></li>
-  <li><a href="#condiciones-de-dirichlet" id="toc-condiciones-de-dirichlet" class="nav-link" data-scroll-target="#condiciones-de-dirichlet"><span class="header-section-number">6</span> Condiciones de Dirichlet</a></li>
-  <li><a href="#simetrías-útiles" id="toc-simetrías-útiles" class="nav-link" data-scroll-target="#simetrías-útiles"><span class="header-section-number">7</span> Simetrías útiles</a></li>
-  <li><a href="#energía-potencia-bessel-y-parseval" id="toc-energía-potencia-bessel-y-parseval" class="nav-link" data-scroll-target="#energía-potencia-bessel-y-parseval"><span class="header-section-number">8</span> Energía, potencia, Bessel y Parseval</a></li>
-  <li><a href="#observación-práctica" id="toc-observación-práctica" class="nav-link" data-scroll-target="#observación-práctica"><span class="header-section-number">9</span> Observación práctica</a></li>
+  <li><a href="#interpretación-espectral" id="toc-interpretación-espectral" class="nav-link" data-scroll-target="#interpretación-espectral"><span class="header-section-number">4</span> Interpretación Espectral</a></li>
+  <li><a href="#frecuencia-fundamental" id="toc-frecuencia-fundamental" class="nav-link" data-scroll-target="#frecuencia-fundamental"><span class="header-section-number">8</span> Frecuencia fundamental</a></li>
+  <li><a href="#condiciones-de-dirichlet" id="toc-condiciones-de-dirichlet" class="nav-link" data-scroll-target="#condiciones-de-dirichlet"><span class="header-section-number">9</span> Condiciones de Dirichlet</a></li>
+  <li><a href="#simetrías-útiles" id="toc-simetrías-útiles" class="nav-link" data-scroll-target="#simetrías-útiles"><span class="header-section-number">10</span> Simetrías útiles</a></li>
+  <li><a href="#energía-potencia-bessel-y-parseval" id="toc-energía-potencia-bessel-y-parseval" class="nav-link" data-scroll-target="#energía-potencia-bessel-y-parseval"><span class="header-section-number">11</span> Energía, potencia, Bessel y Parseval</a></li>
   </ul>
 </nav>
     </div>
@@ -283,12 +282,12 @@ x(t)=\frac{a_0}{2}+\sum_{n=1}^{\infty}\left[a_n\cos(2\pi n u_0 t)+b_n\sin(2\pi n
 a_0=\frac{2}{T_0}\int_{t_0}^{t_0+T_0}x(t)\,dt,
 \]</span></p>
 <p><span class="math display">\[
-a_n=\frac{2}{T_0}\int_{t_0}^{t_0+T_0}x(t)\cos(2\pi n u_0 t)\,dt,
-\qquad n\geq 1,
+a_n=\frac{2}{T_0}\int_{t_0}^{t_0+T_0}
+x(t)\cos(2\pi n u_0t)\,dt,\qquad n\geq 1,
 \]</span></p>
 <p><span class="math display">\[
-b_n=\frac{2}{T_0}\int_{t_0}^{t_0+T_0}x(t)\sin(2\pi n u_0 t)\,dt,
-\qquad n\geq 1.
+b_n=\frac{2}{T_0}\int_{t_0}^{t_0+T_0}
+x(t)\sin(2\pi n u_0t)\,dt,\qquad n\geq 1.
 \]</span></p>
 <p>Aquí:</p>
 <ul>
@@ -300,13 +299,58 @@ b_n=\frac{2}{T_0}\int_{t_0}^{t_0+T_0}x(t)\sin(2\pi n u_0 t)\,dt,
 <li>Si la señal es impar, típicamente desaparecen los términos coseno y el valor medio, de modo que <span class="math inline">\(a_n=0\)</span> y <span class="math inline">\(a_0=0\)</span>.</li>
 </ul>
 </section>
-<section id="interpretación-como-descomposición-en-armónicos" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="interpretación-como-descomposición-en-armónicos"><span class="header-section-number">4</span> Interpretación como descomposición en armónicos</h2>
-<p>Cada término de la serie corresponde a un modo de oscilación compatible con el período <span class="math inline">\(T_0\)</span>. El armónico <span class="math inline">\(n=1\)</span> reproduce la frecuencia fundamental; los armónicos <span class="math inline">\(n=2,3,\dots\)</span> agregan detalle fino a la forma de onda.</p>
-<p>Para señales suaves, los coeficientes tienden a decrecer rápido. Para señales con discontinuidades, el decrecimiento es más lento y se necesitan más armónicos para aproximar bien los saltos.</p>
+<section id="interpretación-espectral" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="interpretación-espectral"><span class="header-section-number">4</span> Interpretación Espectral</h2>
+<p>La Serie de Fourier también puede leerse en el dominio de la frecuencia: una señal periódica no genera un espectro continuo, sino un conjunto discreto de componentes espectrales ubicadas en <span class="math inline">\(u=ku_0\)</span>, con <span class="math inline">\(k\in\mathbb{Z}\)</span>. Cada coeficiente <span class="math inline">\(c_k\)</span>, o de forma equivalente cada par <span class="math inline">\((a_n,b_n)\)</span>, indica cuánto pesa una línea espectral y cómo contribuye a la reconstrucción temporal.</p>
+<p>Cuando truncamos la serie y conservamos solo una cantidad finita de términos, estamos reteniendo un número finito de líneas del espectro. Los armónicos bajos capturan la estructura gruesa de la señal; los armónicos altos agregan bordes, esquinas y cambios rápidos.</p>
 </section>
-<section id="frecuencia-fundamental" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="frecuencia-fundamental"><span class="header-section-number">5</span> Frecuencia fundamental</h2>
+<div id="fourier-spectrum-widget" class="simulation-shell simulation-shell--embedded">
+<section id="explorador-espectral" class="level2 sim-card sim-card--controls" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="explorador-espectral"><span class="header-section-number">5</span> Explorador espectral</h2>
+<div class="control-grid">
+<div class="control-field">
+<p><label for="fs-spectrum-waveform">Señal periódica</label> <select id="fs-spectrum-waveform"> <option value="square">Cuadrada impar</option> <option value="sawtooth">Diente de sierra impar</option> <option value="triangle">Triangular par</option> </select></p>
+</div>
+<div class="control-field">
+<label for="fs-spectrum-order">Cantidad de términos <em>N</em></label>
+<div class="control-inline">
+<input id="fs-spectrum-order" type="range" min="0" max="20" step="1" value="0">
+<output id="fs-spectrum-order-value" class="control-readout">
+0
+</output>
+</div>
+</div>
+</div>
+</section>
+<section id="señal-ideal-y-suma-parcial" class="level2 sim-card sim-card--plot" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="señal-ideal-y-suma-parcial"><span class="header-section-number">6</span> Señal ideal y suma parcial</h2>
+<div id="fs-spectrum-plot" class="plot-panel plot-panel--embedded">
+
+</div>
+</section>
+<section id="lectura-rápida" class="level2 sim-card sim-card--diagnostics" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="lectura-rápida"><span class="header-section-number">7</span> Lectura rápida</h2>
+<div id="fs-spectrum-formula" class="formula-panel">
+
+</div>
+<div class="metric-grid">
+<div class="metric-card">
+<p><span class="metric-label">Armónicos retenidos</span> <strong id="fs-spectrum-harmonics"></strong></p>
+</div>
+<div class="metric-card">
+<p><span class="metric-label">Valor medio</span> <strong id="fs-spectrum-mean"></strong></p>
+</div>
+<div class="metric-card">
+<p><span class="metric-label">Período usado</span> <strong id="fs-spectrum-period"></strong></p>
+</div>
+</div>
+<p class="sim-explainer" id="fs-spectrum-summary">
+</p>
+</section>
+</div>
+<p>Al aumentar <span class="math inline">\(N\)</span> se agregan más armónicos y la señal reconstruida se acerca mejor a la ideal. Las ondas con saltos o esquinas necesitan más componentes espectrales que las formas suaves para lograr una aproximación comparable. En la triangular mostrada aquí se usa una convención par, de media cero, con máximo en <span class="math inline">\(t=0\)</span>. Cerca de discontinuidades puede aparecer una sobreoscilación del tipo Gibbs, incluso cuando la forma global ya está muy bien capturada; si quieres explorar esta idea con más detalle para una onda cuadrada, puedes abrir la simulación <a href="../simulaciones/serie-fourier.html">Reconstrucción por Serie de Fourier</a>.</p>
+<section id="frecuencia-fundamental" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="frecuencia-fundamental"><span class="header-section-number">8</span> Frecuencia fundamental</h2>
 <p>La frecuencia fundamental es</p>
 <p><span class="math display">\[
 u_0=\frac{1}{T_0}.
@@ -315,10 +359,9 @@ u_0=\frac{1}{T_0}.
 <p><span class="math display">\[
 \omega_0=2\pi u_0.
 \]</span></p>
-<p>En este sitio preferimos escribir la serie usando <span class="math inline">\(u_0\)</span>, de modo consistente con la convención de Fourier en <span class="math inline">\(u\)</span>.</p>
 </section>
-<section id="condiciones-de-dirichlet" class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="condiciones-de-dirichlet"><span class="header-section-number">6</span> Condiciones de Dirichlet</h2>
+<section id="condiciones-de-dirichlet" class="level2" data-number="9">
+<h2 data-number="9" class="anchored" data-anchor-id="condiciones-de-dirichlet"><span class="header-section-number">9</span> Condiciones de Dirichlet</h2>
 <p>Las condiciones de Dirichlet son suficientes para garantizar convergencia puntual de la serie en muchos problemas clásicos:</p>
 <ul>
 <li><span class="math inline">\(x(t)\)</span> es absolutamente integrable en un período.</li>
@@ -343,8 +386,8 @@ u_0=\frac{1}{T_0}.
 </div>
 </div>
 </section>
-<section id="simetrías-útiles" class="level2" data-number="7">
-<h2 data-number="7" class="anchored" data-anchor-id="simetrías-útiles"><span class="header-section-number">7</span> Simetrías útiles</h2>
+<section id="simetrías-útiles" class="level2" data-number="10">
+<h2 data-number="10" class="anchored" data-anchor-id="simetrías-útiles"><span class="header-section-number">10</span> Simetrías útiles</h2>
 <p>Las simetrías reducen el trabajo de cálculo:</p>
 <ul>
 <li>Si <span class="math inline">\(x(t)\)</span> es real, entonces <span class="math inline">\(c_{-k}=\overline{c_k}\)</span>.</li>
@@ -354,9 +397,14 @@ u_0=\frac{1}{T_0}.
 </ul>
 <p>Reconocer estas estructuras antes de integrar simplifica mucho el cálculo manual.</p>
 </section>
-<section id="energía-potencia-bessel-y-parseval" class="level2" data-number="8">
-<h2 data-number="8" class="anchored" data-anchor-id="energía-potencia-bessel-y-parseval"><span class="header-section-number">8</span> Energía, potencia, Bessel y Parseval</h2>
-<p>Para señales periódicas la energía total suele ser infinita, pero la potencia media sí es finita:</p>
+<section id="energía-potencia-bessel-y-parseval" class="level2" data-number="11">
+<h2 data-number="11" class="anchored" data-anchor-id="energía-potencia-bessel-y-parseval"><span class="header-section-number">11</span> Energía, potencia, Bessel y Parseval</h2>
+<p>En Señales y Sistemas, la energía puede entenderse como una medida matemática basada en la norma cuadrática de la señal. Resume la magnitud global acumulada de <span class="math inline">\(x(t)\)</span> y sirve para cuantificar su tamaño total en un intervalo, sin necesidad de interpretarla siempre en un sentido físico.</p>
+<p>Sobre un período completo definimos la energía acumulada como</p>
+<p><span class="math display">\[
+E_{T_0}=\int_{t_0}^{t_0+T_0}|x(t)|^2\,dt.
+\]</span></p>
+<p>Para señales periódicas resulta más natural trabajar con la potencia promedio asociada a esa energía por período:</p>
 <p><span class="math display">\[
 P=\frac{1}{T_0}\int_{t_0}^{t_0+T_0}|x(t)|^2\,dt.
 \]</span></p>
@@ -373,23 +421,8 @@ P=\sum_{k=-\infty}^{\infty}|c_k|^2.
 P=\frac{a_0^2}{4}+\frac{1}{2}\sum_{n=1}^{\infty}(a_n^2+b_n^2).
 \]</span></p>
 <p>Estas igualdades conectan el dominio del tiempo con el reparto de potencia entre armónicos.</p>
-</section>
-<section id="observación-práctica" class="level2" data-number="9">
-<h2 data-number="9" class="anchored" data-anchor-id="observación-práctica"><span class="header-section-number">9</span> Observación práctica</h2>
-<p>Si una señal tiene esquinas o saltos, la reconstrucción parcial cerca de esas zonas es lenta. Eso no es un error numérico: refleja la estructura espectral real de la señal.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Explora la reconstrucción
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>La simulación <a href="../simulaciones/serie-fourier.html">Reconstrucción por Serie de Fourier</a> muestra cómo una onda cuadrada se aproxima sumando armónicos impares y permite observar el fenómeno de Gibbs.</p>
-</div>
-</div>
+<script src="https://cdn.plot.ly/plotly-2.32.0.min.js"></script>
+<script type="module" src="../assets/js/simulations/fourier-spectrum-widget.js"></script>
 
 
 </section>

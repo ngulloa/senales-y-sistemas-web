@@ -60,7 +60,7 @@ function updateSimulation(elements) {
   ];
 
   renderPlot(elements.plot, traces, {
-    title: "Senoide continua",
+    title: "Sinusoide continua",
     xaxis: {
       title: { text: "Tiempo t" },
       gridcolor: THEME.grid,

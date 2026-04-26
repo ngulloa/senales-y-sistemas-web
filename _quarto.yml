@@ -35,8 +35,8 @@ website:
             text: DTFT, DFT, FFT y DCT
       - text: Simulaciones
         menu:
-          - href: simulaciones/senoide.qmd
-            text: Senoide
+          - href: simulaciones/sinusoide.qmd
+            text: Sinusoide
           - href: simulaciones/serie-fourier.qmd
             text: Serie de Fourier
           - href: simulaciones/muestreo-aliasing.qmd

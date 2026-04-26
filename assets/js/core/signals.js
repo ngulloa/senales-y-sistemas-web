@@ -45,3 +45,29 @@ export function buildSquareWave(grid, parameters) {
   return sampleOnGrid(grid, (time) => squareWaveValue(time, parameters));
 }
 
+function centeredCycles(t, period) {
+  const safePeriod = Math.max(Math.abs(toFiniteNumber(period, 2)), EPSILON);
+  return (t / safePeriod) - Math.floor((t / safePeriod) + 0.5);
+}
+
+export function sawtoothValue(
+  t,
+  { period = 2, amplitude = 1 } = {},
+) {
+  return 2 * amplitude * centeredCycles(t, period);
+}
+
+export function buildSawtoothWave(grid, parameters) {
+  return sampleOnGrid(grid, (time) => sawtoothValue(time, parameters));
+}
+
+export function triangleWaveValue(
+  t,
+  { period = 2, amplitude = 1 } = {},
+) {
+  return amplitude * (1 - (4 * Math.abs(centeredCycles(t, period))));
+}
+
+export function buildTriangleWave(grid, parameters) {
+  return sampleOnGrid(grid, (time) => triangleWaveValue(time, parameters));
+}

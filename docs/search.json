@@ -1,31 +1,31 @@
 [
   {
-    "objectID": "simulaciones/serie-fourier.html",
-    "href": "simulaciones/serie-fourier.html",
-    "title": "Simulación: reconstrucción por Serie de Fourier",
+    "objectID": "simulaciones/sinusoide.html",
+    "href": "simulaciones/sinusoide.html",
+    "title": "Simulación: sinusoide",
     "section": "",
-    "text": "Esta simulación usa la aproximación parcial de una onda cuadrada normalizada:\n\\[\nx_N(t)=\\frac{4}{\\pi}\\sum_{m=0}^{N-1}\\frac{1}{2m+1}\\sin\\!\\bigl(2\\pi(2m+1)u_0 t\\bigr),\n\\qquad\nu_0=\\frac{1}{T_0}.\n\\]"
+    "text": "Explora la señal\n\\[\nx(t)=A\\sin\\!\\bigl(2\\pi f (t-t_0)+\\phi\\bigr)+b\n\\]\nmodificando amplitud, frecuencia, fase, desplazamiento vertical y desplazamiento temporal."
   },
   {
-    "objectID": "simulaciones/serie-fourier.html#controles",
-    "href": "simulaciones/serie-fourier.html#controles",
-    "title": "Simulación: reconstrucción por Serie de Fourier",
+    "objectID": "simulaciones/sinusoide.html#controles",
+    "href": "simulaciones/sinusoide.html#controles",
+    "title": "Simulación: sinusoide",
     "section": "1 Controles",
-    "text": "1 Controles\n\n\nArmónicos impares\n\n \n\n\n\nPeríodo T0"
+    "text": "1 Controles\n\n\nAmplitud A\n\n \n\n\n\nFrecuencia f\n\n \n\n\n\nFase φ [rad]\n\n \n\n\n\nSesgo vertical b\n\n \n\n\n\nDesplazamiento temporal t0"
   },
   {
-    "objectID": "simulaciones/serie-fourier.html#reconstrucción-parcial",
-    "href": "simulaciones/serie-fourier.html#reconstrucción-parcial",
-    "title": "Simulación: reconstrucción por Serie de Fourier",
-    "section": "2 Reconstrucción parcial",
-    "text": "2 Reconstrucción parcial"
+    "objectID": "simulaciones/sinusoide.html#gráfico",
+    "href": "simulaciones/sinusoide.html#gráfico",
+    "title": "Simulación: sinusoide",
+    "section": "2 Gráfico",
+    "text": "2 Gráfico"
   },
   {
-    "objectID": "simulaciones/serie-fourier.html#lectura-rápida",
-    "href": "simulaciones/serie-fourier.html#lectura-rápida",
-    "title": "Simulación: reconstrucción por Serie de Fourier",
-    "section": "3 Lectura rápida",
-    "text": "3 Lectura rápida\n\n\n\n\n\nFrecuencia fundamental \n\n\nPeríodo \n\n\nSobrepico de Gibbs"
+    "objectID": "simulaciones/sinusoide.html#fórmula-actual",
+    "href": "simulaciones/sinusoide.html#fórmula-actual",
+    "title": "Simulación: sinusoide",
+    "section": "3 Fórmula actual",
+    "text": "3 Fórmula actual\n\n\n\n\n\nPeríodo \n\n\nFrecuencia angular"
   },
   {
     "objectID": "simulaciones/proximamente.html",
@@ -116,7 +116,7 @@
     "href": "temas/serie-fourier.html",
     "title": "Serie de Fourier",
     "section": "",
-    "text": "La Serie de Fourier permite representar una señal periódica \\(x(t)\\) de período \\(T_0\\) como combinación lineal de exponenciales complejas o, de forma equivalente, de senos y cosenos con frecuencias múltiplos de la frecuencia fundamental.\nSi definimos\n\\[\nu_0=\\frac{1}{T_0},\n\\]\nentonces las frecuencias necesarias para reconstruir la señal serán \\(k u_0\\) con \\(k\\in\\mathbb{Z}\\). Las frecuencias de este tipo, que corresponden a múltiplos enteros de la frecuencia natural \\(u_0\\), se denominan armónicos.\n\n\n\n\n\n\nImportanteIdea clave\n\n\n\nLa Serie de Fourier es una forma de representar matemáticamente una señal periódica utilizando la exponencial compleja \\(e^{i2\\pi k u_0 t}\\) como base del espacio vectorial de funciones complejas."
+    "text": "La Serie de Fourier permite representar una señal periódica \\(x(t)\\) de período \\(T_0\\) como combinación lineal de exponenciales complejas o, de forma equivalente, de senos y cosenos con frecuencias múltiplos de la frecuencia fundamental.\nSi definimos\n\\[\nu_0=\\frac{1}{T_0},\n\\]\nentonces las frecuencias necesarias para reconstruir la señal serán \\(k u_0\\) con \\(k\\in\\mathbb{Z}\\). Las frecuencias de este tipo, que corresponden a múltiplos enteros de la frecuencia natural \\(u_0\\), se denominan armónicos.\n\n\n\n\n\n\nImportanteIdea clave\n\n\n\nLa Serie de Fourier es una forma de representar matemáticamente una señal periódica utilizando la exponencial compleja \\(e^{i2\\pi k u_0 t}\\) como base del espacio vectorial de funciones complejas.\nAl aumentar \\(N\\) se agregan más armónicos y la señal reconstruida se acerca mejor a la ideal. Las ondas con saltos o esquinas necesitan más componentes espectrales que las formas suaves para lograr una aproximación comparable. En la triangular mostrada aquí se usa una convención par, de media cero, con máximo en \\(t=0\\). Cerca de discontinuidades puede aparecer una sobreoscilación del tipo Gibbs, incluso cuando la forma global ya está muy bien capturada; si quieres explorar esta idea con más detalle para una onda cuadrada, puedes abrir la simulación Reconstrucción por Serie de Fourier."
   },
   {
     "objectID": "temas/serie-fourier.html#idea-central",
@@ -137,49 +137,63 @@
     "href": "temas/serie-fourier.html#forma-trigonométrica",
     "title": "Serie de Fourier",
     "section": "3 Forma trigonométrica",
-    "text": "3 Forma trigonométrica\nUna forma equivalente es\n\\[\nx(t)=\\frac{a_0}{2}+\\sum_{n=1}^{\\infty}\\left[a_n\\cos(2\\pi n u_0 t)+b_n\\sin(2\\pi n u_0 t)\\right].\n\\]\nLos coeficientes trigonométricos se obtienen integrando sobre cualquier período completo:\n\\[\na_0=\\frac{2}{T_0}\\int_{t_0}^{t_0+T_0}x(t)\\,dt,\n\\]\n\\[\na_n=\\frac{2}{T_0}\\int_{t_0}^{t_0+T_0}x(t)\\cos(2\\pi n u_0 t)\\,dt,\n\\qquad n\\geq 1,\n\\]\n\\[\nb_n=\\frac{2}{T_0}\\int_{t_0}^{t_0+T_0}x(t)\\sin(2\\pi n u_0 t)\\,dt,\n\\qquad n\\geq 1.\n\\]\nAquí:\n\n\\(a_0/2\\) es el valor medio sobre un período.\n\\(a_n\\) mide la contribución del coseno del armónico \\(n\\).\n\\(b_n\\) mide la contribución del seno del armónico \\(n\\).\nEl intervalo de integración puede elegirse como cualquier período completo.\nSi la señal es par, típicamente desaparecen los términos seno, es decir, \\(b_n=0\\).\nSi la señal es impar, típicamente desaparecen los términos coseno y el valor medio, de modo que \\(a_n=0\\) y \\(a_0=0\\)."
+    "text": "3 Forma trigonométrica\nUna forma equivalente es\n\\[\nx(t)=\\frac{a_0}{2}+\\sum_{n=1}^{\\infty}\\left[a_n\\cos(2\\pi n u_0 t)+b_n\\sin(2\\pi n u_0 t)\\right].\n\\]\nLos coeficientes trigonométricos se obtienen integrando sobre cualquier período completo:\n\\[\na_0=\\frac{2}{T_0}\\int_{t_0}^{t_0+T_0}x(t)\\,dt,\n\\]\n\\[\na_n=\\frac{2}{T_0}\\int_{t_0}^{t_0+T_0}\nx(t)\\cos(2\\pi n u_0t)\\,dt,\\qquad n\\geq 1,\n\\]\n\\[\nb_n=\\frac{2}{T_0}\\int_{t_0}^{t_0+T_0}\nx(t)\\sin(2\\pi n u_0t)\\,dt,\\qquad n\\geq 1.\n\\]\nAquí:\n\n\\(a_0/2\\) es el valor medio sobre un período.\n\\(a_n\\) mide la contribución del coseno del armónico \\(n\\).\n\\(b_n\\) mide la contribución del seno del armónico \\(n\\).\nEl intervalo de integración puede elegirse como cualquier período completo.\nSi la señal es par, típicamente desaparecen los términos seno, es decir, \\(b_n=0\\).\nSi la señal es impar, típicamente desaparecen los términos coseno y el valor medio, de modo que \\(a_n=0\\) y \\(a_0=0\\)."
   },
   {
-    "objectID": "temas/serie-fourier.html#interpretación-como-descomposición-en-armónicos",
-    "href": "temas/serie-fourier.html#interpretación-como-descomposición-en-armónicos",
+    "objectID": "temas/serie-fourier.html#interpretación-espectral",
+    "href": "temas/serie-fourier.html#interpretación-espectral",
     "title": "Serie de Fourier",
-    "section": "4 Interpretación como descomposición en armónicos",
-    "text": "4 Interpretación como descomposición en armónicos\nCada término de la serie corresponde a un modo de oscilación compatible con el período \\(T_0\\). El armónico \\(n=1\\) reproduce la frecuencia fundamental; los armónicos \\(n=2,3,\\dots\\) agregan detalle fino a la forma de onda.\nPara señales suaves, los coeficientes tienden a decrecer rápido. Para señales con discontinuidades, el decrecimiento es más lento y se necesitan más armónicos para aproximar bien los saltos."
+    "section": "4 Interpretación Espectral",
+    "text": "4 Interpretación Espectral\nLa Serie de Fourier también puede leerse en el dominio de la frecuencia: una señal periódica no genera un espectro continuo, sino un conjunto discreto de componentes espectrales ubicadas en \\(u=ku_0\\), con \\(k\\in\\mathbb{Z}\\). Cada coeficiente \\(c_k\\), o de forma equivalente cada par \\((a_n,b_n)\\), indica cuánto pesa una línea espectral y cómo contribuye a la reconstrucción temporal.\nCuando truncamos la serie y conservamos solo una cantidad finita de términos, estamos reteniendo un número finito de líneas del espectro. Los armónicos bajos capturan la estructura gruesa de la señal; los armónicos altos agregan bordes, esquinas y cambios rápidos."
+  },
+  {
+    "objectID": "temas/serie-fourier.html#explorador-espectral",
+    "href": "temas/serie-fourier.html#explorador-espectral",
+    "title": "Serie de Fourier",
+    "section": "5 Explorador espectral",
+    "text": "5 Explorador espectral\n\n\nSeñal periódica  Cuadrada impar Diente de sierra impar Triangular par \n\n\nCantidad de términos N\n\n\n\n0"
+  },
+  {
+    "objectID": "temas/serie-fourier.html#señal-ideal-y-suma-parcial",
+    "href": "temas/serie-fourier.html#señal-ideal-y-suma-parcial",
+    "title": "Serie de Fourier",
+    "section": "6 Señal ideal y suma parcial",
+    "text": "6 Señal ideal y suma parcial"
+  },
+  {
+    "objectID": "temas/serie-fourier.html#lectura-rápida",
+    "href": "temas/serie-fourier.html#lectura-rápida",
+    "title": "Serie de Fourier",
+    "section": "7 Lectura rápida",
+    "text": "7 Lectura rápida\n\n\n\n\n\nArmónicos retenidos \n\n\nValor medio \n\n\nPeríodo usado"
   },
   {
     "objectID": "temas/serie-fourier.html#frecuencia-fundamental",
     "href": "temas/serie-fourier.html#frecuencia-fundamental",
     "title": "Serie de Fourier",
-    "section": "5 Frecuencia fundamental",
-    "text": "5 Frecuencia fundamental\nLa frecuencia fundamental es\n\\[\nu_0=\\frac{1}{T_0}.\n\\]\nSi se usa frecuencia angular, entonces\n\\[\n\\omega_0=2\\pi u_0.\n\\]\nEn este sitio preferimos escribir la serie usando \\(u_0\\), de modo consistente con la convención de Fourier en \\(u\\)."
+    "section": "8 Frecuencia fundamental",
+    "text": "8 Frecuencia fundamental\nLa frecuencia fundamental es\n\\[\nu_0=\\frac{1}{T_0}.\n\\]\nSi se usa frecuencia angular, entonces\n\\[\n\\omega_0=2\\pi u_0.\n\\]"
   },
   {
     "objectID": "temas/serie-fourier.html#condiciones-de-dirichlet",
     "href": "temas/serie-fourier.html#condiciones-de-dirichlet",
     "title": "Serie de Fourier",
-    "section": "6 Condiciones de Dirichlet",
-    "text": "6 Condiciones de Dirichlet\nLas condiciones de Dirichlet son suficientes para garantizar convergencia puntual de la serie en muchos problemas clásicos:\n\n\\(x(t)\\) es absolutamente integrable en un período.\nTiene un número finito de máximos y mínimos en un período.\nTiene un número finito de discontinuidades de salto en un período.\n\nCuando hay una discontinuidad en \\(t=t_d\\), la serie converge al promedio lateral\n\\[\n\\frac{x(t_d^-)+x(t_d^+)}{2}.\n\\]\n\n\n\n\n\n\nNotaInterpretación\n\n\n\nLa convergencia en los puntos de salto no significa que la señal “pierda” el salto. Significa que la suma infinita de funciones continuas aproxima el salto desde ambos lados y toma el valor medio exactamente en el punto discontinuo."
+    "section": "9 Condiciones de Dirichlet",
+    "text": "9 Condiciones de Dirichlet\nLas condiciones de Dirichlet son suficientes para garantizar convergencia puntual de la serie en muchos problemas clásicos:\n\n\\(x(t)\\) es absolutamente integrable en un período.\nTiene un número finito de máximos y mínimos en un período.\nTiene un número finito de discontinuidades de salto en un período.\n\nCuando hay una discontinuidad en \\(t=t_d\\), la serie converge al promedio lateral\n\\[\n\\frac{x(t_d^-)+x(t_d^+)}{2}.\n\\]\n\n\n\n\n\n\nNotaInterpretación\n\n\n\nLa convergencia en los puntos de salto no significa que la señal “pierda” el salto. Significa que la suma infinita de funciones continuas aproxima el salto desde ambos lados y toma el valor medio exactamente en el punto discontinuo."
   },
   {
     "objectID": "temas/serie-fourier.html#simetrías-útiles",
     "href": "temas/serie-fourier.html#simetrías-útiles",
     "title": "Serie de Fourier",
-    "section": "7 Simetrías útiles",
-    "text": "7 Simetrías útiles\nLas simetrías reducen el trabajo de cálculo:\n\nSi \\(x(t)\\) es real, entonces \\(c_{-k}=\\overline{c_k}\\).\nSi \\(x(t)\\) es par, entonces \\(b_n=0\\).\nSi \\(x(t)\\) es impar, entonces \\(a_n=0\\) y \\(a_0=0\\).\nSi la señal tiene simetría de media onda, desaparecen ciertos armónicos, con frecuencia los pares.\n\nReconocer estas estructuras antes de integrar simplifica mucho el cálculo manual."
+    "section": "10 Simetrías útiles",
+    "text": "10 Simetrías útiles\nLas simetrías reducen el trabajo de cálculo:\n\nSi \\(x(t)\\) es real, entonces \\(c_{-k}=\\overline{c_k}\\).\nSi \\(x(t)\\) es par, entonces \\(b_n=0\\).\nSi \\(x(t)\\) es impar, entonces \\(a_n=0\\) y \\(a_0=0\\).\nSi la señal tiene simetría de media onda, desaparecen ciertos armónicos, con frecuencia los pares.\n\nReconocer estas estructuras antes de integrar simplifica mucho el cálculo manual."
   },
   {
     "objectID": "temas/serie-fourier.html#energía-potencia-bessel-y-parseval",
     "href": "temas/serie-fourier.html#energía-potencia-bessel-y-parseval",
     "title": "Serie de Fourier",
-    "section": "8 Energía, potencia, Bessel y Parseval",
-    "text": "8 Energía, potencia, Bessel y Parseval\nPara señales periódicas la energía total suele ser infinita, pero la potencia media sí es finita:\n\\[\nP=\\frac{1}{T_0}\\int_{t_0}^{t_0+T_0}|x(t)|^2\\,dt.\n\\]\nLa desigualdad de Bessel afirma que, para cualquier suma parcial,\n\\[\n\\sum_{k=-N}^{N}|c_k|^2 \\le P.\n\\]\nCuando la serie converge en media cuadrática, se obtiene la identidad de Parseval:\n\\[\nP=\\sum_{k=-\\infty}^{\\infty}|c_k|^2.\n\\]\nEn forma trigonométrica,\n\\[\nP=\\frac{a_0^2}{4}+\\frac{1}{2}\\sum_{n=1}^{\\infty}(a_n^2+b_n^2).\n\\]\nEstas igualdades conectan el dominio del tiempo con el reparto de potencia entre armónicos."
-  },
-  {
-    "objectID": "temas/serie-fourier.html#observación-práctica",
-    "href": "temas/serie-fourier.html#observación-práctica",
-    "title": "Serie de Fourier",
-    "section": "9 Observación práctica",
-    "text": "9 Observación práctica\nSi una señal tiene esquinas o saltos, la reconstrucción parcial cerca de esas zonas es lenta. Eso no es un error numérico: refleja la estructura espectral real de la señal.\n\n\n\n\n\n\nTipExplora la reconstrucción\n\n\n\nLa simulación Reconstrucción por Serie de Fourier muestra cómo una onda cuadrada se aproxima sumando armónicos impares y permite observar el fenómeno de Gibbs."
+    "section": "11 Energía, potencia, Bessel y Parseval",
+    "text": "11 Energía, potencia, Bessel y Parseval\nEn Señales y Sistemas, la energía puede entenderse como una medida matemática basada en la norma cuadrática de la señal. Resume la magnitud global acumulada de \\(x(t)\\) y sirve para cuantificar su tamaño total en un intervalo, sin necesidad de interpretarla siempre en un sentido físico.\nSobre un período completo definimos la energía acumulada como\n\\[\nE_{T_0}=\\int_{t_0}^{t_0+T_0}|x(t)|^2\\,dt.\n\\]\nPara señales periódicas resulta más natural trabajar con la potencia promedio asociada a esa energía por período:\n\\[\nP=\\frac{1}{T_0}\\int_{t_0}^{t_0+T_0}|x(t)|^2\\,dt.\n\\]\nLa desigualdad de Bessel afirma que, para cualquier suma parcial,\n\\[\n\\sum_{k=-N}^{N}|c_k|^2 \\le P.\n\\]\nCuando la serie converge en media cuadrática, se obtiene la identidad de Parseval:\n\\[\nP=\\sum_{k=-\\infty}^{\\infty}|c_k|^2.\n\\]\nEn forma trigonométrica,\n\\[\nP=\\frac{a_0^2}{4}+\\frac{1}{2}\\sum_{n=1}^{\\infty}(a_n^2+b_n^2).\n\\]\nEstas igualdades conectan el dominio del tiempo con el reparto de potencia entre armónicos."
   },
   {
     "objectID": "temas/propiedades-fourier.html",
@@ -333,7 +347,7 @@
     "href": "index.html",
     "title": "Inicio",
     "section": "",
-    "text": "Este sitio reúne apuntes introductorios, recordatorios de fórmulas y simulaciones interactivas para apoyar el estudio de Señales y Sistemas en cursos de matemática aplicada e ingeniería. La idea central es combinar una presentación rigurosa con herramientas ligeras que puedan abrirse en cualquier navegador, sin backend y sin dependencias de escritorio.\n\n\n\n\n\n\nAdvertenciaSitio en construcción\n\n\n\nEl material ya es útil para estudiar conceptos base y experimentar con ejemplos, pero seguirá creciendo con nuevas simulaciones, ejercicios y validación matemática de tablas notables.\n\n\n\n\n\n\n\n\nNotaConvención usada\n\n\n\nEn todo el sitio se usa la transformada de Fourier\n\\[\nX(u)=\\int_{-\\infty}^{\\infty}x(t)e^{-i2\\pi ut}\\,dt\n\\]\ncon frecuencia \\(u\\) medida en ciclos por unidad de tiempo. Si aparece la frecuencia angular, se indicará explícitamente que \\(\\omega = 2\\pi u\\).\n\n\n\n\n\nSeries de Fourier y su interpretación en armónicos.\nTransformada de Fourier de señales continuas bajo la convención \\(e^{-i2\\pi ut}\\).\nRelación entre señales periódicas, espectros discretos y espectros continuos.\nTransformada de Laplace, región de convergencia, polos, ceros y estabilidad.\nPropiedades operacionales de Fourier y fundamentos de sistemas LTI.\nModulación, muestreo, aliasing y primera aproximación a DTFT, DFT, FFT y DCT.\n\n\n\n\n\n\n\nContenidos\n\nContenidos principales\nIngresa por Serie de Fourier y continúa con Fourier, Laplace, LTI, modulación y señales discretas.\n\n\n\nSimulaciones\n\nSimulaciones\nExplora senoides, reconstrucción por Serie de Fourier y aliasing con controles interactivos en navegador.\n\n\nEl sitio está pensado como material gratuito, publicable en GitHub Pages y fácil de extender con nuevas páginas .qmd y módulos JavaScript. Cada simulación busca conectar fórmulas, gráficos e intuición física sin depender de backend."
+    "text": "Este sitio reúne apuntes introductorios, recordatorios de fórmulas y simulaciones interactivas para apoyar el estudio de Señales y Sistemas en cursos de matemática aplicada e ingeniería. La idea central es combinar una presentación rigurosa con herramientas ligeras que puedan abrirse en cualquier navegador, sin backend y sin dependencias de escritorio.\n\n\n\n\n\n\nAdvertenciaSitio en construcción\n\n\n\nEl material ya es útil para estudiar conceptos base y experimentar con ejemplos, pero seguirá creciendo con nuevas simulaciones, ejercicios y validación matemática de tablas notables.\n\n\n\n\n\n\n\n\nNotaConvención usada\n\n\n\nEn todo el sitio se usa la transformada de Fourier\n\\[\nX(u)=\\int_{-\\infty}^{\\infty}x(t)e^{-i2\\pi ut}\\,dt\n\\]\ncon frecuencia \\(u\\) medida en ciclos por unidad de tiempo. Si aparece la frecuencia angular, se indicará explícitamente que \\(\\omega = 2\\pi u\\).\n\n\n\n\n\nSeries de Fourier y su interpretación en armónicos.\nTransformada de Fourier de señales continuas bajo la convención \\(e^{-i2\\pi ut}\\).\nRelación entre señales periódicas, espectros discretos y espectros continuos.\nTransformada de Laplace, región de convergencia, polos, ceros y estabilidad.\nPropiedades operacionales de Fourier y fundamentos de sistemas LTI.\nModulación, muestreo, aliasing y primera aproximación a DTFT, DFT, FFT y DCT.\n\n\n\n\n\n\n\nContenidos\n\nContenidos principales\nIngresa por Serie de Fourier y continúa con Fourier, Laplace, LTI, modulación y señales discretas.\n\n\n\nSimulaciones\n\nSimulaciones\nExplora sinusoides, reconstrucción por Serie de Fourier y aliasing con controles interactivos en navegador.\n\n\nEl sitio está pensado como material gratuito, publicable en GitHub Pages y fácil de extender con nuevas páginas .qmd y módulos JavaScript. Cada simulación busca conectar fórmulas, gráficos e intuición física sin depender de backend."
   },
   {
     "objectID": "index.html#qué-puedes-estudiar-aquí",
@@ -347,7 +361,7 @@
     "href": "index.html#accesos-rápidos",
     "title": "Inicio",
     "section": "",
-    "text": "Contenidos\n\nContenidos principales\nIngresa por Serie de Fourier y continúa con Fourier, Laplace, LTI, modulación y señales discretas.\n\n\n\nSimulaciones\n\nSimulaciones\nExplora senoides, reconstrucción por Serie de Fourier y aliasing con controles interactivos en navegador.\n\n\nEl sitio está pensado como material gratuito, publicable en GitHub Pages y fácil de extender con nuevas páginas .qmd y módulos JavaScript. Cada simulación busca conectar fórmulas, gráficos e intuición física sin depender de backend."
+    "text": "Contenidos\n\nContenidos principales\nIngresa por Serie de Fourier y continúa con Fourier, Laplace, LTI, modulación y señales discretas.\n\n\n\nSimulaciones\n\nSimulaciones\nExplora sinusoides, reconstrucción por Serie de Fourier y aliasing con controles interactivos en navegador.\n\n\nEl sitio está pensado como material gratuito, publicable en GitHub Pages y fácil de extender con nuevas páginas .qmd y módulos JavaScript. Cada simulación busca conectar fórmulas, gráficos e intuición física sin depender de backend."
   },
   {
     "objectID": "temas/dtft-dft-fft-dct.html",
@@ -452,14 +466,14 @@
     "href": "temas/modulacion-muestreo.html#aliasing",
     "title": "Modulación y muestreo",
     "section": "5 Aliasing",
-    "text": "5 Aliasing\nSi las réplicas se solapan, distintas frecuencias continuas generan la misma secuencia muestreada. Ese fenómeno es el aliasing.\nEn términos prácticos, una frecuencia alta puede “disfrazarse” de otra más baja después del muestreo.\nPara una sola senoide, una forma útil de estimar la frecuencia alias es\n\\[\nf_{\\text{alias}}=\\left|f-kf_s\\right|,\n\\]\ndonde \\(k\\in\\mathbb{Z}\\) se escoge de modo que el resultado quede dentro de la banda base observable."
+    "text": "5 Aliasing\nSi las réplicas se solapan, distintas frecuencias continuas generan la misma secuencia muestreada. Ese fenómeno es el aliasing.\nEn términos prácticos, una frecuencia alta puede “disfrazarse” de otra más baja después del muestreo.\nPara una sola sinusoide, una forma útil de estimar la frecuencia alias es\n\\[\nf_{\\text{alias}}=\\left|f-kf_s\\right|,\n\\]\ndonde \\(k\\in\\mathbb{Z}\\) se escoge de modo que el resultado quede dentro de la banda base observable."
   },
   {
     "objectID": "temas/modulacion-muestreo.html#frecuencia-de-nyquist",
     "href": "temas/modulacion-muestreo.html#frecuencia-de-nyquist",
     "title": "Modulación y muestreo",
     "section": "6 Frecuencia de Nyquist",
-    "text": "6 Frecuencia de Nyquist\nSi la señal es limitada en banda a \\(|u|\\le u_{\\max}\\), el criterio clásico para evitar solapamiento es\n\\[\nf_s \\ge 2u_{\\max}.\n\\]\nEl valor \\(f_s/2\\) se conoce como frecuencia de Nyquist.\n\n\n\n\n\n\nAdvertenciaError común\n\n\n\nCumplir \\(f_s \\ge 2u_{\\max}\\) exige conocer una cota realista de la banda ocupada por la señal. En práctica, siempre se acompaña de filtrado anti-alias antes del muestreo.\n\n\n\n\n\n\n\n\nTipExplora el aliasing\n\n\n\nLa simulación Muestreo y aliasing permite comparar una senoide continua con sus muestras y con la frecuencia alias equivalente cuando no se cumple Nyquist."
+    "text": "6 Frecuencia de Nyquist\nSi la señal es limitada en banda a \\(|u|\\le u_{\\max}\\), el criterio clásico para evitar solapamiento es\n\\[\nf_s \\ge 2u_{\\max}.\n\\]\nEl valor \\(f_s/2\\) se conoce como frecuencia de Nyquist.\n\n\n\n\n\n\nAdvertenciaError común\n\n\n\nCumplir \\(f_s \\ge 2u_{\\max}\\) exige conocer una cota realista de la banda ocupada por la señal. En práctica, siempre se acompaña de filtrado anti-alias antes del muestreo.\n\n\n\n\n\n\n\n\nTipExplora el aliasing\n\n\n\nLa simulación Muestreo y aliasing permite comparar una sinusoide continua con sus muestras y con la frecuencia alias equivalente cuando no se cumple Nyquist."
   },
   {
     "objectID": "temas/relacion-sf-tf.html",
@@ -578,7 +592,7 @@
     "href": "simulaciones/muestreo-aliasing.html",
     "title": "Simulación: muestreo y aliasing",
     "section": "",
-    "text": "Considera una senoide continua\n\\[\nx(t)=\\sin(2\\pi f t+\\phi)\n\\]\ny una frecuencia de muestreo \\(f_s\\). La simulación compara la señal continua con sus muestras y con una curva alias equivalente cuando la señal ya no es distinguible de otra frecuencia más baja en los instantes de muestreo."
+    "text": "Considera una sinusoide continua\n\\[\nx(t)=\\sin(2\\pi f t+\\phi)\n\\]\ny una frecuencia de muestreo \\(f_s\\). La simulación compara la señal continua con sus muestras y con una curva alias equivalente cuando la señal ya no es distinguible de otra frecuencia más baja en los instantes de muestreo."
   },
   {
     "objectID": "simulaciones/muestreo-aliasing.html#controles",
@@ -602,31 +616,31 @@
     "text": "3 Diagnóstico\n\n\n\n\n\nNyquist \n\n\nFrecuencia alias estimada"
   },
   {
-    "objectID": "simulaciones/senoide.html",
-    "href": "simulaciones/senoide.html",
-    "title": "Simulación: senoide",
+    "objectID": "simulaciones/serie-fourier.html",
+    "href": "simulaciones/serie-fourier.html",
+    "title": "Simulación: reconstrucción por Serie de Fourier",
     "section": "",
-    "text": "Explora la señal\n\\[\nx(t)=A\\sin\\!\\bigl(2\\pi f (t-t_0)+\\phi\\bigr)+b\n\\]\nmodificando amplitud, frecuencia, fase, desplazamiento vertical y desplazamiento temporal."
+    "text": "Esta simulación usa la aproximación parcial de una onda cuadrada normalizada:\n\\[\nx_N(t)=\\frac{4}{\\pi}\\sum_{m=0}^{N-1}\\frac{1}{2m+1}\\sin\\!\\bigl(2\\pi(2m+1)u_0 t\\bigr),\n\\qquad\nu_0=\\frac{1}{T_0}.\n\\]"
   },
   {
-    "objectID": "simulaciones/senoide.html#controles",
-    "href": "simulaciones/senoide.html#controles",
-    "title": "Simulación: senoide",
+    "objectID": "simulaciones/serie-fourier.html#controles",
+    "href": "simulaciones/serie-fourier.html#controles",
+    "title": "Simulación: reconstrucción por Serie de Fourier",
     "section": "1 Controles",
-    "text": "1 Controles\n\n\nAmplitud A\n\n \n\n\n\nFrecuencia f\n\n \n\n\n\nFase φ [rad]\n\n \n\n\n\nSesgo vertical b\n\n \n\n\n\nDesplazamiento temporal t0"
+    "text": "1 Controles\n\n\nArmónicos impares\n\n \n\n\n\nPeríodo T0"
   },
   {
-    "objectID": "simulaciones/senoide.html#gráfico",
-    "href": "simulaciones/senoide.html#gráfico",
-    "title": "Simulación: senoide",
-    "section": "2 Gráfico",
-    "text": "2 Gráfico"
+    "objectID": "simulaciones/serie-fourier.html#reconstrucción-parcial",
+    "href": "simulaciones/serie-fourier.html#reconstrucción-parcial",
+    "title": "Simulación: reconstrucción por Serie de Fourier",
+    "section": "2 Reconstrucción parcial",
+    "text": "2 Reconstrucción parcial"
   },
   {
-    "objectID": "simulaciones/senoide.html#fórmula-actual",
-    "href": "simulaciones/senoide.html#fórmula-actual",
-    "title": "Simulación: senoide",
-    "section": "3 Fórmula actual",
-    "text": "3 Fórmula actual\n\n\n\n\n\nPeríodo \n\n\nFrecuencia angular"
+    "objectID": "simulaciones/serie-fourier.html#lectura-rápida",
+    "href": "simulaciones/serie-fourier.html#lectura-rápida",
+    "title": "Simulación: reconstrucción por Serie de Fourier",
+    "section": "3 Lectura rápida",
+    "text": "3 Lectura rápida\n\n\n\n\n\nFrecuencia fundamental \n\n\nPeríodo \n\n\nSobrepico de Gibbs"
   }
 ]
