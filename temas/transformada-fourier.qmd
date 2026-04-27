@@ -43,12 +43,26 @@ Cuando aparecen [distribuciones o funciones generalizadas](distribuciones.qmd), 
 <div class="control-field">
 <label for="tf-explorer-signal">Señal típica</label>
 <select id="tf-explorer-signal">
-  <option value="delta">Delta de Dirac</option>
-  <option value="one">Constante uno</option>
-  <option value="step">Escalón</option>
-  <option value="ramp">Rampa causal</option>
-  <option value="sign">Signo</option>
-  <option value="triangle">Triángulo</option>
+  <optgroup label="Distribucionales">
+    <option value="delta">Delta de Dirac</option>
+    <option value="one">Constante uno</option>
+    <option value="step">Escalón</option>
+    <option value="ramp">Rampa causal</option>
+    <option value="sign">Signo</option>
+  </optgroup>
+  <optgroup label="Armónicos ideales">
+    <option value="complex-exponential">Exponencial compleja</option>
+    <option value="cosine">Coseno</option>
+    <option value="sine">Seno</option>
+  </optgroup>
+  <optgroup label="Funciones ordinarias">
+    <option value="rect">Pulso rectangular</option>
+    <option value="sinc">Sinc</option>
+    <option value="triangle">Triángulo</option>
+    <option value="gaussian">Gaussiana</option>
+    <option value="exp-causal">Exponencial lateral</option>
+    <option value="exp-double">Exponencial doble</option>
+  </optgroup>
 </select>
 </div>
 <div class="control-field">
@@ -90,8 +104,10 @@ $$
 |---|---|---|
 | $\delta(t)$ | $1$ | Impulso unitario en el tiempo. |
 | $1$ | $\delta(u)$ | Constante temporal, concentración total en frecuencia cero. |
+| $e^{i2\pi u_0 t}$ | $\delta(u-u_0)$ | Línea espectral única; señal compleja de frecuencia fija. |
 | $\operatorname{rect}(t/T)$ | $T\,\operatorname{sinc}(Tu)$ | Con $\operatorname{rect}(t/T)=1$ para $|t|<T/2$. |
 | $\operatorname{sinc}(Bt)$ | $\frac{1}{|B|}\operatorname{rect}(u/B)$ | Dualidad clásica entre tiempo y frecuencia. |
+| $\operatorname{tri}(t)$ | $\operatorname{sinc}^2(u)$ | Función par con espectro real no negativo. |
 | $e^{-\pi a t^2}$, $a>0$ | $a^{-1/2}e^{-\pi u^2/a}$ | La gaussiana conserva su forma. |
 | $e^{-at}u(t)$, $a>0$ | $\frac{1}{a+i2\pi u}$ | Exponencial lateral causal. |
 | $e^{-a|t|}$, $a>0$ | $\frac{2a}{a^2+(2\pi u)^2}$ | Exponencial doble, real y par. |

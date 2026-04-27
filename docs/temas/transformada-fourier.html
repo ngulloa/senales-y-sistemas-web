@@ -281,7 +281,7 @@ Controles
 </p>
 <div class="control-grid">
 <div class="control-field">
-<p><label for="tf-explorer-signal">Señal típica</label> <select id="tf-explorer-signal"> <option value="delta">Delta de Dirac</option> <option value="one">Constante uno</option> <option value="step">Escalón</option> <option value="ramp">Rampa causal</option> <option value="sign">Signo</option> <option value="triangle">Triángulo</option> </select></p>
+<p><label for="tf-explorer-signal">Señal típica</label> <select id="tf-explorer-signal"> <optgroup label="Distribucionales"> <option value="delta">Delta de Dirac</option> <option value="one">Constante uno</option> <option value="step">Escalón</option> <option value="ramp">Rampa causal</option> <option value="sign">Signo</option> </optgroup> <optgroup label="Armónicos ideales"> <option value="complex-exponential">Exponencial compleja</option> <option value="cosine">Coseno</option> <option value="sine">Seno</option> </optgroup> <optgroup label="Funciones ordinarias"> <option value="rect">Pulso rectangular</option> <option value="sinc">Sinc</option> <option value="triangle">Triángulo</option> <option value="gaussian">Gaussiana</option> <option value="exp-causal">Exponencial lateral</option> <option value="exp-double">Exponencial doble</option> </optgroup> </select></p>
 </div>
 <div class="control-field">
 <p><label for="tf-explorer-view">Vista espectral</label> <select id="tf-explorer-view"> <option value="both">Magnitud y fase</option> <option value="magnitude">Solo magnitud</option> <option value="phase">Solo fase</option> </select></p>
@@ -345,14 +345,24 @@ Dominio de la frecuencia
 <td>Constante temporal, concentración total en frecuencia cero.</td>
 </tr>
 <tr class="odd">
+<td><span class="math inline">\(e^{i2\pi u_0 t}\)</span></td>
+<td><span class="math inline">\(\delta(u-u_0)\)</span></td>
+<td>Línea espectral única; señal compleja de frecuencia fija.</td>
+</tr>
+<tr class="even">
 <td><span class="math inline">\(\operatorname{rect}(t/T)\)</span></td>
 <td><span class="math inline">\(T\,\operatorname{sinc}(Tu)\)</span></td>
 <td>Con <span class="math inline">\(\operatorname{rect}(t/T)=1\)</span> para <span class="math inline">\(|t|&lt;T/2\)</span>.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><span class="math inline">\(\operatorname{sinc}(Bt)\)</span></td>
 <td><span class="math inline">\(\frac{1}{|B|}\operatorname{rect}(u/B)\)</span></td>
 <td>Dualidad clásica entre tiempo y frecuencia.</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\operatorname{tri}(t)\)</span></td>
+<td><span class="math inline">\(\operatorname{sinc}^2(u)\)</span></td>
+<td>Función par con espectro real no negativo.</td>
 </tr>
 <tr class="odd">
 <td><span class="math inline">\(e^{-\pi a t^2}\)</span>, <span class="math inline">\(a&gt;0\)</span></td>
