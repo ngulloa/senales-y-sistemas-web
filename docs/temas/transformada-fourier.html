@@ -140,6 +140,10 @@ window.Quarto = {
  <span class="dropdown-text">Transformada de Fourier</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../temas/distribuciones.html">
+ <span class="dropdown-text">Distribuciones</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../temas/relacion-sf-tf.html">
  <span class="dropdown-text">Relación SF/TF</span></a>
   </li>  
@@ -263,7 +267,7 @@ x(t)=\int_{-\infty}^{\infty}X(u)e^{i2\pi ut}\,du.
 <h2 data-number="2" class="anchored" data-anchor-id="interpretación-espectral"><span class="header-section-number">2</span> Interpretación espectral</h2>
 <p>La transformada de Fourier describe cómo se distribuye una señal entre componentes senoidales de distintas frecuencias. La magnitud <span class="math inline">\(|X(u)|\)</span> indica la intensidad relativa de cada banda, mientras que la fase <span class="math inline">\(\arg X(u)\)</span> conserva información temporal y de alineamiento.</p>
 <p>Para señales localizadas en el tiempo, el espectro suele ser extendido. Para señales muy oscilatorias o periódicas, el espectro tiende a concentrarse en frecuencias particulares.</p>
-<p>Cuando aparecen distribuciones, la visualización separa la parte regular de los términos impulsivos para no presentar como función ordinaria algo que solo adquiere sentido completo dentro de integrales u operadores lineales.</p>
+<p>Cuando aparecen <a href="../temas/distribuciones.html">distribuciones o funciones generalizadas</a>, la visualización separa la parte regular de los términos impulsivos para no presentar como función ordinaria algo que solo adquiere sentido completo dentro de integrales u operadores lineales.</p>
 <p class="sim-section-title">
 Explorador tiempo-frecuencia
 </p>
@@ -385,7 +389,7 @@ Dominio de la frecuencia
 </section>
 <section id="delta-escalón-y-distribuciones" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="delta-escalón-y-distribuciones"><span class="header-section-number">4</span> Delta, escalón y distribuciones</h2>
-<p>Algunas transformadas no deben interpretarse como funciones ordinarias sino como distribuciones.</p>
+<p>Algunas transformadas no deben interpretarse como funciones ordinarias sino como <a href="../temas/distribuciones.html">distribuciones</a>.</p>
 <ul>
 <li>El par <span class="math inline">\(1 \leftrightarrow \delta(u)\)</span> expresa que una componente constante está concentrada en frecuencia cero.</li>
 <li>El escalón <span class="math inline">\(u(t)\)</span> no es absolutamente integrable, por lo que su transformada se entiende en sentido de distribuciones:</li>
@@ -422,6 +426,8 @@ Dominio de la frecuencia
 <li><span class="math inline">\(|X(u)|\)</span>, para ver qué frecuencias están presentes.</li>
 <li><span class="math inline">\(\arg X(u)\)</span>, para estudiar retardos, simetrías y reconstrucción temporal.</li>
 </ul>
+<p>En el contexto de la Transformada de Fourier, la fase describe el desplazamiento temporal relativo de cada componente sinusoidal que compone una señal. Si se prefiere trabajar con frecuencia angular, la misma interpretación debe leerse recordando que <span class="math inline">\(\omega = 2\pi u\)</span>.</p>
+<p>Cuando la magnitud se anula o el espectro contiene impulsos, la fase no siempre puede leerse como una curva ordinaria y conviene volver a la <a href="../temas/distribuciones.html">interpretación distribucional</a>.</p>
 <p>Dos señales pueden tener magnitud similar y fase muy distinta, produciendo formas temporales radicalmente diferentes.</p>
 <p class="sim-section-title">
 Ejemplos gráficos

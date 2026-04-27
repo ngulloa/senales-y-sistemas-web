@@ -68,13 +68,25 @@ export function renderLatex(container, latexExpression) {
   }
 }
 
-export function setStatusBanner(container, { text, tone = "success" }) {
+export function setStatusBanner(container, { text = "", html = "", tone = "success" }) {
   if (!container) {
     console.error("No se pudo actualizar el banner de estado: el contenedor no existe.");
     return;
   }
 
-  container.textContent = text;
+  if (window.MathJax?.typesetClear) {
+    window.MathJax.typesetClear([container]);
+  }
+
+  if (html) {
+    container.innerHTML = html;
+    if (window.MathJax?.typesetPromise) {
+      window.MathJax.typesetPromise([container]).catch(() => {});
+    }
+  } else {
+    container.textContent = text;
+  }
+
   container.classList.remove("is-success", "is-warning");
   container.classList.add(tone === "warning" ? "is-warning" : "is-success");
 }

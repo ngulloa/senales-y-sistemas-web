@@ -19,7 +19,7 @@ $$
 X(u)=\sum_{k=-\infty}^{\infty} c_k\,\delta(u-ku_0).
 $$
 
-La frecuencia no aparece como una curva continua, sino como una familia de impulsos en los armónicos. Esta escritura se interpreta en sentido de distribuciones.
+La frecuencia no aparece como una curva continua, sino como una familia de impulsos en los armónicos. Esta escritura se interpreta en sentido de [distribuciones](distribuciones.qmd).
 
 ## Impulsos en frecuencia
 

@@ -507,6 +507,10 @@ input[type="range"]::-moz-range-thumb {
   background-color: rgba(255, 255, 255, 0.94);
 }
 
+.status-banner > :last-child {
+  margin-bottom: 0;
+}
+
 .status-banner.is-success {
   color: #1c7469;
   background-color: rgba(230, 244, 239, 0.95);
@@ -530,6 +534,42 @@ input[type="range"]::-moz-range-thumb {
 
 .plot-panel--example {
   min-height: 360px;
+}
+
+#fourier-spectrum-widget .sim-card,
+#fourier-series-sim .sim-card--controls,
+#fourier-series-sim .sim-card--diagnostics {
+  border-color: rgba(42, 157, 143, 0.24);
+}
+
+#fourier-spectrum-widget .sim-card--controls,
+#fourier-series-sim .sim-card--controls,
+#fourier-series-sim .sim-card--diagnostics {
+  background-color: rgba(246, 251, 248, 0.98);
+}
+
+#fourier-spectrum-widget .sim-card-kicker,
+#fourier-series-sim .metric-card strong,
+#fourier-series-sim .metric-label {
+  color: var(--color-accent);
+}
+
+#fourier-spectrum-widget .formula-panel,
+#fourier-series-sim .formula-panel {
+  border-color: rgba(42, 157, 143, 0.34);
+  background-color: rgba(230, 244, 239, 0.96);
+}
+
+#fourier-series-sim .metric-card {
+  border-color: rgba(42, 157, 143, 0.2);
+  background-color: rgba(230, 244, 239, 0.55);
+}
+
+#fourier-spectrum-widget .status-banner.is-warning,
+#fourier-series-sim .status-banner.is-warning {
+  color: #1c7469;
+  background-color: rgba(230, 244, 239, 0.95);
+  border-color: rgba(42, 157, 143, 0.32);
 }
 
 .mjx-container {

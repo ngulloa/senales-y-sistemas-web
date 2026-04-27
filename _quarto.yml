@@ -21,6 +21,8 @@ website:
             text: Serie de Fourier
           - href: temas/transformada-fourier.qmd
             text: Transformada de Fourier
+          - href: temas/distribuciones.qmd
+            text: Distribuciones
           - href: temas/relacion-sf-tf.qmd
             text: Relación SF/TF
           - href: temas/laplace.qmd

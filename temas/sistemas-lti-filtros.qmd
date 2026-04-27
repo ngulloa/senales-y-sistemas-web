@@ -4,7 +4,7 @@ title: "Sistemas LTI y filtros"
 
 ## Respuesta al impulso
 
-Un sistema lineal e invariante en el tiempo (LTI) queda completamente caracterizado por su respuesta al impulso $h(t)$. Conocer $h(t)$ equivale a conocer cómo el sistema actúa sobre cualquier entrada admisible.
+Un sistema lineal e invariante en el tiempo (LTI) queda completamente caracterizado por su respuesta al impulso $h(t)$. Esa respuesta se entiende como la salida ante una entrada ideal modelada con la delta de Dirac dentro del lenguaje de [distribuciones](distribuciones.qmd). Conocer $h(t)$ equivale a conocer cómo el sistema actúa sobre cualquier entrada admisible.
 
 ## Entrada-salida por convolución
 
@@ -79,4 +79,3 @@ Pensar en filtros como operadores espectrales ayuda a conectar intuición físic
 
 La página [Simulaciones en desarrollo](../simulaciones/proximamente.qmd#sistemas-lti-y-filtros) anticipa una simulación donde podrás comparar entrada, respuesta al impulso, salida y respuesta en frecuencia del mismo sistema.
 :::
-

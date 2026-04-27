@@ -78,7 +78,7 @@ Cuando se trunca la serie y se conserva solo una cantidad finita de términos, s
 <p class="sim-section-title">Reconstrucción de señal</p>
 <p class="sim-section-lead">En la visualización se muestra el resultado de la suma de los primeros <em>N</em> términos de la Serie de Fourier para algunas señales típicas. Al aumentar <em>N</em>, la aproximación incorpora más armónicos; en señales con saltos o esquinas la convergencia exige más términos y puede aparecer sobreoscilación del tipo Gibbs.</p>
 
-::: {#fourier-spectrum-widget .simulation-shell .simulation-shell--embedded}
+::: {#fourier-spectrum-widget .simulation-shell .simulation-shell--embedded .fourier-series-widget}
 ::: {.sim-card .sim-card--controls}
 <p class="sim-card-title">Explorador espectral</p>
 

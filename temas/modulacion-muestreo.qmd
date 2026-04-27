@@ -36,6 +36,8 @@ $$
 x_s(t)=x(t)\sum_{n=-\infty}^{\infty}\delta(t-nT_s).
 $$
 
+Aquí aparece un tren de [deltas de Dirac](distribuciones.qmd), útil para formalizar el muestreo como producto entre la señal continua y una rejilla impulsiva.
+
 En frecuencia esto produce réplicas periódicas:
 
 $$

@@ -30,7 +30,7 @@ La transformada de Fourier describe cómo se distribuye una señal entre compone
 
 Para señales localizadas en el tiempo, el espectro suele ser extendido. Para señales muy oscilatorias o periódicas, el espectro tiende a concentrarse en frecuencias particulares.
 
-Cuando aparecen distribuciones, la visualización separa la parte regular de los términos impulsivos para no presentar como función ordinaria algo que solo adquiere sentido completo dentro de integrales u operadores lineales.
+Cuando aparecen [distribuciones o funciones generalizadas](distribuciones.qmd), la visualización separa la parte regular de los términos impulsivos para no presentar como función ordinaria algo que solo adquiere sentido completo dentro de integrales u operadores lineales.
 
 <p class="sim-section-title">Explorador tiempo-frecuencia</p>
 <p class="sim-section-lead">Selecciona una señal típica y observa su representación en el dominio del tiempo y en el dominio de la frecuencia. La vista espectral puede mostrarse como magnitud, fase o ambas; cuando hay deltas o derivadas de deltas, la interfaz lo indica explícitamente.</p>
@@ -101,7 +101,7 @@ $$
 
 ## Delta, escalón y distribuciones
 
-Algunas transformadas no deben interpretarse como funciones ordinarias sino como distribuciones.
+Algunas transformadas no deben interpretarse como funciones ordinarias sino como [distribuciones](distribuciones.qmd).
 
 - El par $1 \leftrightarrow \delta(u)$ expresa que una componente constante está concentrada en frecuencia cero.
 - El escalón $u(t)$ no es absolutamente integrable, por lo que su transformada se entiende en sentido de distribuciones:
@@ -129,6 +129,10 @@ En aplicaciones físicas y de ingeniería suele graficarse:
 
 - $|X(u)|$, para ver qué frecuencias están presentes.
 - $\arg X(u)$, para estudiar retardos, simetrías y reconstrucción temporal.
+
+En el contexto de la Transformada de Fourier, la fase describe el desplazamiento temporal relativo de cada componente sinusoidal que compone una señal. Si se prefiere trabajar con frecuencia angular, la misma interpretación debe leerse recordando que $\omega = 2\pi u$.
+
+Cuando la magnitud se anula o el espectro contiene impulsos, la fase no siempre puede leerse como una curva ordinaria y conviene volver a la [interpretación distribucional](distribuciones.qmd).
 
 Dos señales pueden tener magnitud similar y fase muy distinta, produciendo formas temporales radicalmente diferentes.
 

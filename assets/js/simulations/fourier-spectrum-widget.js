@@ -32,7 +32,7 @@ const WAVEFORMS = {
     formula: (order) => (
       order === 0
         ? "x_0(t)=0"
-        : `x_N(t)=\\frac{4}{\\pi}\\sum_{m=0}^{${order - 1}}\\frac{1}{2m+1}\\sin\\!\\left(2\\pi(2m+1)u_0t\\right)`
+        : `x_N(t)=\\frac{4}{\\pi}\\sum_{m=0}^{${order - 1}}\\frac{1}{2m+1}\\sin\\!\\left(2\\pi(2m+1)u_0 t\\right)`
     ),
   },
   sawtooth: {
@@ -47,7 +47,7 @@ const WAVEFORMS = {
     formula: (order) => (
       order === 0
         ? "x_0(t)=0"
-        : `x_N(t)=\\frac{2}{\\pi}\\sum_{n=1}^{${order}}\\frac{(-1)^{n+1}}{n}\\sin\\!\\left(2\\pi nu_0t\\right)`
+        : `x_N(t)=\\frac{2}{\\pi}\\sum_{n=1}^{${order}}\\frac{(-1)^{n+1}}{n}\\sin\\!\\left(2\\pi n u_0 t\\right)`
     ),
   },
   triangle: {
@@ -62,7 +62,7 @@ const WAVEFORMS = {
     formula: (order) => (
       order === 0
         ? "x_0(t)=0"
-        : `x_N(t)=\\frac{8}{\\pi^2}\\sum_{m=0}^{${order - 1}}\\frac{1}{(2m+1)^2}\\cos\\!\\left(2\\pi(2m+1)u_0t\\right)`
+        : `x_N(t)=\\frac{8}{\\pi^2}\\sum_{m=0}^{${order - 1}}\\frac{1}{(2m+1)^2}\\cos\\!\\left(2\\pi(2m+1)u_0 t\\right)`
     ),
   },
 };

@@ -96,7 +96,7 @@ El producto temporal mezcla contenidos frecuenciales y puede ensanchar el espect
 
 ## Deltas y distribuciones
 
-Al trabajar con impulsos aparecen reglas útiles:
+Al trabajar con [impulsos y distribuciones](distribuciones.qmd) aparecen reglas útiles:
 
 $$
 \delta(t-t_0)\leftrightarrow e^{-i2\pi u t_0},

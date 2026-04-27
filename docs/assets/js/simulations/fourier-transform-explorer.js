@@ -6,7 +6,7 @@ const TIME_GRID = createTimeGrid({ start: -3, end: 3, count: 1400 });
 const FREQ_GRID = createTimeGrid({ start: -3.5, end: 3.5, count: 1800 });
 const PHASE_TICKS = {
   tickvals: [-Math.PI, -Math.PI / 2, 0, Math.PI / 2, Math.PI],
-  ticktext: ["-pi", "-pi/2", "0", "pi/2", "pi"],
+  ticktext: ["-π", "-π/2", "0", "π/2", "π"],
 };
 const PV_GAP = 0.06;
 
@@ -73,11 +73,9 @@ function impulseStemTraces(items, {
     },
     {
       type: "scatter",
-      mode: "markers+text",
+      mode: "markers",
       x: items.map((item) => item.position),
       y: items.map((item) => item.height),
-      text: items.map((item) => item.label),
-      textposition: "top center",
       marker: {
         color,
         size: 9,
@@ -103,11 +101,9 @@ function symbolicMarkerTrace(items, axis = {}) {
   return [
     {
       type: "scatter",
-      mode: "markers+text",
+      mode: "markers",
       x: items.map((item) => item.position),
       y: items.map((item) => item.height),
-      text: items.map((item) => item.label),
-      textposition: "top center",
       marker: {
         color: THEME.success,
         size: 10,
@@ -161,10 +157,10 @@ const SIGNALS = {
     timeFormula: "x(t)=\\delta(t)",
     spectrumFormula: "X(u)=1",
     timeValues: TIME_GRID.map(() => 0),
-    timeImpulses: [{ position: 0, height: 1, label: "delta(t)" }],
+    timeImpulses: [{ position: 0, height: 1 }],
     magnitude: FREQ_GRID.map(() => 1),
     phase: FREQ_GRID.map(() => 0),
-    note: "El impulso en el tiempo produce una transformada constante. En este caso no aparecen términos distribucionales en frecuencia.",
+    noteHtml: "<p>El impulso en el tiempo produce una transformada constante. En este caso no aparecen términos distribucionales adicionales en frecuencia.</p>",
   },
   one: {
     label: "Constante uno",
@@ -173,8 +169,8 @@ const SIGNALS = {
     timeValues: TIME_GRID.map(() => 1),
     magnitude: [],
     phase: [],
-    impulses: [{ position: 0, height: 1, label: "delta(u)" }],
-    note: "La señal constante concentra toda su contribución en u = 0. La fase no se interpreta como función ordinaria para una delta aislada.",
+    impulses: [{ position: 0, height: 1 }],
+    noteHtml: "<p>La señal constante concentra toda su contribución en $u=0$. La fase no se interpreta como una función ordinaria para una delta aislada.</p>",
   },
   step: {
     label: "Escalón",
@@ -188,8 +184,8 @@ const SIGNALS = {
       return clipMagnitude(1 / (2 * Math.PI * Math.abs(frequency)));
     }),
     phase: piecewisePhase(FREQ_GRID, -Math.PI / 2, Math.PI / 2),
-    impulses: [{ position: 0, height: 0.5, label: "1/2 delta(u)" }],
-    note: "La curva espectral muestra la parte regular en valor principal. Además aparece un impulso de peso 1/2 en el origen.",
+    impulses: [{ position: 0, height: 0.5 }],
+    noteHtml: "<p>La curva espectral muestra la parte regular en valor principal, $\\operatorname{p.v.}\\!\\left(\\frac{1}{i2\\pi u}\\right)$. Además aparece un impulso de peso $\\frac{1}{2}\\delta(u)$ en el origen.</p>",
   },
   ramp: {
     label: "Rampa causal",
@@ -203,8 +199,8 @@ const SIGNALS = {
       return clipMagnitude(1 / (4 * Math.PI * Math.PI * (frequency ** 2)), 4.2);
     }),
     phase: FREQ_GRID.map((frequency) => (Math.abs(frequency) < PV_GAP ? Number.NaN : Math.PI)),
-    symbols: [{ position: 0, height: 1.1, label: "delta'(u)" }],
-    note: "Se grafica solo la parte regular, proporcional a 1/u^2. En el origen también aparece un término distribucional proporcional a delta'(u), indicado de forma simbólica.",
+    symbols: [{ position: 0, height: 1.1 }],
+    noteHtml: "<p>Se grafica solo la parte regular, proporcional a $\\frac{1}{u^2}$. En el origen también aparece un término distribucional proporcional a $\\delta'(u)$, indicado de forma simbólica.</p>",
   },
   sign: {
     label: "Signo",
@@ -218,7 +214,7 @@ const SIGNALS = {
       return clipMagnitude(1 / (Math.PI * Math.abs(frequency)));
     }),
     phase: piecewisePhase(FREQ_GRID, -Math.PI / 2, Math.PI / 2),
-    note: "La transformada del signo es puramente distribucional en valor principal. La fase mostrada corresponde a la parte regular imaginaria impar.",
+    noteHtml: "<p>La transformada del signo se interpreta como $\\operatorname{p.v.}\\!\\left(\\frac{1}{i\\pi u}\\right)$. La fase mostrada corresponde a la parte regular imaginaria impar.</p>",
   },
   triangle: {
     label: "Triángulo",
@@ -227,7 +223,7 @@ const SIGNALS = {
     timeValues: TIME_GRID.map((time) => trianglePulse(time)),
     magnitude: FREQ_GRID.map((frequency) => sincNormalized(frequency) ** 2),
     phase: FREQ_GRID.map((frequency) => (Math.abs(sincNormalized(frequency)) < 1e-3 ? Number.NaN : 0)),
-    note: "En este ejemplo la transformada es una función ordinaria, real y par. La fase es nula allí donde la magnitud no se anula.",
+    noteHtml: "<p>En este ejemplo la transformada es una función ordinaria, real y par. La fase es nula allí donde la magnitud no se anula.</p>",
   },
 };
 
@@ -451,7 +447,7 @@ function updateExplorer(elements) {
 
   renderLatex(elements.formula, spectrumFormula(signal));
   setStatusBanner(elements.note, {
-    text: signal.note,
+    html: signal.noteHtml,
     tone: distributionTone(elements.signal.value),
   });
 

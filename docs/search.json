@@ -88,7 +88,7 @@
     "href": "temas/transformada-fourier.html#interpretación-espectral",
     "title": "Transformada de Fourier",
     "section": "2 Interpretación espectral",
-    "text": "2 Interpretación espectral\nLa transformada de Fourier describe cómo se distribuye una señal entre componentes senoidales de distintas frecuencias. La magnitud \\(|X(u)|\\) indica la intensidad relativa de cada banda, mientras que la fase \\(\\arg X(u)\\) conserva información temporal y de alineamiento.\nPara señales localizadas en el tiempo, el espectro suele ser extendido. Para señales muy oscilatorias o periódicas, el espectro tiende a concentrarse en frecuencias particulares.\nCuando aparecen distribuciones, la visualización separa la parte regular de los términos impulsivos para no presentar como función ordinaria algo que solo adquiere sentido completo dentro de integrales u operadores lineales.\n\nExplorador tiempo-frecuencia\n\n\nSelecciona una señal típica y observa su representación en el dominio del tiempo y en el dominio de la frecuencia. La vista espectral puede mostrarse como magnitud, fase o ambas; cuando hay deltas o derivadas de deltas, la interfaz lo indica explícitamente.\n\n\n\n\nControles\n\n\n\nSeñal típica  Delta de Dirac Constante uno Escalón Rampa causal Signo Triángulo \n\n\nVista espectral  Magnitud y fase Solo magnitud Solo fase \n\n\n\n\n\n\n\n\n\n\n\n\nDominio del tiempo\n\n\n\n\n\n\n\nDominio de la frecuencia"
+    "text": "2 Interpretación espectral\nLa transformada de Fourier describe cómo se distribuye una señal entre componentes senoidales de distintas frecuencias. La magnitud \\(|X(u)|\\) indica la intensidad relativa de cada banda, mientras que la fase \\(\\arg X(u)\\) conserva información temporal y de alineamiento.\nPara señales localizadas en el tiempo, el espectro suele ser extendido. Para señales muy oscilatorias o periódicas, el espectro tiende a concentrarse en frecuencias particulares.\nCuando aparecen distribuciones o funciones generalizadas, la visualización separa la parte regular de los términos impulsivos para no presentar como función ordinaria algo que solo adquiere sentido completo dentro de integrales u operadores lineales.\n\nExplorador tiempo-frecuencia\n\n\nSelecciona una señal típica y observa su representación en el dominio del tiempo y en el dominio de la frecuencia. La vista espectral puede mostrarse como magnitud, fase o ambas; cuando hay deltas o derivadas de deltas, la interfaz lo indica explícitamente.\n\n\n\n\nControles\n\n\n\nSeñal típica  Delta de Dirac Constante uno Escalón Rampa causal Signo Triángulo \n\n\nVista espectral  Magnitud y fase Solo magnitud Solo fase \n\n\n\n\n\n\n\n\n\n\n\n\nDominio del tiempo\n\n\n\n\n\n\n\nDominio de la frecuencia"
   },
   {
     "objectID": "temas/transformada-fourier.html#transformadas-notables",
@@ -109,7 +109,7 @@
     "href": "temas/transformada-fourier.html#magnitud-y-fase",
     "title": "Transformada de Fourier",
     "section": "5 Magnitud y fase",
-    "text": "5 Magnitud y fase\nEn aplicaciones físicas y de ingeniería suele graficarse:\n\n\\(|X(u)|\\), para ver qué frecuencias están presentes.\n\\(\\arg X(u)\\), para estudiar retardos, simetrías y reconstrucción temporal.\n\nDos señales pueden tener magnitud similar y fase muy distinta, produciendo formas temporales radicalmente diferentes.\n\nEjemplos gráficos\n\n\nLos siguientes ejemplos muestran dos situaciones típicas: un espectro real y par con fase nula, y el efecto de un retardo temporal que conserva la magnitud pero agrega una fase lineal en \\(u\\).\n\n\n\n\nEjemplo 1: triángulo y fase nula\n\n\nPara una señal triangular par, la magnitud puede verse como una envolvente no negativa tipo \\(\\operatorname{sinc}^2\\), y la fase es nula allí donde la magnitud es positiva.\n\n\n\n\n\n\n\nEjemplo 2: retardo temporal\n\n\nSi la señal se desplaza en el tiempo, la magnitud permanece igual y la fase adquiere una dependencia lineal de la forma \\(-2\\pi u t_0\\)."
+    "text": "5 Magnitud y fase\nEn aplicaciones físicas y de ingeniería suele graficarse:\n\n\\(|X(u)|\\), para ver qué frecuencias están presentes.\n\\(\\arg X(u)\\), para estudiar retardos, simetrías y reconstrucción temporal.\n\nEn el contexto de la Transformada de Fourier, la fase describe el desplazamiento temporal relativo de cada componente sinusoidal que compone una señal. Si se prefiere trabajar con frecuencia angular, la misma interpretación debe leerse recordando que \\(\\omega = 2\\pi u\\).\nCuando la magnitud se anula o el espectro contiene impulsos, la fase no siempre puede leerse como una curva ordinaria y conviene volver a la interpretación distribucional.\nDos señales pueden tener magnitud similar y fase muy distinta, produciendo formas temporales radicalmente diferentes.\n\nEjemplos gráficos\n\n\nLos siguientes ejemplos muestran dos situaciones típicas: un espectro real y par con fase nula, y el efecto de un retardo temporal que conserva la magnitud pero agrega una fase lineal en \\(u\\).\n\n\n\n\nEjemplo 1: triángulo y fase nula\n\n\nPara una señal triangular par, la magnitud puede verse como una envolvente no negativa tipo \\(\\operatorname{sinc}^2\\), y la fase es nula allí donde la magnitud es positiva.\n\n\n\n\n\n\n\nEjemplo 2: retardo temporal\n\n\nSi la señal se desplaza en el tiempo, la magnitud permanece igual y la fase adquiere una dependencia lineal de la forma \\(-2\\pi u t_0\\)."
   },
   {
     "objectID": "temas/serie-fourier.html",
@@ -256,7 +256,7 @@
     "href": "temas/propiedades-fourier.html#deltas-y-distribuciones",
     "title": "Propiedades de la Transformada de Fourier",
     "section": "11 Deltas y distribuciones",
-    "text": "11 Deltas y distribuciones\nAl trabajar con impulsos aparecen reglas útiles:\n\\[\n\\delta(t-t_0)\\leftrightarrow e^{-i2\\pi u t_0},\n\\qquad\ne^{i2\\pi u_0 t}\\leftrightarrow \\delta(u-u_0).\n\\]\nEstas relaciones deben entenderse en sentido de distribuciones.\n\n\n\n\n\n\nAdvertenciaError común\n\n\n\nNo mezcles fórmulas en \\(u\\) con fórmulas en \\(\\omega\\) sin convertir factores de \\(2\\pi\\). Ese descuido suele provocar errores de escala, de fase y de ubicación de líneas espectrales."
+    "text": "11 Deltas y distribuciones\nAl trabajar con impulsos y distribuciones aparecen reglas útiles:\n\\[\n\\delta(t-t_0)\\leftrightarrow e^{-i2\\pi u t_0},\n\\qquad\ne^{i2\\pi u_0 t}\\leftrightarrow \\delta(u-u_0).\n\\]\nEstas relaciones deben entenderse en sentido de distribuciones.\n\n\n\n\n\n\nAdvertenciaError común\n\n\n\nNo mezcles fórmulas en \\(u\\) con fórmulas en \\(\\omega\\) sin convertir factores de \\(2\\pi\\). Ese descuido suele provocar errores de escala, de fase y de ubicación de líneas espectrales."
   },
   {
     "objectID": "temas/laplace.html",
@@ -320,6 +320,62 @@
     "title": "Transformada de Laplace",
     "section": "8 Causalidad y estabilidad en términos de ROC",
     "text": "8 Causalidad y estabilidad en términos de ROC\nEn sistemas racionales continuos:\n\ncausalidad: la ROC está a la derecha del polo con mayor parte real;\nestabilidad BIBO: la ROC contiene el eje \\(\\sigma=0\\), equivalente a \\(s=i2\\pi u\\);\ncausal y estable a la vez: todos los polos quedan en el semiplano izquierdo \\(\\Re(s)&lt;0\\), de modo que la ROC causal incluye el eje imaginario.\n\nEstas reglas son muy útiles para decidir comportamiento del sistema sin calcular la respuesta temporal completa.\n\n\n\n\n\n\nTipPróxima simulación\n\n\n\nLa página Simulaciones en desarrollo resume la futura visualización del plano \\(s\\) con polos, ceros y región de convergencia."
+  },
+  {
+    "objectID": "temas/distribuciones.html",
+    "href": "temas/distribuciones.html",
+    "title": "Distribuciones y funciones generalizadas",
+    "section": "",
+    "text": "En Señales y Sistemas aparecen objetos que resultan muy útiles en modelado, pero que no encajan bien en la categoría de funciones ordinarias integrables. El impulso ideal, las líneas espectrales perfectas o la transformada del escalón son ejemplos clásicos.\nPara tratarlos con rigor se recurre a las distribuciones o funciones generalizadas. La idea central es no pensar primero en el valor puntual del objeto, sino en cómo actúa sobre funciones de prueba suficientemente regulares y decrecientes.\n\n\n\n\n\n\nTipIdea clave\n\n\n\nUna distribución no se manipula como una curva ordinaria. Se entiende por su acción lineal sobre funciones de prueba y por las reglas algebraicas y diferenciales que esa acción satisface."
+  },
+  {
+    "objectID": "temas/distribuciones.html#por-qué-aparecen-en-señales-y-sistemas",
+    "href": "temas/distribuciones.html#por-qué-aparecen-en-señales-y-sistemas",
+    "title": "Distribuciones y funciones generalizadas",
+    "section": "",
+    "text": "En Señales y Sistemas aparecen objetos que resultan muy útiles en modelado, pero que no encajan bien en la categoría de funciones ordinarias integrables. El impulso ideal, las líneas espectrales perfectas o la transformada del escalón son ejemplos clásicos.\nPara tratarlos con rigor se recurre a las distribuciones o funciones generalizadas. La idea central es no pensar primero en el valor puntual del objeto, sino en cómo actúa sobre funciones de prueba suficientemente regulares y decrecientes.\n\n\n\n\n\n\nTipIdea clave\n\n\n\nUna distribución no se manipula como una curva ordinaria. Se entiende por su acción lineal sobre funciones de prueba y por las reglas algebraicas y diferenciales que esa acción satisface."
+  },
+  {
+    "objectID": "temas/distribuciones.html#funciones-ordinarias-y-distribuciones",
+    "href": "temas/distribuciones.html#funciones-ordinarias-y-distribuciones",
+    "title": "Distribuciones y funciones generalizadas",
+    "section": "2 Funciones ordinarias y distribuciones",
+    "text": "2 Funciones ordinarias y distribuciones\nSi \\(f\\) es localmente integrable, puede asociarse la distribución regular \\(T_f\\) mediante\n\\[\n\\langle T_f,\\varphi\\rangle\n=\n\\int_{-\\infty}^{\\infty} f(t)\\varphi(t)\\,dt.\n\\]\nAquí \\(\\varphi\\) representa una función de prueba. En el apunte de referencia esta idea se formula sobre el espacio de Schwartz, lo que permite trabajar con derivadas, desplazamientos y transformadas de Fourier con buen control analítico.\nNo todas las distribuciones provienen de una función ordinaria. La delta de Dirac es el ejemplo más importante: se define por su acción y no por una “altura infinita” en un punto."
+  },
+  {
+    "objectID": "temas/distribuciones.html#delta-de-dirac",
+    "href": "temas/distribuciones.html#delta-de-dirac",
+    "title": "Distribuciones y funciones generalizadas",
+    "section": "3 Delta de Dirac",
+    "text": "3 Delta de Dirac\nLa delta de Dirac centrada en el origen queda caracterizada por\n\\[\n\\langle \\delta,\\varphi\\rangle=\\varphi(0).\n\\]\nMás generalmente, la delta desplazada cumple\n\\[\n\\langle \\delta(t-a),\\varphi(t)\\rangle=\\varphi(a).\n\\]\nDe aquí se desprenden reglas fundamentales:\n\\[\n\\int_{-\\infty}^{\\infty} f(t)\\,\\delta(t-a)\\,dt=f(a),\n\\]\n\\[\n\\delta(at)=\\frac{1}{|a|}\\delta(t), \\qquad a\\neq 0.\n\\]\n\n\n\nImpulso en el origen\n\n\\[\n\\delta(t)\n\\]\n\n\n\n\nLa flecha indica una acción de muestreo en \\(t=0\\). No representa una función ordinaria de gran altura.\n\n\n\n\nDelta desplazada\n\n\\[\n\\delta(t-a)\n\\]\n\n\n\n\nDesplazar la delta mueve el punto donde la distribución “lee” el valor de la función de prueba."
+  },
+  {
+    "objectID": "temas/distribuciones.html#derivadas-distribucionales",
+    "href": "temas/distribuciones.html#derivadas-distribucionales",
+    "title": "Distribuciones y funciones generalizadas",
+    "section": "4 Derivadas distribucionales",
+    "text": "4 Derivadas distribucionales\nUna ventaja importante del formalismo distribucional es que permite derivar objetos con saltos. La derivada se define por transposición:\n\\[\n\\langle T',\\varphi\\rangle=-\\langle T,\\varphi'\\rangle.\n\\]\nCon esta definición se obtienen relaciones muy usadas:\n\\[\n\\frac{d}{dt}u(t)=\\delta(t),\n\\]\n\\[\nr(t)=t\\,u(t), \\qquad r'(t)=u(t), \\qquad r''(t)=\\delta(t).\n\\]\n\n\nEscalón y derivada distribucional\n\n\n\n\n\nEl escalón tiene un salto en el origen. En sentido distribucional, ese salto se codifica mediante una delta en la derivada."
+  },
+  {
+    "objectID": "temas/distribuciones.html#valor-principal-y-función-signo",
+    "href": "temas/distribuciones.html#valor-principal-y-función-signo",
+    "title": "Distribuciones y funciones generalizadas",
+    "section": "5 Valor principal y función signo",
+    "text": "5 Valor principal y función signo\nAlgunas expresiones espectrales no son integrables en el sentido ordinario, pero sí adquieren significado como valor principal. Se escribe\n\\[\n\\operatorname{p.v.}\\!\\left(\\frac{1}{u}\\right)\n\\]\npara indicar que la singularidad en \\(u=0\\) debe interpretarse de manera simétrica dentro de integrales.\nEsto aparece, por ejemplo, en la transformada del signo:\n\\[\n\\operatorname{sgn}(t)\\leftrightarrow \\operatorname{p.v.}\\!\\left(\\frac{1}{i\\pi u}\\right).\n\\]\n\n\nSigno y parte regular en frecuencia\n\n\n\n\n\nLa curva inferior representa la parte regular imaginaria impar. El símbolo \\(\\operatorname{p.v.}\\) recuerda que el origen no se trata como un punto ordinario del gráfico."
+  },
+  {
+    "objectID": "temas/distribuciones.html#transformada-de-fourier-en-sentido-distribucional",
+    "href": "temas/distribuciones.html#transformada-de-fourier-en-sentido-distribucional",
+    "title": "Distribuciones y funciones generalizadas",
+    "section": "6 Transformada de Fourier en sentido distribucional",
+    "text": "6 Transformada de Fourier en sentido distribucional\nMuchas señales de interés no tienen transformada ordinaria en \\(L^1\\), pero sí pueden transformarse en sentido distribucional. Bajo la convención del sitio,\n\\[\nX(u)=\\int_{-\\infty}^{\\infty}x(t)e^{-i2\\pi ut}\\,dt,\n\\]\naparecen pares notables como los siguientes:\n\n\n\n\n\n\n\n\nSeñal o distribución\nTransformada en \\(u\\)\nLectura\n\n\n\n\n\\(\\delta(t)\\)\n\\(1\\)\nImpulso temporal y espectro constante.\n\n\n\\(1\\)\n\\(\\delta(u)\\)\nToda la contribución queda en frecuencia cero.\n\n\n\\(e^{i2\\pi u_0 t}\\)\n\\(\\delta(u-u_0)\\)\nLínea espectral ideal en \\(u_0\\).\n\n\n\\(\\cos(2\\pi u_0 t)\\)\n\\(\\frac{1}{2}\\left[\\delta(u-u_0)+\\delta(u+u_0)\\right]\\)\nDos impulsos simétricos en frecuencia.\n\n\n\\(\\sin(2\\pi u_0 t)\\)\n\\(\\frac{1}{2i}\\left[\\delta(u-u_0)-\\delta(u+u_0)\\right]\\)\nPar de impulsos con pesos opuestos en fase.\n\n\n\\(u(t)\\)\n\\(\\operatorname{p.v.}\\!\\left(\\frac{1}{i2\\pi u}\\right)+\\frac{1}{2}\\delta(u)\\)\nParte regular más impulso en el origen.\n\n\n\\(\\operatorname{sgn}(t)\\)\n\\(\\operatorname{p.v.}\\!\\left(\\frac{1}{i\\pi u}\\right)\\)\nDistribución puramente en valor principal.\n\n\n\n\n\nImpulsos en frecuencia para seno y coseno\n\n\n\n\n\nLas flechas representan líneas espectrales ideales. En el caso del seno, la antisimetía está en los pesos complejos; por eso el gráfico debe leerse de forma simbólica y apoyarse en la fórmula.\n\n\n\n\n\n\n\n\nAdvertenciaError común\n\n\n\nNo conviene interpretar \\(\\delta(t)\\) como un “pico muy angosto” ni a \\(\\operatorname{p.v.}\\!\\left(\\frac{1}{u}\\right)\\) como una función ordinaria definida en \\(u=0\\). Son objetos distribucionales y deben leerse con sus reglas propias."
+  },
+  {
+    "objectID": "temas/distribuciones.html#cómo-leer-los-gráficos",
+    "href": "temas/distribuciones.html#cómo-leer-los-gráficos",
+    "title": "Distribuciones y funciones generalizadas",
+    "section": "7 Cómo leer los gráficos",
+    "text": "7 Cómo leer los gráficos\n\nUna flecha representa un impulso ideal, no una curva ordinaria.\nUna curva continua representa la parte regular del objeto.\nCuando aparece \\(\\operatorname{p.v.}\\), el origen requiere interpretación simétrica.\nSi el gráfico mezcla flechas y curvas, la descripción completa combina parte regular y términos impulsivos."
   },
   {
     "objectID": "index.html",
@@ -438,7 +494,7 @@
     "href": "temas/modulacion-muestreo.html#muestreo-ideal",
     "title": "Modulación y muestreo",
     "section": "4 Muestreo ideal",
-    "text": "4 Muestreo ideal\nSi \\(T_s=1/f_s\\) es el período de muestreo, el muestreo ideal puede modelarse como\n\\[\nx_s(t)=x(t)\\sum_{n=-\\infty}^{\\infty}\\delta(t-nT_s).\n\\]\nEn frecuencia esto produce réplicas periódicas:\n\\[\nX_s(u)=f_s\\sum_{k=-\\infty}^{\\infty}X(u-kf_s).\n\\]"
+    "text": "4 Muestreo ideal\nSi \\(T_s=1/f_s\\) es el período de muestreo, el muestreo ideal puede modelarse como\n\\[\nx_s(t)=x(t)\\sum_{n=-\\infty}^{\\infty}\\delta(t-nT_s).\n\\]\nAquí aparece un tren de deltas de Dirac, útil para formalizar el muestreo como producto entre la señal continua y una rejilla impulsiva.\nEn frecuencia esto produce réplicas periódicas:\n\\[\nX_s(u)=f_s\\sum_{k=-\\infty}^{\\infty}X(u-kf_s).\n\\]"
   },
   {
     "objectID": "temas/modulacion-muestreo.html#aliasing",
@@ -508,14 +564,14 @@
     "href": "temas/sistemas-lti-filtros.html",
     "title": "Sistemas LTI y filtros",
     "section": "",
-    "text": "Un sistema lineal e invariante en el tiempo (LTI) queda completamente caracterizado por su respuesta al impulso \\(h(t)\\). Conocer \\(h(t)\\) equivale a conocer cómo el sistema actúa sobre cualquier entrada admisible."
+    "text": "Un sistema lineal e invariante en el tiempo (LTI) queda completamente caracterizado por su respuesta al impulso \\(h(t)\\). Esa respuesta se entiende como la salida ante una entrada ideal modelada con la delta de Dirac dentro del lenguaje de distribuciones. Conocer \\(h(t)\\) equivale a conocer cómo el sistema actúa sobre cualquier entrada admisible."
   },
   {
     "objectID": "temas/sistemas-lti-filtros.html#respuesta-al-impulso",
     "href": "temas/sistemas-lti-filtros.html#respuesta-al-impulso",
     "title": "Sistemas LTI y filtros",
     "section": "",
-    "text": "Un sistema lineal e invariante en el tiempo (LTI) queda completamente caracterizado por su respuesta al impulso \\(h(t)\\). Conocer \\(h(t)\\) equivale a conocer cómo el sistema actúa sobre cualquier entrada admisible."
+    "text": "Un sistema lineal e invariante en el tiempo (LTI) queda completamente caracterizado por su respuesta al impulso \\(h(t)\\). Esa respuesta se entiende como la salida ante una entrada ideal modelada con la delta de Dirac dentro del lenguaje de distribuciones. Conocer \\(h(t)\\) equivale a conocer cómo el sistema actúa sobre cualquier entrada admisible."
   },
   {
     "objectID": "temas/sistemas-lti-filtros.html#entrada-salida-por-convolución",
