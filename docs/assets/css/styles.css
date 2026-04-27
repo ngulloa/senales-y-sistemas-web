@@ -572,6 +572,15 @@ input[type="range"]::-moz-range-thumb {
   border-color: rgba(42, 157, 143, 0.32);
 }
 
+#tf-explorer .spectral-note,
+#tf-explorer .spectral-note.is-success,
+#tf-explorer .spectral-note.is-warning {
+  color: var(--color-primary);
+  background-color: rgba(230, 244, 239, 0.96);
+  border-color: rgba(42, 157, 143, 0.36);
+  overflow-x: auto;
+}
+
 .mjx-container {
   overflow-x: auto;
   overflow-y: hidden;

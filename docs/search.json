@@ -382,7 +382,7 @@
     "href": "index.html",
     "title": "Inicio",
     "section": "",
-    "text": "Este sitio reúne apuntes introductorios, recordatorios de fórmulas y simulaciones interactivas para apoyar el estudio de Señales y Sistemas en cursos de matemática aplicada e ingeniería. La idea central es combinar una presentación rigurosa con herramientas ligeras que puedan abrirse en cualquier navegador, sin backend y sin dependencias de escritorio.\n\n\n\n\n\n\nAdvertenciaSitio en construcción\n\n\n\nEl material ya es útil para estudiar conceptos base y experimentar con ejemplos, pero seguirá creciendo con nuevas simulaciones, ejercicios y validación matemática de tablas notables.\n\n\n\n\n\n\n\n\nNotaConvención usada\n\n\n\nEn todo el sitio se usa la transformada de Fourier\n\\[\nX(u)=\\int_{-\\infty}^{\\infty}x(t)e^{-i2\\pi ut}\\,dt\n\\]\ncon frecuencia \\(u\\) medida en ciclos por unidad de tiempo. Si aparece la frecuencia angular, se indicará explícitamente que \\(\\omega = 2\\pi u\\).\n\n\n\n\n\nSeries de Fourier y su interpretación en armónicos.\nTransformada de Fourier de señales continuas bajo la convención \\(e^{-i2\\pi ut}\\).\nRelación entre señales periódicas, espectros discretos y espectros continuos.\nTransformada de Laplace, región de convergencia, polos, ceros y estabilidad.\nPropiedades operacionales de Fourier y fundamentos de sistemas LTI.\nModulación, muestreo, aliasing y primera aproximación a DTFT, DFT, FFT y DCT.\n\n\n\n\n\n\n\nContenidos\n\nContenidos principales\nIngresa por Serie de Fourier y continúa con Fourier, Laplace, LTI, modulación y señales discretas.\n\n\n\nSimulaciones\n\nSimulaciones\nExplora sinusoides, reconstrucción por Serie de Fourier y aliasing con controles interactivos en navegador.\n\n\nEl sitio está pensado como material gratuito, publicable en GitHub Pages y fácil de extender con nuevas páginas .qmd y módulos JavaScript. Cada simulación busca conectar fórmulas, gráficos e intuición física sin depender de backend."
+    "text": "Este sitio reúne apuntes introductorios, recordatorios de fórmulas y simulaciones interactivas para apoyar el estudio de Señales y Sistemas en cursos de matemática aplicada e ingeniería. La idea central es combinar una presentación rigurosa con herramientas ligeras que puedan abrirse en cualquier navegador, sin backend y sin dependencias de escritorio.\n\n\n\n\n\n\nAdvertenciaSitio en construcción\n\n\n\nEl material ya es útil para estudiar conceptos base y experimentar con ejemplos, pero seguirá creciendo con nuevas simulaciones, ejercicios y validación matemática de tablas notables.\n\n\n\n\n\n\n\n\nNotaConvención usada\n\n\n\nEn todo el sitio se usa la transformada de Fourier\n\\[\nX(u)=\\int_{-\\infty}^{\\infty}x(t)e^{-i2\\pi ut}\\,dt\n\\]\ncon frecuencia \\(u\\) medida en ciclos por unidad de tiempo. Si aparece la frecuencia angular, se indicará explícitamente que \\(\\omega = 2\\pi u\\).\n\n\n\n\n\nSeries de Fourier y su interpretación en armónicos.\nTransformada de Fourier de señales continuas bajo la convención \\(e^{-i2\\pi ut}\\).\nRelación entre señales periódicas, espectros discretos y espectros continuos.\nTransformada de Laplace, región de convergencia, polos, ceros y estabilidad.\nPropiedades operacionales de Fourier y fundamentos de sistemas LTI.\nModulación, muestreo, aliasing y primera aproximación a DTFT, DFT, FFT y DCT.\n\n\n\n\n\n\n\nContenidos\n\nContenidos principales\nIngresa por Serie de Fourier y continúa con Fourier, Laplace, LTI, modulación y señales discretas.\n\n\n\nSimulaciones\n\nSimulaciones\nExplora sinusoides, reconstrucción por Serie de Fourier y aliasing con controles interactivos en navegador.\n\n\nEl sitio está pensado como material gratuito, publicable en GitHub Pages y fácil de extender con nuevas páginas .qmd y módulos JavaScript. Cada simulación busca conectar fórmulas, gráficos e intuición física."
   },
   {
     "objectID": "index.html#qué-puedes-estudiar-aquí",
@@ -396,7 +396,7 @@
     "href": "index.html#accesos-rápidos",
     "title": "Inicio",
     "section": "",
-    "text": "Contenidos\n\nContenidos principales\nIngresa por Serie de Fourier y continúa con Fourier, Laplace, LTI, modulación y señales discretas.\n\n\n\nSimulaciones\n\nSimulaciones\nExplora sinusoides, reconstrucción por Serie de Fourier y aliasing con controles interactivos en navegador.\n\n\nEl sitio está pensado como material gratuito, publicable en GitHub Pages y fácil de extender con nuevas páginas .qmd y módulos JavaScript. Cada simulación busca conectar fórmulas, gráficos e intuición física sin depender de backend."
+    "text": "Contenidos\n\nContenidos principales\nIngresa por Serie de Fourier y continúa con Fourier, Laplace, LTI, modulación y señales discretas.\n\n\n\nSimulaciones\n\nSimulaciones\nExplora sinusoides, reconstrucción por Serie de Fourier y aliasing con controles interactivos en navegador.\n\n\nEl sitio está pensado como material gratuito, publicable en GitHub Pages y fácil de extender con nuevas páginas .qmd y módulos JavaScript. Cada simulación busca conectar fórmulas, gráficos e intuición física."
   },
   {
     "objectID": "temas/dtft-dft-fft-dct.html",
@@ -466,14 +466,14 @@
     "href": "temas/modulacion-muestreo.html",
     "title": "Modulación y muestreo",
     "section": "",
-    "text": "En modulación de amplitud elemental, una portadora de frecuencia alta transporta una señal de información de frecuencia más baja. Un modelo sencillo es\n\\[\nx_{\\text{AM}}(t)=\\left[1+m\\cos(2\\pi u_m t)\\right]A_c\\cos(2\\pi u_c t),\n\\]\ncon \\(0\\le m \\le 1\\) en el caso sin sobre-modulación.\nEl espectro de la modulante aparece desplazado alrededor de \\(\\pm u_c\\)."
+    "text": "En modulación de amplitud elemental, una portadora de frecuencia alta transporta una señal de información de frecuencia más baja. Un modelo sencillo es\n\\[\ns(t)=\\left[1+\\mu m(t)\\right]\\cos(2\\pi u_c t),\n\\]\ndonde \\(m(t)\\) es el mensaje, \\(u_c\\) es la frecuencia de la portadora y \\(\\mu\\) controla la profundidad de modulación.\nSi \\(|\\mu m(t)|\\) se mantiene moderado, la envolvente de \\(s(t)\\) sigue reproduciendo al mensaje de manera clara. Si \\(\\mu\\) es demasiado grande, puede aparecer sobremodulación y la envolvente deja de ser una lectura fiable del mensaje original.\nEl resultado espectral más importante es que la modulación desplaza copias del espectro de \\(m(t)\\) alrededor de \\(\\pm u_c\\)."
   },
   {
     "objectID": "temas/modulacion-muestreo.html#modulación-am",
     "href": "temas/modulacion-muestreo.html#modulación-am",
     "title": "Modulación y muestreo",
     "section": "",
-    "text": "En modulación de amplitud elemental, una portadora de frecuencia alta transporta una señal de información de frecuencia más baja. Un modelo sencillo es\n\\[\nx_{\\text{AM}}(t)=\\left[1+m\\cos(2\\pi u_m t)\\right]A_c\\cos(2\\pi u_c t),\n\\]\ncon \\(0\\le m \\le 1\\) en el caso sin sobre-modulación.\nEl espectro de la modulante aparece desplazado alrededor de \\(\\pm u_c\\)."
+    "text": "En modulación de amplitud elemental, una portadora de frecuencia alta transporta una señal de información de frecuencia más baja. Un modelo sencillo es\n\\[\ns(t)=\\left[1+\\mu m(t)\\right]\\cos(2\\pi u_c t),\n\\]\ndonde \\(m(t)\\) es el mensaje, \\(u_c\\) es la frecuencia de la portadora y \\(\\mu\\) controla la profundidad de modulación.\nSi \\(|\\mu m(t)|\\) se mantiene moderado, la envolvente de \\(s(t)\\) sigue reproduciendo al mensaje de manera clara. Si \\(\\mu\\) es demasiado grande, puede aparecer sobremodulación y la envolvente deja de ser una lectura fiable del mensaje original.\nEl resultado espectral más importante es que la modulación desplaza copias del espectro de \\(m(t)\\) alrededor de \\(\\pm u_c\\)."
   },
   {
     "objectID": "temas/modulacion-muestreo.html#fm-introductoria",
@@ -487,7 +487,7 @@
     "href": "temas/modulacion-muestreo.html#desplazamiento-espectral",
     "title": "Modulación y muestreo",
     "section": "3 Desplazamiento espectral",
-    "text": "3 Desplazamiento espectral\nLa propiedad\n\\[\ne^{i2\\pi u_0 t}x(t)\\leftrightarrow X(u-u_0)\n\\]\nresume la idea matemática central de la modulación: multiplicar en el tiempo permite trasladar espectros."
+    "text": "3 Desplazamiento espectral\nLa propiedad\n\\[\ne^{i2\\pi u_0 t}x(t)\\leftrightarrow X(u-u_0)\n\\]\nresume la idea matemática central de la modulación: multiplicar en el tiempo permite trasladar espectros.\nCuando se usa una portadora real, por ejemplo \\(\\cos(2\\pi u_c t)\\), aparecen dos copias desplazadas del espectro, una hacia \\(+u_c\\) y otra hacia \\(-u_c\\). Esa es la razón por la que en AM aparecen bandas laterales alrededor de la portadora."
   },
   {
     "objectID": "temas/modulacion-muestreo.html#muestreo-ideal",
@@ -508,7 +508,14 @@
     "href": "temas/modulacion-muestreo.html#frecuencia-de-nyquist",
     "title": "Modulación y muestreo",
     "section": "6 Frecuencia de Nyquist",
-    "text": "6 Frecuencia de Nyquist\nSi la señal es limitada en banda a \\(|u|\\le u_{\\max}\\), el criterio clásico para evitar solapamiento es\n\\[\nf_s \\ge 2u_{\\max}.\n\\]\nEl valor \\(f_s/2\\) se conoce como frecuencia de Nyquist.\n\n\n\n\n\n\nAdvertenciaError común\n\n\n\nCumplir \\(f_s \\ge 2u_{\\max}\\) exige conocer una cota realista de la banda ocupada por la señal. En práctica, siempre se acompaña de filtrado anti-alias antes del muestreo.\n\n\n\n\n\n\n\n\nTipExplora el aliasing\n\n\n\nLa simulación Muestreo y aliasing permite comparar una sinusoide continua con sus muestras y con la frecuencia alias equivalente cuando no se cumple Nyquist."
+    "text": "6 Frecuencia de Nyquist\nSi la señal es limitada en banda a \\(|u|\\le u_{\\max}\\), el criterio clásico para evitar solapamiento es\n\\[\nu_s &gt; 2u_{\\max}.\n\\]\nAquí \\(u_s=1/T_s\\) es la frecuencia de muestreo medida en ciclos por unidad de tiempo. En muchos cursos también se escribe \\(f_s\\), y el valor \\(u_s/2\\) se conoce como frecuencia de Nyquist."
+  },
+  {
+    "objectID": "temas/modulacion-muestreo.html#explorador-de-muestreo-y-aliasing",
+    "href": "temas/modulacion-muestreo.html#explorador-de-muestreo-y-aliasing",
+    "title": "Modulación y muestreo",
+    "section": "7 Explorador de muestreo y aliasing",
+    "text": "7 Explorador de muestreo y aliasing\nLa siguiente visualización permite ver directamente cuándo las muestras representan fielmente a la señal continua y cuándo pasan a confundirse con una frecuencia alias más baja. Mantiene la misma lógica de la simulación completa, pero integrada en esta página para conectar la teoría con la observación inmediata.\n\n\n\nControles\n\n\n\nFrecuencia de la señal u\n\n \n\n\n\nFrecuencia de muestreo us\n\n \n\n\n\nFase φ [rad]\n\n \n\n\n\nDuración observada\n\n \n\n\n\n\n\n\nSeñal continua, muestras y alias\n\n\n\n\n\n\n\nLectura rápida\n\n\n\n\n\n\nNyquist \n\n\nFrecuencia alias \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAdvertenciaError común\n\n\n\nCumplir \\(u_s &gt; 2u_{\\max}\\) exige conocer una cota realista de la banda ocupada por la señal. En práctica, siempre se acompaña de filtrado anti-alias antes del muestreo.\n\n\n\n\n\n\n\n\nTipExplora el aliasing\n\n\n\nLa simulación Muestreo y aliasing permite comparar una sinusoide continua con sus muestras y con la frecuencia alias equivalente cuando no se cumple Nyquist."
   },
   {
     "objectID": "temas/relacion-sf-tf.html",

@@ -57,4 +57,4 @@ Explora sinusoides, reconstrucción por Serie de Fourier y aliasing con controle
 :::
 :::
 
-El sitio está pensado como material gratuito, publicable en GitHub Pages y fácil de extender con nuevas páginas `.qmd` y módulos JavaScript. Cada simulación busca conectar fórmulas, gráficos e intuición física sin depender de backend.
+El sitio está pensado como material gratuito, publicable en GitHub Pages y fácil de extender con nuevas páginas `.qmd` y módulos JavaScript. Cada simulación busca conectar fórmulas, gráficos e intuición física.

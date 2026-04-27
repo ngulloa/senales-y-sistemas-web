@@ -147,10 +147,6 @@ function piecewisePhase(grid, positiveValue, negativeValue) {
   });
 }
 
-function distributionTone(signalKey) {
-  return ["one", "step", "ramp", "sign"].includes(signalKey) ? "warning" : "success";
-}
-
 const SIGNALS = {
   delta: {
     label: "Delta de Dirac",
@@ -448,7 +444,7 @@ function updateExplorer(elements) {
   renderLatex(elements.formula, spectrumFormula(signal));
   setStatusBanner(elements.note, {
     html: signal.noteHtml,
-    tone: distributionTone(elements.signal.value),
+    tone: "success",
   });
 
   renderPlot(elements.timePlot, timeTraces(signal), {

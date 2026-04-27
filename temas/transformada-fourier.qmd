@@ -35,7 +35,7 @@ Cuando aparecen [distribuciones o funciones generalizadas](distribuciones.qmd), 
 <p class="sim-section-title">Explorador tiempo-frecuencia</p>
 <p class="sim-section-lead">Selecciona una señal típica y observa su representación en el dominio del tiempo y en el dominio de la frecuencia. La vista espectral puede mostrarse como magnitud, fase o ambas; cuando hay deltas o derivadas de deltas, la interfaz lo indica explícitamente.</p>
 
-::: {#tf-explorer .simulation-shell .simulation-shell--embedded}
+::: {#tf-explorer .simulation-shell .simulation-shell--embedded .fourier-transform-explorer}
 ::: {.sim-card .sim-card--controls}
 <p class="sim-card-title">Controles</p>
 
@@ -62,7 +62,7 @@ Cuando aparecen [distribuciones o funciones generalizadas](distribuciones.qmd), 
 </div>
 
 <div class="formula-panel" id="tf-explorer-formula"></div>
-<div id="tf-explorer-note" class="status-banner"></div>
+<div id="tf-explorer-note" class="status-banner spectral-note"></div>
 :::
 
 ::: {.dual-plot-grid}

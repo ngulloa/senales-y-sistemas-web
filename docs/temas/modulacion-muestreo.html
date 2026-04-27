@@ -214,6 +214,7 @@ window.Quarto = {
   <li><a href="#muestreo-ideal" id="toc-muestreo-ideal" class="nav-link" data-scroll-target="#muestreo-ideal"><span class="header-section-number">4</span> Muestreo ideal</a></li>
   <li><a href="#aliasing" id="toc-aliasing" class="nav-link" data-scroll-target="#aliasing"><span class="header-section-number">5</span> Aliasing</a></li>
   <li><a href="#frecuencia-de-nyquist" id="toc-frecuencia-de-nyquist" class="nav-link" data-scroll-target="#frecuencia-de-nyquist"><span class="header-section-number">6</span> Frecuencia de Nyquist</a></li>
+  <li><a href="#explorador-de-muestreo-y-aliasing" id="toc-explorador-de-muestreo-y-aliasing" class="nav-link" data-scroll-target="#explorador-de-muestreo-y-aliasing"><span class="header-section-number">7</span> Explorador de muestreo y aliasing</a></li>
   </ul>
 </nav>
     </div>
@@ -243,10 +244,11 @@ window.Quarto = {
 <h2 data-number="1" class="anchored" data-anchor-id="modulación-am"><span class="header-section-number">1</span> Modulación AM</h2>
 <p>En modulación de amplitud elemental, una portadora de frecuencia alta transporta una señal de información de frecuencia más baja. Un modelo sencillo es</p>
 <p><span class="math display">\[
-x_{\text{AM}}(t)=\left[1+m\cos(2\pi u_m t)\right]A_c\cos(2\pi u_c t),
+s(t)=\left[1+\mu m(t)\right]\cos(2\pi u_c t),
 \]</span></p>
-<p>con <span class="math inline">\(0\le m \le 1\)</span> en el caso sin sobre-modulación.</p>
-<p>El espectro de la modulante aparece desplazado alrededor de <span class="math inline">\(\pm u_c\)</span>.</p>
+<p>donde <span class="math inline">\(m(t)\)</span> es el mensaje, <span class="math inline">\(u_c\)</span> es la frecuencia de la portadora y <span class="math inline">\(\mu\)</span> controla la profundidad de modulación.</p>
+<p>Si <span class="math inline">\(|\mu m(t)|\)</span> se mantiene moderado, la envolvente de <span class="math inline">\(s(t)\)</span> sigue reproduciendo al mensaje de manera clara. Si <span class="math inline">\(\mu\)</span> es demasiado grande, puede aparecer sobremodulación y la envolvente deja de ser una lectura fiable del mensaje original.</p>
+<p>El resultado espectral más importante es que la modulación desplaza copias del espectro de <span class="math inline">\(m(t)\)</span> alrededor de <span class="math inline">\(\pm u_c\)</span>.</p>
 </section>
 <section id="fm-introductoria" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="fm-introductoria"><span class="header-section-number">2</span> FM introductoria</h2>
@@ -259,6 +261,7 @@ x_{\text{AM}}(t)=\left[1+m\cos(2\pi u_m t)\right]A_c\cos(2\pi u_c t),
 e^{i2\pi u_0 t}x(t)\leftrightarrow X(u-u_0)
 \]</span></p>
 <p>resume la idea matemática central de la modulación: multiplicar en el tiempo permite trasladar espectros.</p>
+<p>Cuando se usa una portadora real, por ejemplo <span class="math inline">\(\cos(2\pi u_c t)\)</span>, aparecen dos copias desplazadas del espectro, una hacia <span class="math inline">\(+u_c\)</span> y otra hacia <span class="math inline">\(-u_c\)</span>. Esa es la razón por la que en AM aparecen bandas laterales alrededor de la portadora.</p>
 </section>
 <section id="muestreo-ideal" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="muestreo-ideal"><span class="header-section-number">4</span> Muestreo ideal</h2>
@@ -286,9 +289,75 @@ f_{\text{alias}}=\left|f-kf_s\right|,
 <h2 data-number="6" class="anchored" data-anchor-id="frecuencia-de-nyquist"><span class="header-section-number">6</span> Frecuencia de Nyquist</h2>
 <p>Si la señal es limitada en banda a <span class="math inline">\(|u|\le u_{\max}\)</span>, el criterio clásico para evitar solapamiento es</p>
 <p><span class="math display">\[
-f_s \ge 2u_{\max}.
+u_s &gt; 2u_{\max}.
 \]</span></p>
-<p>El valor <span class="math inline">\(f_s/2\)</span> se conoce como frecuencia de Nyquist.</p>
+<p>Aquí <span class="math inline">\(u_s=1/T_s\)</span> es la frecuencia de muestreo medida en ciclos por unidad de tiempo. En muchos cursos también se escribe <span class="math inline">\(f_s\)</span>, y el valor <span class="math inline">\(u_s/2\)</span> se conoce como frecuencia de Nyquist.</p>
+</section>
+<section id="explorador-de-muestreo-y-aliasing" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="explorador-de-muestreo-y-aliasing"><span class="header-section-number">7</span> Explorador de muestreo y aliasing</h2>
+<p>La siguiente visualización permite ver directamente cuándo las muestras representan fielmente a la señal continua y cuándo pasan a confundirse con una frecuencia alias más baja. Mantiene la misma lógica de la simulación completa, pero integrada en esta página para conectar la teoría con la observación inmediata.</p>
+<div id="modulation-sampling-explorer" class="simulation-shell simulation-shell--embedded">
+<div class="sim-card sim-card--controls">
+<p class="sim-card-title">
+Controles
+</p>
+<div class="control-grid">
+<div class="control-field">
+<label for="mod-sampling-frequency">Frecuencia de la señal <em>u</em></label>
+<div class="control-inline">
+<p><input id="mod-sampling-frequency" type="range" min="0.5" max="24" step="0.1" value="7"> <input id="mod-sampling-frequency-number" type="number" min="0.5" max="24" step="0.1" value="7"></p>
+</div>
+</div>
+<div class="control-field">
+<label for="mod-sampling-rate">Frecuencia de muestreo <em>u</em><sub>s</sub></label>
+<div class="control-inline">
+<p><input id="mod-sampling-rate" type="range" min="2" max="30" step="0.5" value="12"> <input id="mod-sampling-rate-number" type="number" min="2" max="30" step="0.5" value="12"></p>
+</div>
+</div>
+<div class="control-field">
+<label for="mod-sampling-phase">Fase <em>φ</em> [rad]</label>
+<div class="control-inline">
+<p><input id="mod-sampling-phase" type="range" min="-3.1416" max="3.1416" step="0.05" value="0"> <input id="mod-sampling-phase-number" type="number" min="-3.1416" max="3.1416" step="0.05" value="0"></p>
+</div>
+</div>
+<div class="control-field">
+<label for="mod-sampling-duration">Duración observada</label>
+<div class="control-inline">
+<p><input id="mod-sampling-duration" type="range" min="0.5" max="3" step="0.1" value="1.5"> <input id="mod-sampling-duration-number" type="number" min="0.5" max="3" step="0.1" value="1.5"></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sim-card sim-card--plot">
+<p class="sim-card-title">
+Señal continua, muestras y alias
+</p>
+<div id="mod-sampling-plot" class="plot-panel plot-panel--embedded">
+
+</div>
+</div>
+<div class="sim-card sim-card--diagnostics">
+<p class="sim-card-title">
+Lectura rápida
+</p>
+<div id="mod-sampling-formula" class="formula-panel">
+
+</div>
+<div class="metric-grid">
+<div class="metric-card">
+<p><span class="metric-label">Nyquist</span> <strong id="mod-sampling-nyquist"></strong></p>
+</div>
+<div class="metric-card">
+<p><span class="metric-label">Frecuencia alias</span> <strong id="mod-sampling-alias"></strong></p>
+</div>
+</div>
+<div id="mod-sampling-alert" class="status-banner">
+
+</div>
+<p class="sim-explainer" id="mod-sampling-summary">
+</p>
+</div>
+</div>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -299,7 +368,7 @@ f_s \ge 2u_{\max}.
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Cumplir <span class="math inline">\(f_s \ge 2u_{\max}\)</span> exige conocer una cota realista de la banda ocupada por la señal. En práctica, siempre se acompaña de filtrado anti-alias antes del muestreo.</p>
+<p>Cumplir <span class="math inline">\(u_s &gt; 2u_{\max}\)</span> exige conocer una cota realista de la banda ocupada por la señal. En práctica, siempre se acompaña de filtrado anti-alias antes del muestreo.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -315,6 +384,8 @@ f_s \ge 2u_{\max}.
 <p>La simulación <a href="../simulaciones/muestreo-aliasing.html">Muestreo y aliasing</a> permite comparar una sinusoide continua con sus muestras y con la frecuencia alias equivalente cuando no se cumple Nyquist.</p>
 </div>
 </div>
+<script src="https://cdn.plot.ly/plotly-2.32.0.min.js"></script>
+<script type="module" src="../assets/js/simulations/modulation-sampling-explorer.js"></script>
 
 
 </section>

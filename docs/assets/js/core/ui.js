@@ -6,6 +6,34 @@ export function onDomReady(callback) {
   callback();
 }
 
+function queueTypeset(container, attempt = 0) {
+  if (!container) {
+    return;
+  }
+
+  const mathJax = window.MathJax;
+  if (!mathJax?.typesetPromise) {
+    if (attempt < 24) {
+      window.setTimeout(() => queueTypeset(container, attempt + 1), 80);
+    }
+    return;
+  }
+
+  const runTypeset = () => {
+    if (mathJax.typesetClear) {
+      mathJax.typesetClear([container]);
+    }
+    mathJax.typesetPromise([container]).catch(() => {});
+  };
+
+  if (mathJax.startup?.promise) {
+    mathJax.startup.promise.then(runTypeset).catch(() => {});
+    return;
+  }
+
+  runTypeset();
+}
+
 export function formatNumber(value, digits = 2) {
   const factor = 10 ** digits;
   const rounded = Math.round(Number(value) * factor) / factor;
@@ -57,15 +85,8 @@ export function renderLatex(container, latexExpression) {
     return;
   }
 
-  if (window.MathJax?.typesetClear) {
-    window.MathJax.typesetClear([container]);
-  }
-
   container.innerHTML = `$$${latexExpression}$$`;
-
-  if (window.MathJax?.typesetPromise) {
-    window.MathJax.typesetPromise([container]).catch(() => {});
-  }
+  queueTypeset(container);
 }
 
 export function setStatusBanner(container, { text = "", html = "", tone = "success" }) {
@@ -74,15 +95,9 @@ export function setStatusBanner(container, { text = "", html = "", tone = "succe
     return;
   }
 
-  if (window.MathJax?.typesetClear) {
-    window.MathJax.typesetClear([container]);
-  }
-
   if (html) {
     container.innerHTML = html;
-    if (window.MathJax?.typesetPromise) {
-      window.MathJax.typesetPromise([container]).catch(() => {});
-    }
+    queueTypeset(container);
   } else {
     container.textContent = text;
   }

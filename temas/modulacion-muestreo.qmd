@@ -7,12 +7,14 @@ title: "Modulación y muestreo"
 En modulación de amplitud elemental, una portadora de frecuencia alta transporta una señal de información de frecuencia más baja. Un modelo sencillo es
 
 $$
-x_{\text{AM}}(t)=\left[1+m\cos(2\pi u_m t)\right]A_c\cos(2\pi u_c t),
+s(t)=\left[1+\mu m(t)\right]\cos(2\pi u_c t),
 $$
 
-con $0\le m \le 1$ en el caso sin sobre-modulación.
+donde $m(t)$ es el mensaje, $u_c$ es la frecuencia de la portadora y $\mu$ controla la profundidad de modulación.
 
-El espectro de la modulante aparece desplazado alrededor de $\pm u_c$.
+Si $|\mu m(t)|$ se mantiene moderado, la envolvente de $s(t)$ sigue reproduciendo al mensaje de manera clara. Si $\mu$ es demasiado grande, puede aparecer sobremodulación y la envolvente deja de ser una lectura fiable del mensaje original.
+
+El resultado espectral más importante es que la modulación desplaza copias del espectro de $m(t)$ alrededor de $\pm u_c$.
 
 ## FM introductoria
 
@@ -27,6 +29,8 @@ e^{i2\pi u_0 t}x(t)\leftrightarrow X(u-u_0)
 $$
 
 resume la idea matemática central de la modulación: multiplicar en el tiempo permite trasladar espectros.
+
+Cuando se usa una portadora real, por ejemplo $\cos(2\pi u_c t)$, aparecen dos copias desplazadas del espectro, una hacia $+u_c$ y otra hacia $-u_c$. Esa es la razón por la que en AM aparecen bandas laterales alrededor de la portadora.
 
 ## Muestreo ideal
 
@@ -63,15 +67,78 @@ donde $k\in\mathbb{Z}$ se escoge de modo que el resultado quede dentro de la ban
 Si la señal es limitada en banda a $|u|\le u_{\max}$, el criterio clásico para evitar solapamiento es
 
 $$
-f_s \ge 2u_{\max}.
+u_s > 2u_{\max}.
 $$
 
-El valor $f_s/2$ se conoce como frecuencia de Nyquist.
+Aquí $u_s=1/T_s$ es la frecuencia de muestreo medida en ciclos por unidad de tiempo. En muchos cursos también se escribe $f_s$, y el valor $u_s/2$ se conoce como frecuencia de Nyquist.
+
+## Explorador de muestreo y aliasing
+
+La siguiente visualización permite ver directamente cuándo las muestras representan fielmente a la señal continua y cuándo pasan a confundirse con una frecuencia alias más baja. Mantiene la misma lógica de la simulación completa, pero integrada en esta página para conectar la teoría con la observación inmediata.
+
+::: {#modulation-sampling-explorer .simulation-shell .simulation-shell--embedded}
+::: {.sim-card .sim-card--controls}
+<p class="sim-card-title">Controles</p>
+
+<div class="control-grid">
+<div class="control-field">
+<label for="mod-sampling-frequency">Frecuencia de la señal <em>u</em></label>
+<div class="control-inline">
+<input id="mod-sampling-frequency" type="range" min="0.5" max="24" step="0.1" value="7">
+<input id="mod-sampling-frequency-number" type="number" min="0.5" max="24" step="0.1" value="7">
+</div>
+</div>
+<div class="control-field">
+<label for="mod-sampling-rate">Frecuencia de muestreo <em>u</em><sub>s</sub></label>
+<div class="control-inline">
+<input id="mod-sampling-rate" type="range" min="2" max="30" step="0.5" value="12">
+<input id="mod-sampling-rate-number" type="number" min="2" max="30" step="0.5" value="12">
+</div>
+</div>
+<div class="control-field">
+<label for="mod-sampling-phase">Fase <em>&phi;</em> [rad]</label>
+<div class="control-inline">
+<input id="mod-sampling-phase" type="range" min="-3.1416" max="3.1416" step="0.05" value="0">
+<input id="mod-sampling-phase-number" type="number" min="-3.1416" max="3.1416" step="0.05" value="0">
+</div>
+</div>
+<div class="control-field">
+<label for="mod-sampling-duration">Duración observada</label>
+<div class="control-inline">
+<input id="mod-sampling-duration" type="range" min="0.5" max="3" step="0.1" value="1.5">
+<input id="mod-sampling-duration-number" type="number" min="0.5" max="3" step="0.1" value="1.5">
+</div>
+</div>
+</div>
+:::
+
+::: {.sim-card .sim-card--plot}
+<p class="sim-card-title">Señal continua, muestras y alias</p>
+<div id="mod-sampling-plot" class="plot-panel plot-panel--embedded"></div>
+:::
+
+::: {.sim-card .sim-card--diagnostics}
+<p class="sim-card-title">Lectura rápida</p>
+<div class="formula-panel" id="mod-sampling-formula"></div>
+<div class="metric-grid">
+<div class="metric-card">
+<span class="metric-label">Nyquist</span>
+<strong id="mod-sampling-nyquist"></strong>
+</div>
+<div class="metric-card">
+<span class="metric-label">Frecuencia alias</span>
+<strong id="mod-sampling-alias"></strong>
+</div>
+</div>
+<div id="mod-sampling-alert" class="status-banner"></div>
+<p class="sim-explainer" id="mod-sampling-summary"></p>
+:::
+:::
 
 ::: {.callout-warning}
 ## Error común
 
-Cumplir $f_s \ge 2u_{\max}$ exige conocer una cota realista de la banda ocupada por la señal. En práctica, siempre se acompaña de filtrado anti-alias antes del muestreo.
+Cumplir $u_s > 2u_{\max}$ exige conocer una cota realista de la banda ocupada por la señal. En práctica, siempre se acompaña de filtrado anti-alias antes del muestreo.
 :::
 
 ::: {.callout-tip}
@@ -79,3 +146,6 @@ Cumplir $f_s \ge 2u_{\max}$ exige conocer una cota realista de la banda ocupada 
 
 La simulación [Muestreo y aliasing](../simulaciones/muestreo-aliasing.qmd) permite comparar una sinusoide continua con sus muestras y con la frecuencia alias equivalente cuando no se cumple Nyquist.
 :::
+
+<script src="https://cdn.plot.ly/plotly-2.32.0.min.js"></script>
+<script type="module" src="../assets/js/simulations/modulation-sampling-explorer.js"></script>
