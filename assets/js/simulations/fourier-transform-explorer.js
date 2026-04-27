@@ -166,7 +166,7 @@ const SIGNALS = {
     magnitude: [],
     phase: [],
     impulses: [{ position: 0, height: 1 }],
-    noteHtml: "<p>La señal constante concentra toda su contribución en $u=0$. La fase no se interpreta como una función ordinaria para una delta aislada.</p>",
+    noteHtml: "<p>La señal constante concentra toda su contribución en \\(u=0\\). La fase no se interpreta como una función ordinaria para una delta aislada.</p>",
   },
   step: {
     label: "Escalón",
@@ -181,7 +181,7 @@ const SIGNALS = {
     }),
     phase: piecewisePhase(FREQ_GRID, -Math.PI / 2, Math.PI / 2),
     impulses: [{ position: 0, height: 0.5 }],
-    noteHtml: "<p>La curva espectral muestra la parte regular en valor principal, $\\operatorname{p.v.}\\!\\left(\\frac{1}{i2\\pi u}\\right)$. Además aparece un impulso de peso $\\frac{1}{2}\\delta(u)$ en el origen.</p>",
+    noteHtml: "<p>La curva espectral muestra la parte regular en valor principal, \\(\\operatorname{p.v.}\\!\\left(\\frac{1}{i2\\pi u}\\right)\\). Además aparece un impulso de peso \\(\\frac{1}{2}\\delta(u)\\) en el origen.</p>",
   },
   ramp: {
     label: "Rampa causal",
@@ -196,7 +196,7 @@ const SIGNALS = {
     }),
     phase: FREQ_GRID.map((frequency) => (Math.abs(frequency) < PV_GAP ? Number.NaN : Math.PI)),
     symbols: [{ position: 0, height: 1.1 }],
-    noteHtml: "<p>Se grafica solo la parte regular, proporcional a $\\frac{1}{u^2}$. En el origen también aparece un término distribucional proporcional a $\\delta'(u)$, indicado de forma simbólica.</p>",
+    noteHtml: "<p>Se grafica solo la parte regular, proporcional a \\(\\frac{1}{u^2}\\). En el origen también aparece un término distribucional proporcional a \\(\\delta'(u)\\), indicado de forma simbólica.</p>",
   },
   sign: {
     label: "Signo",
@@ -210,7 +210,7 @@ const SIGNALS = {
       return clipMagnitude(1 / (Math.PI * Math.abs(frequency)));
     }),
     phase: piecewisePhase(FREQ_GRID, -Math.PI / 2, Math.PI / 2),
-    noteHtml: "<p>La transformada del signo se interpreta como $\\operatorname{p.v.}\\!\\left(\\frac{1}{i\\pi u}\\right)$. La fase mostrada corresponde a la parte regular imaginaria impar.</p>",
+    noteHtml: "<p>La transformada del signo se interpreta como \\(\\operatorname{p.v.}\\!\\left(\\frac{1}{i\\pi u}\\right)\\). La fase mostrada corresponde a la parte regular imaginaria impar.</p>",
   },
   triangle: {
     label: "Triángulo",
