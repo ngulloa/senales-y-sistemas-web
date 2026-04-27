@@ -604,10 +604,11 @@ pre {
 .plot-container {
   width: 100%;
   max-width: 100%;
+  touch-action: pan-y !important;
 }
 
 .plotly .modebar {
-  opacity: 0.94;
+  display: none !important;
 }
 
 .btn,

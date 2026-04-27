@@ -12,15 +12,29 @@ const THEME = {
 
 const PLOT_CONFIG = {
   responsive: true,
+  displayModeBar: false,
   displaylogo: false,
+  scrollZoom: false,
+  doubleClick: false,
+  showAxisDragHandles: false,
+  showAxisRangeEntryBoxes: false,
+  editable: false,
   modeBarButtonsToRemove: [
     "lasso2d",
     "select2d",
+    "zoom2d",
+    "pan2d",
+    "zoomIn2d",
+    "zoomOut2d",
+    "autoScale2d",
+    "resetScale2d",
     "toggleSpikelines",
     "hoverClosestCartesian",
     "hoverCompareCartesian",
   ],
 };
+
+const AXIS_KEY_PATTERN = /^(x|y)axis\d*$/;
 
 function ensurePlotly() {
   if (!window.Plotly) {
@@ -74,6 +88,43 @@ export function markerTrace(x, y, options = {}) {
   };
 }
 
+function normalizeAxis(axis = {}) {
+  const mergedAxis = {
+    automargin: true,
+    gridcolor: THEME.grid,
+    zerolinecolor: THEME.axis,
+    linecolor: THEME.axis,
+    mirror: true,
+    ...axis,
+  };
+  const hasExplicitRange = Array.isArray(mergedAxis.range);
+
+  if (hasExplicitRange) {
+    mergedAxis.autorange = false;
+  } else if (!Object.prototype.hasOwnProperty.call(mergedAxis, "autorange")) {
+    mergedAxis.autorange = true;
+  }
+
+  mergedAxis.fixedrange = true;
+  return mergedAxis;
+}
+
+function normalizeLayout(layout) {
+  const normalized = {
+    ...layout,
+    dragmode: false,
+    hovermode: false,
+  };
+
+  Object.keys(normalized).forEach((key) => {
+    if (AXIS_KEY_PATTERN.test(key)) {
+      normalized[key] = normalizeAxis(normalized[key]);
+    }
+  });
+
+  return normalized;
+}
+
 export function renderPlot(container, traces, layoutOverrides = {}) {
   if (!container) {
     throw new Error("No existe el contenedor del gráfico.");
@@ -114,24 +165,16 @@ export function renderPlot(container, traces, layoutOverrides = {}) {
       },
     },
     xaxis: {
-      automargin: true,
-      gridcolor: THEME.grid,
-      zerolinecolor: THEME.axis,
-      linecolor: THEME.axis,
-      mirror: true,
+      autorange: true,
     },
     yaxis: {
-      automargin: true,
-      gridcolor: THEME.grid,
-      zerolinecolor: THEME.axis,
-      linecolor: THEME.axis,
-      mirror: true,
+      autorange: true,
     },
     ...layoutOverrides,
   };
 
   bindResponsiveResize(container, Plotly);
-  return Plotly.react(container, traces, layout, PLOT_CONFIG);
+  return Plotly.react(container, traces, normalizeLayout(layout), PLOT_CONFIG);
 }
 
 export { THEME };
